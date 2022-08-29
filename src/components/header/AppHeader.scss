@@ -1,0 +1,41 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    color: white;
+    padding-right: 2rem;
+
+    a {
+        cursor: pointer;
+    }
+
+}
+
+.logo {
+    li {
+        height: 4rem;
+
+        img {
+            height: 7rem;
+            border: 1px solid white;
+            border-radius: 1rem;
+            margin: 1rem;
+            box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+            border: 1px solid #ddd;
+        }
+    }
+}
+
+.navbar {
+    padding: 1rem 0 1rem 0;
+
+    ul {
+        display: flex;
+
+        li {
+            margin-left: 1rem;
+        }
+    }
+}

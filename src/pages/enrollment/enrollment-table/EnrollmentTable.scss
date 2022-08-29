@@ -1,0 +1,34 @@
+.enrollment-table {
+    text-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    
+
+    h1:first-child{
+        // margin-top: 10rem;
+    }
+    .container{
+        // margin-top: 8rem;
+    }
+
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        td,tr,th{
+            border: 1px solid lightgray;
+
+        }
+        th{
+            background-color: lightgrey;
+        }
+    }
+
+    p {
+        padding: 5rem;
+        direction: rtl;
+        text-align: right;
+    }
+}

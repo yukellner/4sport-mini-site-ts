@@ -1,0 +1,18 @@
+footer{
+    height: 2rem;
+    position: absolute;
+    background-color: var(--secondaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+        a{
+            cursor: pointer;
+        }
+
+        color: white;
+    }
+    width: 100%;
+    text-align: center;
+
+}

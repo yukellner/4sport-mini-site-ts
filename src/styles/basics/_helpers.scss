@@ -1,0 +1,49 @@
+* {
+    // outline: 0.5px solid red !important;
+    list-style-type: none;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+    a {
+        all: unset;
+        text-decoration: none;
+        /* no underline */
+
+    }
+
+}
+
+* {
+    font-family: General-Font;
+}
+
+body {
+    color: var(--fontColor);
+}
+
+.vh-80 {
+    height: 80vh
+}
+
+.sign-btn {
+    margin-top: 5rem;
+    background-color: var(--secondaryColor);
+}
+
+.sign-btn-oposite {
+    background-color: white !important;
+    color: var(--secondaryColor) !important;
+
+}
+
+.titleText {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    text-align: center;
+    margin: 4rem auto;
+    font-size: 1rem;
+}
+
+.button-border{
+    border-radius: 1rem;
+}

@@ -1,0 +1,20 @@
+.main-enrollment{
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-image: var(--coverImage);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+    h1{
+        padding: 1rem;
+        color: white;
+    }
+}
+
+button{
+    width: 16rem;
+    height: 4rem;
+}
