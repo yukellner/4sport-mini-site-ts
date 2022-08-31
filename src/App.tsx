@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 import { Home } from './pages/home/Home';
@@ -21,6 +21,8 @@ function App() {
 
   }, [])
 
+  
+
 
   const getJsonFromApi = async () => {
     //http://hinawi:3000/
@@ -35,7 +37,9 @@ function App() {
     }
   }
 
-  if (!eventObj) return <h1>no obj</h1>
+  if (!eventObj) return <h1 style={{color:"black", textAlign:"center"}}>אנחנו מצטערים אבל יש כרגע תקלה באתר ואנחנו מטפלים בה, אנא נסו אותנו יותר מאוחר</h1>
+
+
 
 
 
