@@ -69,7 +69,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
                                     aria-labelledby="demo-radio-buttons-group-label"
                                     defaultValue="female">
                                     {eventObj.heats.map(heat =>
-                                        <FormControlLabel key={heat.description} value={heat.description} control={<Radio />} label={heat.description} />
+                                        <FormControlLabel   key={heat.description} value={heat.description} control={<Radio />} label={heat.description} />
                                     )}
                                 </RadioGroup>
                             </FormControl>
