@@ -7,7 +7,6 @@ export const DetailsMainHeader:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }
         <div className="main-details-container">
             <div className="first-img">
                 <img src={eventObj.coverImages[2]} alt="" />
-                <div className="seconed-img"></div>
             </div>
             <div className="meeting-point">
                 <a href={eventObj.wazeDirection}>
