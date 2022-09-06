@@ -14,12 +14,23 @@
 
 }
 
+.pointer{
+    cursor: pointer;
+}
+
 * {
     font-family: General-Font;
 }
 
 body {
     color: var(--fontColor);
+}
+
+.visible-class{
+    visibility: visible;
+}
+.hide-class{
+    visibility: hidden;
 }
 
 .vh-80 {
