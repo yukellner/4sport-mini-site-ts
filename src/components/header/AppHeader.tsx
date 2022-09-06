@@ -60,10 +60,6 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
         document.documentElement.style.setProperty(`--coverImage`, `url(${eventObj.coverImages[0]})`);
     }
 
-
-    // if(!timerIsShown) return
-
-
     return (<>
         <div onClick={showModal} id="background-div" className="background-div"></div>
         <header id="main-header" className="main-header">
@@ -74,15 +70,13 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
                     </li>
                 </div>
             </NavLink>
-            <div className="navbar" id="navbar">
-                <ul>
+                <ul className="navbar" id="navbar">
                     <li><NavLink to='/contact'>צור קשר</NavLink></li>
                     <li><NavLink to='/maps'>מפות ומסלולים</NavLink></li>
                     <li><NavLink to='/details'>מידע</NavLink></li>
                     <li><NavLink to={`/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
                     <li><NavLink to='/'>בית</NavLink></li>
                 </ul>
-            </div>
             <span onClick={showModal} className="material-icons pointer hamburger">
                 menu
             </span>

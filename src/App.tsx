@@ -15,7 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
-  const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
+  const [eventObj, setEventObj] = useState<RaceObjModel>()
 
   useEffect(() => {
     getJsonFromApi()
