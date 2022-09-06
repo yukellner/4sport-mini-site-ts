@@ -1,11 +1,11 @@
-import {Button} from "@mui/material";
-import {useEffect, useState} from "react"
-import {NavLink} from "react-router-dom"
+import { Button } from "@mui/material";
+import { useEffect, useState } from "react"
+import { NavLink } from "react-router-dom"
 import { RaceObjModel } from "../../models/raceObj.model";
 import CountdownTimer from "../countdown/CountdownTimer";
 
 
-export const AppHeader:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
+export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const [timerIsShown, setTimerIsShownd] = useState(true)
 
@@ -17,7 +17,7 @@ export const AppHeader:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
 
     useEffect(() => {
         updateVaribles()
-        window.addEventListener('scroll', scrollEv, {passive: true});
+        window.addEventListener('scroll', scrollEv, { passive: true });
 
         return () => {
             // window.removeEventListener('scroll', scrollEv, {passive: true});
@@ -36,6 +36,21 @@ export const AppHeader:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
         }
     }
 
+    const showModal = () => {
+        const element = document.getElementById("navbar");
+        const el1: HTMLElement = element!;
+        el1.classList.toggle("visible-class");
+
+
+        const element2 = document.getElementById("background-div");
+        const el2: HTMLElement = element2!;
+        el2.classList.toggle("visible-class");
+    }
+
+
+
+
+
 
     const updateVaribles = () => {
         document.documentElement.style.setProperty('--backgroundColor', eventObj.backgroundColor);
@@ -48,16 +63,17 @@ export const AppHeader:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
     // if(!timerIsShown) return
 
 
-    return (
+    return (<>
+        <div onClick={showModal} id="background-div" className="background-div"></div>
         <header id="main-header" className="main-header">
             <NavLink to='/'>
                 <div className="logo">
                     <li>
-                        <img src={eventObj.logo}/>
+                        <img src={eventObj.logo} />
                     </li>
                 </div>
             </NavLink>
-            <div className="navbar">
+            <div className="navbar" id="navbar">
                 <ul>
                     <li><NavLink to='/contact'>צור קשר</NavLink></li>
                     <li><NavLink to='/maps'>מפות ומסלולים</NavLink></li>
@@ -66,14 +82,18 @@ export const AppHeader:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
                     <li><NavLink to='/'>בית</NavLink></li>
                 </ul>
             </div>
+            <span onClick={showModal} className="material-icons pointer hamburger">
+                menu
+            </span>
             <div className='countdown-container'>
                 <div className="log-in-modal">
                     <h1>{eventObj.date}</h1>
                     <Button className='sign-btn-oposite' href={eventObj.participantsListUrl} variant="contained">לחץ
                         להרשמה</Button>
-                    {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS}/>}
+                    {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
                 </div>
             </div>
         </header>
+    </>
     )
 }
