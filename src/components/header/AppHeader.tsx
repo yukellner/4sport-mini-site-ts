@@ -11,8 +11,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
 
     // var NOW_IN_MS = new Date().getTime();
-    var date = new Date("11/21/2022 16:00:00"); // some mock date
-    // var date = new Date(eventObj.date); // some mock date
+    // var date = new Date("11/21/2022 16:00:00"); // some mock date
+    var date = new Date(eventObj.dateTime); // some mock date
+    console.log('date',date)
     var DATE_IN_MS = date.getTime();
 
     useEffect(() => {
