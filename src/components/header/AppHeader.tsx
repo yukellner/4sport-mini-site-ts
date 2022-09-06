@@ -61,41 +61,38 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
         document.documentElement.style.setProperty(`--coverImage`, `url(${eventObj.coverImages[0]})`);
     }
 
-
-    // if(!timerIsShown) return
-
-
-    return (<>
-        <div onClick={showModal} id="background-div" className="background-div"></div>
-        <header id="main-header" className="main-header">
-            <NavLink to='/site/'>
-                <div className="logo">
-                    <li>
-                        <img src={eventObj.logo} />
-                    </li>
+    return (
+        <>
+            <div onClick={showModal} id="background-div" className="background-div"></div>
+            <header id="main-header" className="main-header">
+                <NavLink to='/site/'>
+                    <div className="logo">
+                        <li>
+                            <img src={eventObj.logo} />
+                        </li>
+                    </div>
+                </NavLink>
+                <div className="navbar" id="navbar">
+                    <ul>
+                        <li><NavLink to='/site/contact'>צור קשר</NavLink></li>
+                        <li><NavLink to='/site/maps'>מפות ומסלולים</NavLink></li>
+                        <li><NavLink to='/site/details'>מידע</NavLink></li>
+                        <li><NavLink to={`/site/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
+                        <li><NavLink to='/site/'>בית</NavLink></li>
+                    </ul>
                 </div>
-            </NavLink>
-            <div className="navbar" id="navbar">
-                <ul>
-                    <li><NavLink to='/site/contact'>צור קשר</NavLink></li>
-                    <li><NavLink to='/site/maps'>מפות ומסלולים</NavLink></li>
-                    <li><NavLink to='/site/details'>מידע</NavLink></li>
-                    <li><NavLink to={`/site/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
-                    <li><NavLink to='/site/'>בית</NavLink></li>
-                </ul>
-            </div>
-            <span onClick={showModal} className="material-icons pointer hamburger">
+                <span onClick={showModal} className="material-icons pointer hamburger">
                 menu
             </span>
-            <div className='countdown-container'>
-                <div className="log-in-modal">
-                    <h1>{eventObj.date}</h1>
-                    <Button className='sign-btn-oposite' href={eventObj.participantsListUrl} variant="contained">לחץ
-                        להרשמה</Button>
-                    {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
+                <div className='countdown-container'>
+                    <div className="log-in-modal">
+                        <h1>{eventObj.date}</h1>
+                        <Button className='sign-btn-oposite' href={eventObj.participantsListUrl} variant="contained">לחץ
+                            להרשמה</Button>
+                        {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
+                    </div>
                 </div>
-            </div>
-        </header>
-    </>
+            </header>
+        </>
     )
 }
