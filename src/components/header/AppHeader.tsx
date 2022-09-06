@@ -19,7 +19,6 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     useEffect(():any => {
         updateVaribles()
         window.addEventListener('scroll', scrollEv, { passive: true });
-        alert("in")
 
         return () => {
             // alert("out")
