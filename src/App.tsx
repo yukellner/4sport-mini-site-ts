@@ -11,6 +11,7 @@ import { Details } from './pages/details/Details';
 import { Contact } from './pages/contact/Contact';
 import { Maps } from './pages/maps/Maps';
 import { Enrollment } from './pages/enrollment/Enrollment';
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
@@ -45,6 +46,8 @@ function App() {
 
   return (
     <BrowserRouter >
+          <ScrollToTop/>
+
     <div className="App">
       <AppHeader eventObj={eventObj} />
       <Routes>
