@@ -16,13 +16,15 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     console.log('date',date)
     var DATE_IN_MS = date.getTime();
 
-    useEffect(() => {
+    useEffect(():any => {
         updateVaribles()
         window.addEventListener('scroll', scrollEv, { passive: true });
+        alert("in")
 
         return () => {
+            // alert("out")
             // window.removeEventListener('scroll', scrollEv, {passive: true});
-        }
+        };
 
     }, [])
 
