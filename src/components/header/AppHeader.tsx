@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
+import { FALSE } from "sass";
 import { RaceObjModel } from "../../models/raceObj.model";
 import CountdownTimer from "../countdown/CountdownTimer";
 
@@ -13,16 +14,16 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     // var NOW_IN_MS = new Date().getTime();
     // var date = new Date("11/21/2022 16:00:00"); // some mock date
     var date = new Date(eventObj.dateTime); // some mock date
-    console.log('date',date)
+    console.log('date', date)
     var DATE_IN_MS = date.getTime();
 
-    useEffect(():any => {
+    useEffect(() => {
         updateVaribles()
         window.addEventListener('scroll', scrollEv, { passive: true });
 
         return () => {
             // alert("out")
-            // window.removeEventListener('scroll', scrollEv, {passive: true});
+            window.removeEventListener('scroll', scrollEv);
         };
 
     }, [])
@@ -39,18 +40,21 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     }
 
     const showModal = () => {
-        const element = document.getElementById("navbar");
-        const el1: HTMLElement = element!;
-        el1.classList.toggle("visible-class");
+        if (window.innerWidth < 640) {
+            const element = document.getElementById("navbar");
+            const el1: HTMLElement = element!;
+            el1.classList.toggle("visible-class");
 
 
-        const element2 = document.getElementById("hamburger");
-        const el2: HTMLElement = element2!;
-        el2.classList.toggle("hide-class");
-        
-        const element3 = document.getElementById("close");
-        const el3: HTMLElement = element3!;
-        el3.classList.toggle("block-class");
+            const element2 = document.getElementById("hamburger");
+            const el2: HTMLElement = element2!;
+            el2.classList.toggle("hide-class");
+
+
+            const element3 = document.getElementById("close");
+            const el3: HTMLElement = element3!;
+            el3.classList.toggle("block-class");
+        }
     }
 
 
@@ -61,16 +65,13 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     const updateVaribles = () => {
         document.documentElement.style.setProperty('--backgroundColor', eventObj.backgroundColor);
         document.documentElement.style.setProperty('--fontColor', eventObj.foregroundColor);
-        // document.documentElement.style.setProperty('--secondaryColor', eventObj.secondaryColor);
         document.documentElement.style.setProperty(`--coverImage`, `url(${eventObj.coverImages[0]})`);
     }
 
 
-    // if(!timerIsShown) return
 
 
     return (<>
-        {/* <div onClick={showModal} id="background-div" className="background-div"></div> */}
         <header id="main-header" className="main-header">
             <NavLink to='/'>
                 <div className="logo">

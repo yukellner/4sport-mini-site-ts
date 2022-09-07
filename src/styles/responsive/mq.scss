@@ -2,6 +2,10 @@
 
 @media (max-width: 640px) {
 
+    .map-container{
+        padding: 3rem 2%;
+    }
+
     .sponsers-container{
         margin-bottom: 4rem;
 
@@ -49,6 +53,8 @@
         }
     }
 
+    
+
     .log-in-modal {
         position: fixed !important;
         bottom: 0;
@@ -75,12 +81,20 @@
         // display: none !important;
     }
 
+    
+
 }
 
 
 
 // tablet
 @media (min-width: 640px) {
+
+    .map-container{
+        padding: 3rem 20%;
+    }
+
+
 
     .navbar{
         ul{
@@ -90,8 +104,12 @@
         }
     }
 
+    // .close{
+    //     display: none;
+    // }
+
     .hamburger {
-        display: none;
+        display: none !important;
     }
 
     .main-footer {
