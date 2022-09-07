@@ -37,8 +37,9 @@ function App() {
       console.error(error);
     }
   }
+  if (!eventObj) return ( <div className="loader"></div> )
 
-  if (!eventObj) return <h1 style={{color:"black", textAlign:"center"}}>אנחנו מצטערים אבל יש כרגע תקלה באתר ואנחנו מטפלים בה, אנא נסו אותנו יותר מאוחר</h1>
+  // if (!eventObj) return <h1 style={{color:"black", textAlign:"center"}}>אנחנו מצטערים אבל יש כרגע תקלה באתר ואנחנו מטפלים בה, אנא נסו אותנו יותר מאוחר</h1>
 
 
 

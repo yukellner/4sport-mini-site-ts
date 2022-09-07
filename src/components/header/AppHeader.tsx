@@ -9,6 +9,7 @@ import CountdownTimer from "../countdown/CountdownTimer";
 export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const [timerIsShown, setTimerIsShownd] = useState(true)
+    const [mobileHeader, setMobileHeader] = useState()
 
 
     // var NOW_IN_MS = new Date().getTime();
@@ -41,6 +42,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
     const showModal = () => {
         if (window.innerWidth < 640) {
+            // setMobileHeader(page)
             const element = document.getElementById("navbar");
             const el1: HTMLElement = element!;
             el1.classList.toggle("visible-class");
