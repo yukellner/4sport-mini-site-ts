@@ -21,21 +21,30 @@
         visibility: hidden;
 
         ul {
-            z-index: 20;
+            padding: 0;
+            padding-top: 5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            z-index: -1;
             flex-direction: column;
-            position: absolute;
+            position: fixed;
             right: 0;
+            bottom: 0;
+            width: 100%;
             gap: 0.5rem;
             top: 64px;
             background-color: var(--secondaryColor);
-            padding: 0;
-            padding-bottom: 0.5rem;
-            border-bottom-left-radius: 0.5rem;
+            // padding: 0;
+            // border-bottom-left-radius: 0.5rem;
 
             li {
                 font-size: 1.5rem;
-                text-align: right;
-                padding-right: 1rem;
+                text-align: center;
+                padding: 1rem;
+                border-bottom: 1px solid rgb(221, 221, 221);
+                
+
             }
         }
     }
@@ -72,6 +81,14 @@
 
 // tablet
 @media (min-width: 640px) {
+
+    .navbar{
+        ul{
+            li{
+                margin-left: 1rem;
+            }
+        }
+    }
 
     .hamburger {
         display: none;

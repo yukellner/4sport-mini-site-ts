@@ -44,9 +44,13 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
         el1.classList.toggle("visible-class");
 
 
-        const element2 = document.getElementById("background-div");
+        const element2 = document.getElementById("hamburger");
         const el2: HTMLElement = element2!;
-        el2.classList.toggle("visible-class");
+        el2.classList.toggle("hide-class");
+        
+        const element3 = document.getElementById("close");
+        const el3: HTMLElement = element3!;
+        el3.classList.toggle("block-class");
     }
 
 
@@ -66,7 +70,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
 
     return (<>
-        <div onClick={showModal} id="background-div" className="background-div"></div>
+        {/* <div onClick={showModal} id="background-div" className="background-div"></div> */}
         <header id="main-header" className="main-header">
             <NavLink to='/'>
                 <div className="logo">
@@ -77,15 +81,18 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
             </NavLink>
             <div className="navbar" id="navbar">
                 <ul>
-                    <li><NavLink to='/contact'>צור קשר</NavLink></li>
-                    <li><NavLink to='/maps'>מפות ומסלולים</NavLink></li>
-                    <li><NavLink to='/details'>מידע</NavLink></li>
-                    <li><NavLink to={`/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
-                    <li><NavLink to='/'>בית</NavLink></li>
+                    <li><NavLink onClick={showModal} to='/contact'>צור קשר</NavLink></li>
+                    <li><NavLink onClick={showModal} to='/maps'>מפות ומסלולים</NavLink></li>
+                    <li><NavLink onClick={showModal} to='/details'>מידע</NavLink></li>
+                    <li><NavLink onClick={showModal} to={`/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
+                    <li><NavLink onClick={showModal} to='/'>בית</NavLink></li>
                 </ul>
             </div>
-            <span onClick={showModal} className="material-icons pointer hamburger">
+            <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">
                 menu
+            </span>
+            <span id="close" onClick={showModal} className="material-icons pointer close">
+                close
             </span>
             <div className='countdown-container'>
                 <div className="log-in-modal">

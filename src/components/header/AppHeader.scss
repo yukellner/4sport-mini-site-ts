@@ -41,6 +41,10 @@
     }
 }
 
+.close{
+    display: none;
+}
+
 .navbar {
     padding: 1rem 0 1rem 0;
 
@@ -48,7 +52,7 @@
         display: flex;
 
         li {
-            margin-left: 1rem;
+            // margin-left: 1rem;
         }
     }
 }
