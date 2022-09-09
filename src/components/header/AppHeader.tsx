@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
-import { FALSE } from "sass";
 import { RaceObjModel } from "../../models/raceObj.model";
 import CountdownTimer from "../countdown/CountdownTimer";
 
@@ -10,7 +9,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
     const [timerIsShown, setTimerIsShownd] = useState(true)
     const [mobileHeader, setMobileHeader] = useState()
-
+    const { codeName } = eventObj
 
     // var NOW_IN_MS = new Date().getTime();
     // var date = new Date("11/21/2022 16:00:00"); // some mock date
@@ -23,10 +22,8 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
         window.addEventListener('scroll', scrollEv, { passive: true });
 
         return () => {
-            // alert("out")
             window.removeEventListener('scroll', scrollEv);
         };
-
     }, [])
 
     const scrollEv = () => {
@@ -67,26 +64,24 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
         document.documentElement.style.setProperty(`--BackgroundColor`, eventObj.backgroundColor);
     }
 
-
-
-
-
-    return (<>
+    const basePath = `/site/${codeName}`
+    return (
+        <>
             <header id="main-header" className="main-header">
-                <NavLink to='/'>
-                    <div className="logo">
-                        <li>
-                            <img src={eventObj.logo} />
-                        </li>
-                    </div>
-                </NavLink>
+                <div className="logo">
+                    <li>
+                        <NavLink to={`${basePath}/`}>
+                            <img src={eventObj.logo}  alt={'event logo'}/>
+                        </NavLink>
+                    </li>
+                </div>
                 <div className="navbar" id="navbar">
                     <ul>
-                        <li><NavLink onClick={showModal} to='/site/contact'>צור קשר</NavLink></li>
-                        <li><NavLink onClick={showModal} to='/site/maps'>מפות ומסלולים</NavLink></li>
-                        <li><NavLink onClick={showModal} to='/site/details'>מידע</NavLink></li>
-                        <li><NavLink onClick={showModal} to={`/site/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
-                        <li><NavLink onClick={showModal} to='/site/'>בית</NavLink></li>
+                        <li><NavLink onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
+                        <li><NavLink onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>
+                        <li><NavLink onClick={showModal} to={`${basePath}/details`}>מידע</NavLink></li>
+                        <li><NavLink onClick={showModal} to={`${basePath}/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
+                        <li><NavLink onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
                     </ul>
                 </div>
                 <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">

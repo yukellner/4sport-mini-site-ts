@@ -29,7 +29,9 @@ export const HeatBox: React.FC<{ heat: HeatModel, eventObj: RaceObjModel }> = ({
                     <div>
                         <h3>{heat.description}</h3>
                         <h3>מגיל {heat.minAge} עד גיל {heat.maxAge}</h3>
-                        <Button className='sign-btn' href={eventObj.participantsListUrl} variant="contained">לחץ
+                        <Button className='sign-btn' 
+                        sx={{ color: eventObj.foregroundColor, backgroundColor: eventObj.backgroundColor }}href={eventObj.participantsListUrl}  variant="contained">לחץ
+
                             להרשמה</Button>
 
                     </div>

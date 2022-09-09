@@ -14,14 +14,24 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
+    const [codeName, setCodeName] = useState<string | null>(null)
+
+
+    function getCodeName(): string {
+        const urlSegments = window.location.href.split('/')
+        const siteSegmentIndex = urlSegments.indexOf('site')
+        return urlSegments[siteSegmentIndex + 1]
+    }
 
     useEffect(() => {
-        getJsonFromApi()
+        const codeName = getCodeName()
+        setCodeName(codeName)
+        getJsonFromApi(codeName)
     }, [])
 
-    const getJsonFromApi = async () => {
+    const getJsonFromApi = async (codeName: string) => {
         try {
-            const response = await fetch('https://www.4sport-live.com/miniSite/eventData/?comp=3432');
+            const response = await fetch(`https://www.4sport-live.com/miniSite/eventData/?codeName=${codeName}`);
             const responseJson = await response.json();
             setEventObj(Object(responseJson))
             console.log(Object(responseJson))
@@ -31,8 +41,9 @@ function App() {
         }
     }
 
-  if (!eventObj) return ( <div className="loader"></div> )
+    if(!eventObj) return <div className="loader"></div>
 
+    const basePath = `/site/${codeName}`
     return (
         <BrowserRouter >
             <ScrollToTop/>
@@ -40,11 +51,11 @@ function App() {
             <div className="App">
                 <AppHeader eventObj={eventObj} />
                 <Routes>
-                    <Route path='/site/' element={<Home eventObj={eventObj}/>} />
-                    <Route path='/site/contact' element={<Contact eventObj={eventObj}/>} />
-                    <Route path='/site/enrollment/:description' element={<Enrollment eventObj={eventObj}/>} />
-                    <Route path='/site/details' element={<Details eventObj={eventObj}/>} />
-                    <Route path='/site/maps' element={<Maps eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/`} element={<Home eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/enrollment/:description`} element={<Enrollment eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/details`} element={<Details eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj}/>} />
                 </Routes>
             </div>
 

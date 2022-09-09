@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     // gap: 2rem;
     padding: 1rem 10%;
-    background-color: #E5E5E5;
+    // background-color: #E5E5E5;
 
     label ,.MuiInputBase-root{
         direction: rtl;
@@ -25,7 +25,6 @@
         }
 
         button{
-            z-index: 10;
             cursor: pointer;
             background-color: black;
             border-radius: 2rem;
@@ -75,7 +74,7 @@
     padding: 1rem 20%;
     border-bottom: 1px solid rgb(221, 221, 221);
     gap: 1rem;
-    background-color: #E5E5E5;
+    // background-color: #E5E5E5;
 
     .contact-box{
         padding: 1rem;
