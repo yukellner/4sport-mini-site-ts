@@ -60,10 +60,6 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     }
 
 
-
-
-
-
     const updateVaribles = () => {
         document.documentElement.style.setProperty('--backgroundColor', eventObj.backgroundColor);
         document.documentElement.style.setProperty('--fontColorJson', eventObj.foregroundColor);
@@ -74,15 +70,16 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
 
 
+
     return (<>
         <header id="main-header" className="main-header">
-            <div className="logo">
-                <li>
-                    <NavLink to='/'>
+            <NavLink to='/'>
+                <div className="logo">
+                    <li>
                         <img src={eventObj.logo} />
-                    </NavLink>
-                </li>
-            </div>
+                    </li>
+                </div>
+            </NavLink>
             <div className="navbar" id="navbar">
                 <ul>
                     <li><NavLink onClick={showModal} to='/contact'>צור קשר</NavLink></li>
@@ -95,18 +92,18 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
             <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">
                 menu
             </span>
-            <span id="close" onClick={showModal} className="material-icons pointer close">
+                <span id="close" onClick={showModal} className="material-icons pointer close">
                 close
             </span>
-            <div className='countdown-container'>
-                <div className="log-in-modal">
-                    <h1>{eventObj.date}</h1>
-                    <Button className='sign-btn-oposite' href={eventObj.participantsListUrl} variant="contained">לחץ
-                        להרשמה</Button>
-                    {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
+                <div className='countdown-container'>
+                    <div className="log-in-modal">
+                        <h1>{eventObj.date}</h1>
+                        <Button className='sign-btn-oposite' href={eventObj.participantsListUrl} variant="contained">לחץ
+                            להרשמה</Button>
+                        {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
+                    </div>
                 </div>
-            </div>
-        </header>
-    </>
+            </header>
+        </>
     )
 }
