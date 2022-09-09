@@ -76,13 +76,13 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
     return (<>
         <header id="main-header" className="main-header">
-            <NavLink to='/'>
-                <div className="logo">
-                    <li>
+            <div className="logo">
+                <li>
+                    <NavLink to='/'>
                         <img src={eventObj.logo} />
-                    </li>
-                </div>
-            </NavLink>
+                    </NavLink>
+                </li>
+            </div>
             <div className="navbar" id="navbar">
                 <ul>
                     <li><NavLink onClick={showModal} to='/contact'>צור קשר</NavLink></li>

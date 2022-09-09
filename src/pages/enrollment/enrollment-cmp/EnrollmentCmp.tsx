@@ -9,7 +9,7 @@ export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }
             <div className="header-home">
                 <div>
 
-                <h1 className="scale-up-center">{eventObj.description} 2022</h1>
+                <h1 className="scale-up-center">{eventObj.description}</h1>
                 </div>
                 {/* <Button className="button-border" variant="contained">הרשמה</Button> */}
             </div>

@@ -62,7 +62,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel }> = ({eventObj}) => {
                         <div className="form-group">
                             <TextField size="small" onChange={(ev) => handleChange(ev)} id="outlined-basic"
                                        label="שם מלא" name="fullName" variant="outlined"
-                                       InputLabelProps={{style: {color: eventObj.secondaryColor}}}/>
+                                       InputLabelProps={{style: {color: '#222222'}}}/>
                             <TextField size="small" onChange={(ev) => handleChange(ev)} id="outlined-basic"
                                        label="מספר טלפון" name="phoneNumber" variant="outlined"
                                        InputLabelProps={{style: {color: '#222222'}}}/>
@@ -96,9 +96,9 @@ export const Contact: React.FC<{ eventObj: RaceObjModel }> = ({eventObj}) => {
 
             </div>
             <div className="contact-boxes-container">
-                <div className="contact-phone contact-box">0543269743</div>
-                <div className="contact-location contact-box">Kibutz galuyot 29, Tel Aviv</div>
-                <div className="contact-hours contact-box">Mon – Fri …… 11 am – 8 pm, Sat, Sun …… 6 am – 8 pm</div>
+                <div className="contact-phone contact-box">{eventObj.contactPhone}</div>
+                <div className="contact-location contact-box">{eventObj.location}</div>
+                <div className="contact-hours contact-box">{eventObj.organizerDetails}</div>
 
             </div>
         </div>
