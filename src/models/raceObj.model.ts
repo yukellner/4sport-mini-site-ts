@@ -3,6 +3,7 @@ import { SponserModel } from "./sponser.model";
 
     export interface RaceObjModel {
         eventId: number;
+        codeName: string;
         description: string;
         date: string;
         dateTime: string;
