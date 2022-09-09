@@ -3,9 +3,10 @@
     justify-content: space-between;
     height: 4rem;
     align-items: center;
-    background-color: var(--secondaryColor);
-    color: white;
+    background-color: var(--BackgroundColor);
+    // color: white;
     padding-right: 2rem;
+    color: var(--fontColorJson);
 
     a {
         cursor: pointer;
@@ -41,6 +42,10 @@
     }
 }
 
+.close{
+    display: none;
+}
+
 .navbar {
     padding: 1rem 0 1rem 0;
 
@@ -48,7 +53,7 @@
         display: flex;
 
         li {
-            margin-left: 1rem;
+            // margin-left: 1rem;
         }
     }
 }

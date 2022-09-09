@@ -15,6 +15,7 @@ export const Home:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
         // printJSON()
       }, [])
 
+      if (!eventObj) return ( <div className="loader"></div> )
 
     return (
         <div >

@@ -31,7 +31,7 @@ function App() {
         }
     }
 
-    if (!eventObj) return <></>
+  if (!eventObj) return ( <div className="loader"></div> )
 
     return (
         <BrowserRouter >

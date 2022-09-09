@@ -7,7 +7,7 @@
         
         
         img {
-            box-shadow: 1rem 1.25rem var(--secondaryColor);
+            box-shadow: 1rem 1.25rem var(--BackgroundColor);
             height: 20rem;
             border-radius: 1rem;
             aspect-ratio: 16/9;
@@ -18,7 +18,7 @@
 
     .seconed-img {
         width: 100%;
-        background-color: var(--secondaryColor);
+        background-color: var(--BackgroundColor);
         height: 20rem;
         border-radius: 1rem;
         margin-top: -19rem;

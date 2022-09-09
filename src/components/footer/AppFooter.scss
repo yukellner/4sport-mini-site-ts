@@ -1,7 +1,7 @@
 footer{
     height: 2rem;
     position: absolute;
-    background-color: var(--secondaryColor);
+    background-color: var(--BackgroundColor);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@ footer{
             cursor: pointer;
         }
 
-        color: white;
+        color: var(--fontcolorDark);
     }
     width: 100%;
     text-align: center;

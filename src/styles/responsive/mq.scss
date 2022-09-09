@@ -3,6 +3,20 @@
 @media (max-width: 640px) {
 
     .sponsers-container{
+
+        
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr))
+    }
+
+    .contact-img {
+        display: none;
+    }
+
+    .map-container {
+        padding: 3rem 2%;
+    }
+
+    .sponsers-container {
         margin-bottom: 4rem;
 
     }
@@ -21,24 +35,35 @@
         visibility: hidden;
 
         ul {
-            z-index: 20;
+            padding: 0;
+            padding-top: 5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            z-index: -1;
             flex-direction: column;
-            position: absolute;
+            position: fixed;
             right: 0;
+            bottom: 0;
+            width: 100%;
             gap: 0.5rem;
             top: 64px;
-            background-color: var(--secondaryColor);
-            padding: 0;
-            padding-bottom: 0.5rem;
-            border-bottom-left-radius: 0.5rem;
+            background-color: var(--BackgroundColor);
+            flex-direction: column-reverse;
+            justify-content: start;
 
             li {
                 font-size: 1.5rem;
-                text-align: right;
-                padding-right: 1rem;
+                text-align: center;
+                padding: 1rem;
+                border-bottom: 1px solid var(--fontColorJson);
+
+
             }
         }
     }
+
+
 
     .log-in-modal {
         position: fixed !important;
@@ -47,6 +72,8 @@
         width: 100%;
         right: 0;
         border-bottom-left-radius: unset !important;
+        flex-direction: column-reverse !important;
+
 
         // visibility: hidden;
     }
@@ -66,6 +93,8 @@
         // display: none !important;
     }
 
+
+
 }
 
 
@@ -73,8 +102,32 @@
 // tablet
 @media (min-width: 640px) {
 
+    .sponsers-container{
+
+        
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    }
+
+    .map-container {
+        padding: 3rem 20%;
+    }
+
+
+
+    .navbar {
+        ul {
+            li {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    // .close{
+    //     display: none;
+    // }
+
     .hamburger {
-        display: none;
+        display: none !important;
     }
 
     .main-footer {

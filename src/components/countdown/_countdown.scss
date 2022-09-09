@@ -6,24 +6,26 @@
     position: absolute;
     right: 0rem;
     top: 4rem;
-    color: white;
+    color: var(--fontColorJson);
     width: 14rem;
-
+    
     .log-in-modal {
         z-index: 100;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: var(--secondaryColor);
+        background-color: var(--BackgroundColor);
+        font-weight: bold;
         text-align: center;
         position: sticky;
         top: 0;
         border-bottom-left-radius: 1rem;
         gap: 0.5rem;
         padding: 0.5rem;
-
+        
         a {
+            color: var(--fontColorDark);
             // margin-top: 1rem;
         }
 
