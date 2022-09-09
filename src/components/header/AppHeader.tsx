@@ -66,7 +66,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
     const updateVaribles = () => {
         document.documentElement.style.setProperty('--backgroundColor', eventObj.backgroundColor);
-        document.documentElement.style.setProperty('--fontColorLite', eventObj.foregroundColor);
+        document.documentElement.style.setProperty('--fontColorJson', eventObj.foregroundColor);
         document.documentElement.style.setProperty(`--coverImage`, `url(${eventObj.coverImages[0]})`);
         document.documentElement.style.setProperty(`--BackgroundColor`, eventObj.backgroundColor);
     }

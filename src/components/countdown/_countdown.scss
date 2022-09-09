@@ -6,9 +6,9 @@
     position: absolute;
     right: 0rem;
     top: 4rem;
-    color: var(--foregroundColor);
+    color: var(--fontColorJson);
     width: 14rem;
-
+    
     .log-in-modal {
         z-index: 100;
         display: flex;
@@ -23,8 +23,9 @@
         border-bottom-left-radius: 1rem;
         gap: 0.5rem;
         padding: 0.5rem;
-
+        
         a {
+            color: var(--fontColorDark);
             // margin-top: 1rem;
         }
 
