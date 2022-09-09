@@ -6,7 +6,7 @@
     position: absolute;
     right: 0rem;
     top: 4rem;
-    color: white;
+    color: var(--foregroundColor);
     width: 14rem;
 
     .log-in-modal {
@@ -15,7 +15,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: var(--secondaryColor);
+        background-color: var(--BackgroundColor);
+        font-weight: bold;
         text-align: center;
         position: sticky;
         top: 0;

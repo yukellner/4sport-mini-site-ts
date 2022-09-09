@@ -2,6 +2,12 @@
 
 @media (max-width: 640px) {
 
+    .sponsers-container{
+
+        
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr))
+    }
+
     .contact-img {
         display: none;
     }
@@ -42,7 +48,7 @@
             width: 100%;
             gap: 0.5rem;
             top: 64px;
-            background-color: var(--secondaryColor);
+            background-color: var(--BackgroundColor);
             flex-direction: column-reverse;
             justify-content: start;
 
@@ -95,6 +101,12 @@
 
 // tablet
 @media (min-width: 640px) {
+
+    .sponsers-container{
+
+        
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    }
 
     .map-container {
         padding: 3rem 20%;

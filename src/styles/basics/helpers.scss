@@ -23,7 +23,7 @@
 }
 
 body {
-    color: var(--fontColor);
+    color: var(--fontColorDark);
 }
 
 .visible-class{
@@ -48,12 +48,12 @@ body {
 
 .sign-btn {
     margin-top: 5rem;
-    background-color: var(--secondaryColor);
+    background-color: var(--BackgroundColor);
 }
 
 .sign-btn-oposite {
     background-color: white !important;
-    color: var(--secondaryColor) !important;
+    color: var(--BackgroundColor) !important;
 
 }
 
