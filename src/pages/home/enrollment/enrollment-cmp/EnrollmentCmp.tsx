@@ -1,5 +1,5 @@
 import { Button } from "@mui/material"
-import { RaceObjModel } from "../../../models/raceObj.model"
+import { RaceObjModel } from "../../../../models/raceObj.model"
 
 
 export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
@@ -8,7 +8,7 @@ export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }
             <div className="background-home"></div>
             <div className="header-home">
                 <div>
-
+                {/* kenburns-top */}
                 <h1 className="scale-up-center">{eventObj.description}</h1>
                 </div>
                 {/* <Button className="button-border" variant="contained">הרשמה</Button> */}

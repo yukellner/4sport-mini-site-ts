@@ -1,5 +1,5 @@
 import {Button} from "@mui/material"
-import { RaceObjModel } from "../../../models/raceObj.model"
+import { RaceObjModel } from "../../../../models/raceObj.model"
 
 
 export const EnrollmentTable:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {

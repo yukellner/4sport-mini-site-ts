@@ -69,7 +69,7 @@
 
     }
 
-    div {
+    div:first-child:not(.heat-details ){
         text-align: center;
         padding: 6rem 1rem 1rem 1rem;
         gap: 0.5rem;

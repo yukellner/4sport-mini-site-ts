@@ -71,25 +71,27 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
                 <div className="logo">
                     <li>
                         <NavLink to={`${basePath}/`}>
-                            <img src={eventObj.logo}  alt={'event logo'}/>
+                            <img src={eventObj.logo} alt={'event logo'} />
                         </NavLink>
                     </li>
                 </div>
                 <div className="navbar" id="navbar">
                     <ul>
-                        <li><NavLink onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
-                        <li><NavLink onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>
-                        <li><NavLink onClick={showModal} to={`${basePath}/details`}>מידע</NavLink></li>
-                        <li><NavLink onClick={showModal} to={`${basePath}/enrollment/${eventObj.description}`}>הרשמה</NavLink></li>
-                        <li><NavLink onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/gallery`}>גלריה</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/info`}>רז גוטרמן</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>מידע</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/enrollment`}>הרשמה</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
                     </ul>
                 </div>
                 <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">
-                menu
-            </span>
+                    menu
+                </span>
                 <span id="close" onClick={showModal} className="material-icons pointer close">
-                close
-            </span>
+                    close
+                </span>
                 <div className='countdown-container'>
                     <div className="log-in-modal">
                         <h1>{eventObj.date}</h1>
