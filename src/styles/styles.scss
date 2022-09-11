@@ -9,7 +9,9 @@
 @import 'setup/sizing';
 @import 'animations/animations.scss';
 @import '../pages/home/Home';
-@import '../pages/enrollment/enrollment-cmp/EnrollmentCmp';
+@import '../pages/gallery/gallery.scss';
+@import '../pages/info/info.scss';
+@import '../pages/home/enrollment/enrollment-cmp/EnrollmentCmp.scss';
 @import '../components/sponsers/componets/sponser-card/SponserCard';
 @import '../components/sponsers/Sponsers';
 @import '../components/countdown/countdown';
@@ -18,7 +20,7 @@
 @import '../pages/details/details.scss';
 @import '../pages/contact/contact.scss';
 @import '../pages/maps/map.scss';
-@import '../pages/enrollment/enrollment-table/EnrollmentTable';
+@import '../pages/home/enrollment/enrollment-table/EnrollmentTable';
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 @import '../../node_modules/material-design-icons/iconfont/material-icons.css';
 

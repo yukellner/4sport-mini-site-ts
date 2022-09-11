@@ -9,17 +9,21 @@ import { AppFooter } from './components/footer/AppFooter';
 import { Details } from './pages/details/Details';
 import { Contact } from './pages/contact/Contact';
 import { Maps } from './pages/maps/Maps';
-import { Enrollment } from './pages/enrollment/Enrollment';
+import { Enrollment } from './pages/home/enrollment/Enrollment';
 import ScrollToTop from "./components/ScrollToTop";
+import { Gallery } from "./pages/gallery/Gallery";
+import { Info } from "./pages/info/Info";
 
 function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
     const [codeName, setCodeName] = useState<string | null>(null)
+    
 
 
     function getCodeName(): string {
         const urlSegments = window.location.href.split('/')
         const siteSegmentIndex = urlSegments.indexOf('site')
+        console.log('path',urlSegments[siteSegmentIndex + 1])
         return urlSegments[siteSegmentIndex + 1]
     }
 
@@ -56,6 +60,8 @@ function App() {
                     <Route path={`${basePath}/enrollment/:description`} element={<Enrollment eventObj={eventObj}/>} />
                     <Route path={`${basePath}/details`} element={<Details eventObj={eventObj}/>} />
                     <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/info`} element={<Info eventObj={eventObj}/>} />
                 </Routes>
             </div>
 
