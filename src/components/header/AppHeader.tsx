@@ -79,13 +79,14 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
                     <ul>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/gallery`}>גלריה</NavLink></li>
-                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/info`}>רז גוטרמן</NavLink></li>
-                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>
-                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>מידע</NavLink></li>
+                        {/* <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/info`}>רז גוטרמן</NavLink></li> */}
+                        {/* <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li> */}
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>פרטים מלאים</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/enrollment`}>הרשמה</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
                     </ul>
                 </div>
+
                 <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">
                     menu
                 </span>
@@ -95,8 +96,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
                 <div className='countdown-container'>
                     <div className="log-in-modal">
                         <h1>{eventObj.date}</h1>
-                        <Button className='sign-btn-oposite' href={eventObj.participantsListUrl} variant="contained">לחץ
-                            להרשמה</Button>
+                        {eventObj.status === "registration" ? <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץ
+                            להרשמה</Button> : <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ
+                                לתוצאות</Button>}
                         {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
                     </div>
                 </div>

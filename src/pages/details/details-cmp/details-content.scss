@@ -1,0 +1,14 @@
+.DetailsContent{
+
+    .icon{
+        color: var(--BackgroundColor);
+        font-size: 2rem;
+        cursor: pointer;
+        
+    }
+}
+
+.details-icons{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
