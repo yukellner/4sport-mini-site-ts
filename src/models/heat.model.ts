@@ -12,6 +12,7 @@ import { SectionModel } from "./section.model";
         prizes: PrizeModel[];
         mapUrl: string;
         sections: SectionModel[];
+        amami: number
     }
 
 

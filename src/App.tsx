@@ -13,6 +13,9 @@ import { Enrollment } from './pages/home/enrollment/Enrollment';
 import ScrollToTop from "./components/ScrollToTop";
 import { Gallery } from "./pages/gallery/Gallery";
 import { Info } from "./pages/info/Info";
+import Favicon from "react-favicon";
+
+
 
 function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
@@ -39,6 +42,8 @@ function App() {
             const responseJson = await response.json();
             setEventObj(Object(responseJson))
             console.log(Object(responseJson))
+            
+
             return responseJson;
         } catch (error) {
             console.error(error);
@@ -46,18 +51,23 @@ function App() {
     }
 
     if(!eventObj) return <div className="loader"></div>
+    document.title = eventObj.description
 
     const basePath = `/site/${codeName}`
     return (
         <BrowserRouter >
             <ScrollToTop/>
+            <Favicon url={eventObj.logo}></Favicon>
+
+
+           
 
             <div className="App">
                 <AppHeader eventObj={eventObj} />
                 <Routes>
                     <Route path={`${basePath}/`} element={<Home eventObj={eventObj}/>} />
                     <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj}/>} />
-                    <Route path={`${basePath}/enrollment/:description`} element={<Enrollment eventObj={eventObj}/>} />
+                    <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj}/>} />
                     <Route path={`${basePath}/details`} element={<Details eventObj={eventObj}/>} />
                     <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj}/>} />
                     <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj}/>} />
@@ -65,7 +75,7 @@ function App() {
                 </Routes>
             </div>
 
-            <Sponsers eventObj={eventObj}/>
+            {eventObj.sponsors && eventObj.sponsors.length && <Sponsers eventObj={eventObj}/>}
             <AppFooter eventObj={eventObj}/>
         </BrowserRouter>
     );

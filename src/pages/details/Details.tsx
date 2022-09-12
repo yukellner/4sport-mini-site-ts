@@ -15,8 +15,8 @@ export const Details:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
         <div className="details-container">
             <HeaderTitle titleText={'מידע'} />
             <div className="content-container">
-                <DetailsMainHeader eventObj={eventObj} />
                 <DetailsContent eventObj={eventObj} />
+                <DetailsMainHeader eventObj={eventObj} />
             </div>
 
 

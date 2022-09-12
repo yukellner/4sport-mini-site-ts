@@ -42,10 +42,13 @@ export const HeatBox: React.FC<{ heat: HeatModel, eventObj: RaceObjModel }> = ({
 
                         <h3>{heat.description}</h3>
                         <h3>מגיל {heat.minAge} עד גיל {heat.maxAge}</h3>
-                        <StyledButton className='sign-btn'
-                            sx={{ color: eventObj.foregroundColor, backgroundColor: eventObj.backgroundColor }} href={eventObj.participantsListUrl} variant="contained">לחץ
+                        {eventObj.status==="registration" ? <StyledButton className='sign-btn'
+                            sx={{ color: eventObj.foregroundColor, backgroundColor: eventObj.backgroundColor }} href={eventObj.registrationUrl} variant="contained">לחץ
 
-                            להרשמה</StyledButton>
+                            להרשמה</StyledButton> : <StyledButton className='sign-btn'
+                            sx={{ color: eventObj.foregroundColor, backgroundColor: eventObj.backgroundColor }} href={eventObj.resultsUrl} variant="contained">לחץ
+
+                            לתוצאות</StyledButton>}
                     </div>
 
                 </div>
@@ -59,7 +62,6 @@ export const HeatBox: React.FC<{ heat: HeatModel, eventObj: RaceObjModel }> = ({
                     {raceType === 'run' && <span className="material-icons icon">
                         directions_run
                     </span>}
-
                     {raceType === 'swim' && <span className="material-icons icon">
                         pool
                     </span>}
