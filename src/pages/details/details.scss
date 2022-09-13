@@ -26,45 +26,11 @@
     }
 }
 
-.DetailsContent {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: right;
-    align-items: right;
-    direction: rtl;
-    padding: 1rem;
 
-    div{
-        text-align: right;
-    }
-
-
-    table {
-        // margin: 0 auto;
-        border-collapse: collapse;
-        direction: ltr;
-        
-
-        td,
-        tr,
-        th {
-            direction: rtl;
-            border: 1px solid lightgray;
-
-        }
-
-        th {
-            background-color: lightgrey;
-        }
-    }
-
-}
 
 .content-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .categories{
