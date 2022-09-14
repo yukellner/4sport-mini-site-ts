@@ -1,110 +1,73 @@
 import { RaceObjModel } from "../../../models/raceObj.model"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDays, faAward, faVenusMars, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays, faAward, faVenusMars,faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react"
 import { detailsText } from "../../../utils/dictionery-details"
+import { DetailsModal } from "./details-modal"
 
 
 export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const [modalText, setModalText] = useState<RaceObjModel | any>(null)
 
-    const openModal = () => {
-        setModalText(detailsText.time)
+    const openModal = (name: string) => {
+        const element = document.getElementById("closee");
+        const el1: HTMLElement = element!;
+        el1.classList.toggle("none-class");
+        console.log(name)
+        setModalText(name)
 
+        const element2 = document.getElementById("details-icons");
+        const el2: HTMLElement = element2!;
+        el2.classList.toggle("none-class");
+        
+        const element3 = document.getElementById("details-modal2");
+        const el3: HTMLElement = element3!;
+        // el3.classList.toggle("details-modal");
+        el3.classList.toggle("add-padding");
+
+        
     }
 
 
 
+
     return (
-        <div className="DetailsContent">
+        <div id="DetailsContent" className="DetailsContent">
 
-            {/* <div dangerouslySetInnerHTML={{__html: modalText}}> */}
-            {/* {`<div>${modalText}</div>`} */}
-            {/* </div> */}
-
-            {/* <a className="pointer"> */}
-
-            <div className="details-icons">
-                <FontAwesomeIcon onClick={openModal} name="calendar" className="icon" icon={faCalendarDays} />
-                <FontAwesomeIcon onClick={openModal} name="calendar" className="icon" icon={faAward} />
-                <FontAwesomeIcon onClick={openModal} name="calendar" className="icon" icon={faCommentDots} />
-                <FontAwesomeIcon onClick={openModal} name="calendar" className="icon" icon={faStopwatch} />
+            <div className="details-modal2" id="details-modal2">
+                <span id="closee" onClick={() => openModal('hello')} className="material-icons pointer none-class">close</span>
+                <DetailsModal eventObj={eventObj} modalText={modalText} />
             </div>
-            {/* </a> */}
 
-            <div className="schedule">
-                <h1>לוז אירוע</h1>
-                <h3>תאריך האירוע: {eventObj.date}</h3>
-                <h3>הגעה והתכנסות {eventObj.gatheringTime}</h3>
-                <h2>לוז זינוקים</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>מקצה</th>
-                            <th>שעת זינוק</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {eventObj.heats.map(heat =>
-                            <tr key={heat.description}>
-                                <td>{heat.description}</td>
-                                <td>{heat.startHeat}</td>
-                            </tr>
-                        )}
-
-                    </tbody>
-                </table>
-                <h3>טקס סיום וחלוקת פרסים : {eventObj.ceremonyTime}</h3>
+            <div id="details-icons" className="details-icons">
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("calendar")} className="icon" icon={faCalendarDays} />
+                    <h3>לוז</h3>
+                </div>
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("prize")} className="icon" icon={faAward} />
+                    <h3>פרסים</h3>
+                </div>
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("category")} className="icon" icon={faVenusMars} />
+                    <h3>קטגוריות</h3>
+                </div>
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("results")} className="icon" icon={faStopwatch} />
+                    <h3>תוצאות</h3>
+                </div>
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("location")} className="icon" icon={faLocationDot} />
+                    <h3>הגעה</h3>
+                </div>
             </div>
-            <div className="categories">
-                <h1>קטגוריות</h1>
-                {eventObj.heats.map(heat =>
-                    <div key={heat.description}>
-                        <h3>מקצה {heat.description}</h3>
-                        {heat.sections.map(section => <h3 key={section.description}>{section.description}</h3>)}
-                        <br />
-
-
-                    </div>
-                )}
+            
 
 
 
-            </div>
-            <div className="prices">
-                <h1>פרסים</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>מקום שלישי</th>
-                            <th>מקום שני</th>
-                            <th>מקום ראשון</th>
-                            <th>מקצה</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                        {eventObj.heats.map(heat =>
-                            <tr key={heat.description}>
-                                {heat.prizes.length !== 0 && heat.prizes.map(prize =>
-                                    <td key={Math.random()}>₪{prize.nis}</td>
-                                )}
-                                {heat.prizes.length !== 0 && <td>{heat.description}</td>}
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
 
-            </div>
-            <div>
-                <h1>הערות</h1>
-                <p>
-
-                    {eventObj.comments}
-
-                </p>
-            </div>
         </div>
 
 
