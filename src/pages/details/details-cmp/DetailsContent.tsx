@@ -1,6 +1,6 @@
 import { RaceObjModel } from "../../../models/raceObj.model"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDays, faAward, faVenusMars, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays, faAward, faVenusMars,faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react"
 import { detailsText } from "../../../utils/dictionery-details"
 import { DetailsModal } from "./details-modal"
@@ -50,12 +50,16 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
                     <h3>פרסים</h3>
                 </div>
                 <div>
-                    <FontAwesomeIcon onClick={() => openModal("category")} className="icon" icon={faCommentDots} />
+                    <FontAwesomeIcon onClick={() => openModal("category")} className="icon" icon={faVenusMars} />
                     <h3>קטגוריות</h3>
                 </div>
                 <div>
                     <FontAwesomeIcon onClick={() => openModal("results")} className="icon" icon={faStopwatch} />
                     <h3>תוצאות</h3>
+                </div>
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("location")} className="icon" icon={faLocationDot} />
+                    <h3>הגעה</h3>
                 </div>
             </div>
             

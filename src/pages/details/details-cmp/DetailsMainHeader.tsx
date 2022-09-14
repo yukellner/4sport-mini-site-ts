@@ -13,13 +13,7 @@ export const DetailsMainHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventO
                 <i className="fa-solid fa-calendar-days"></i>
                 <img src={eventObj.coverImages[2]} alt="" />
             </div>
-            <div className="meeting-point">
-                <a href={eventObj.wazeDirection}>
-                    <img src={require('../../../assets/icons/icon-waze.png')} alt="" />
-                    <h3>לחץ לניווט לשטח הכינוס</h3>
-                </a>
-
-            </div>
+            
 
 
 

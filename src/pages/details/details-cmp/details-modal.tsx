@@ -1,6 +1,7 @@
 import { RaceObjModel } from "../../../models/raceObj.model"
 import { Calendar } from "./sections/calendar"
 import { Category } from "./sections/category"
+import { Location } from "./sections/location"
 import { Prize } from "./sections/prize"
 import { Results } from "./sections/Results"
 
@@ -40,6 +41,8 @@ export const DynamicComponent: React.FC<{ eventObj: RaceObjModel, modalText: str
             return <Category eventObj={eventObj} />
           case 'prize':
             return <Prize eventObj={eventObj} />
+          case 'location':
+            return <Location eventObj={eventObj} />
           default:
             return null
         }
