@@ -23,8 +23,8 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
         
         const element3 = document.getElementById("details-modal2");
         const el3: HTMLElement = element3!;
-        el3.classList.toggle("details-modal");
-        el3.classList.toggle("none-class");
+        // el3.classList.toggle("details-modal");
+        el3.classList.toggle("add-padding");
 
         
     }
@@ -35,7 +35,7 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
     return (
         <div id="DetailsContent" className="DetailsContent">
 
-            <div id="details-modal2">
+            <div className="details-modal2" id="details-modal2">
                 <span id="closee" onClick={() => openModal('hello')} className="material-icons pointer none-class">close</span>
                 <DetailsModal eventObj={eventObj} modalText={modalText} />
             </div>

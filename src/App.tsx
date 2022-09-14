@@ -75,7 +75,7 @@ function App() {
                 </Routes>
             </div>
 
-            {eventObj.sponsors && eventObj.sponsors.length && <Sponsers eventObj={eventObj}/>}
+            {eventObj.sponsors && eventObj.sponsors.length !== 0 && <Sponsers eventObj={eventObj}/>}
             <AppFooter eventObj={eventObj}/>
         </BrowserRouter>
     );
