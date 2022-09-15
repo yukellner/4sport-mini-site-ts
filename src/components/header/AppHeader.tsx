@@ -5,9 +5,10 @@ import { RaceObjModel } from "../../models/raceObj.model";
 import CountdownTimer from "../countdown/CountdownTimer";
 
 
-export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> = ({ eventObj, existPage }) => {
 
     const [timerIsShown, setTimerIsShownd] = useState(true)
+    const [pageHederShown, setPageHederShown] = useState(false)
     const [mobileHeader, setMobileHeader] = useState()
     const { codeName } = eventObj
 
@@ -32,7 +33,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
         if (scrollValue > 100) {
             setTimerIsShownd(false)
+            setPageHederShown(true)
         } else if (scrollValue <= 100) {
+            setPageHederShown(false)
             setTimerIsShownd(true)
         }
     }
@@ -75,6 +78,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
                         </NavLink>
                     </li>
                 </div>
+               {pageHederShown && <div className="exist-page">
+                    {existPage}
+                </div>}
                 <div className="navbar" id="navbar">
                     <ul>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>

@@ -16,6 +16,13 @@
         display: none;
     }
 
+    .enrollment-table{
+        p{
+            padding: 1rem !important;
+        }
+
+    } 
+
     .map-container {
         padding: 3rem 2%;
     }
@@ -23,6 +30,14 @@
     .sponsers-container {
         margin-bottom: 4rem;
 
+    }
+
+    .exist-page{
+        visibility: visible;
+        width: 100%;
+        text-align: right;
+        margin-right: 1rem;
+        // display: none;
     }
 
     .footer-container{
@@ -111,6 +126,10 @@
 
 // tablet
 @media (min-width: 640px) {
+
+    .exist-page{
+        visibility: hidden;
+    }
 
     .sponsers-container{
 

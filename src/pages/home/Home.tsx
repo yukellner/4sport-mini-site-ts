@@ -4,12 +4,13 @@ import { EnrollmentCmp } from "./enrollment/enrollment-cmp/EnrollmentCmp";
 import { Heats } from "./heats/Heats";
 
 
-export const Home:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
+export const Home:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({eventObj, pageHeader}) => {
 
     
 
     useEffect(() => {
         console.log('eventobj',eventObj)
+        pageHeader("בית")
         // printJSON()
       }, [])
 
@@ -23,3 +24,4 @@ export const Home:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
         </div >
     )
 }
+

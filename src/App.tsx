@@ -20,6 +20,7 @@ import Favicon from "react-favicon";
 function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
     const [codeName, setCodeName] = useState<string | null>(null)
+    const [existPage, setExistPage] = useState<string>("Home")
 
 
 
@@ -29,6 +30,14 @@ function App() {
         console.log('path', urlSegments[siteSegmentIndex + 1])
         return urlSegments[siteSegmentIndex + 1]
     }
+
+    const pageHeader = (pageName:string) => {
+        setExistPage(pageName)
+        
+    } 
+
+
+    
 
     useEffect(() => {
         const codeName = getCodeName()
@@ -63,15 +72,15 @@ function App() {
 
 
             <div className="App">
-                <AppHeader eventObj={eventObj} />
+                <AppHeader eventObj={eventObj} existPage={existPage}/>
                 <Routes>
-                    <Route path={`${basePath}/`} element={<Home eventObj={eventObj} />} />
-                    <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj} />} />
-                    <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj} />} />
-                    <Route path={`${basePath}/details`} element={<Details eventObj={eventObj} />} />
-                    <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj} />} />
-                    <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj} />} />
-                    <Route path={`${basePath}/info`} element={<Info eventObj={eventObj} />} />
+                    <Route path={`${basePath}/`} element={<Home eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/details`} element={<Details eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/info`} element={<Info eventObj={eventObj} pageHeader={pageHeader} />} />
                 </Routes>
                 {eventObj.sponsors && eventObj.sponsors.length !== 0 && <Sponsers eventObj={eventObj} />}
                 <AppFooter eventObj={eventObj} />
