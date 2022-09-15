@@ -1,7 +1,7 @@
 import { RaceObjModel } from "../../../models/raceObj.model"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays, faAward, faVenusMars,faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { detailsText } from "../../../utils/dictionery-details"
 import { DetailsModal } from "./details-modal"
 
@@ -9,6 +9,24 @@ import { DetailsModal } from "./details-modal"
 export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const [modalText, setModalText] = useState<RaceObjModel | any>(null)
+    const [totalprizes, setTotalprizes] = useState<number>(0)
+
+    useEffect(() => {
+        checkPrizes()
+        
+        
+
+        return () => {
+           
+        };
+    }, [])
+
+    const checkPrizes = () => {
+        var totalprizes:number = 0
+        eventObj.heats.map(heat => heat.prizes.map(prize => totalprizes = totalprizes +prize.nis ))
+        setTotalprizes(totalprizes)
+        console.log('totalprizes',totalprizes)
+    }
 
     const openModal = (name: string) => {
         const element = document.getElementById("closee");
@@ -45,10 +63,10 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
                     <FontAwesomeIcon onClick={() => openModal("calendar")} className="icon" icon={faCalendarDays} />
                     <h3>לוז</h3>
                 </div>
-                <div>
+                {totalprizes > 0 && <div>
                     <FontAwesomeIcon onClick={() => openModal("prize")} className="icon" icon={faAward} />
                     <h3>פרסים</h3>
-                </div>
+                </div>}
                 <div>
                     <FontAwesomeIcon onClick={() => openModal("category")} className="icon" icon={faVenusMars} />
                     <h3>קטגוריות</h3>

@@ -17,7 +17,7 @@ export const Details:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = (
 
     return (
         <div className="details-container">
-            <HeaderTitle titleText={'מידע'} />
+            <HeaderTitle titleText={'פרטים מלאים'} />
             <div className="content-container">
                 <DetailsContent eventObj={eventObj} />
                 <DetailsMainHeader eventObj={eventObj} />

@@ -37,6 +37,7 @@
 
         th {
             background-color: lightgrey;
+            color: var(--BackgroundColor);
         }
     }
 
@@ -71,4 +72,10 @@
     // padding: 1rem;
     color: var(--fontColorJson);
     border-radius: 1rem
+}
+
+.resaluts-container{
+    div:first-child{
+        text-align: center;
+    }
 }
