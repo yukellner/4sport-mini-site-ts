@@ -42,6 +42,20 @@
 
 }
 
+.meeting-point{
+    text-align: center !important;
+
+    a{
+        display: flex;
+        flex-direction: column;
+    }
+
+    svg{
+        color: unset !important;
+    }
+
+}
+
 .details-icons {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));

@@ -8,9 +8,20 @@
         grid-template-columns: repeat(auto-fill, minmax(170px, 1fr))
     }
 
+    body{
+        padding-bottom: 10rem;
+    }
+
     .contact-img {
         display: none;
     }
+
+    .enrollment-table{
+        p{
+            padding: 1rem !important;
+        }
+
+    } 
 
     .map-container {
         padding: 3rem 2%;
@@ -21,8 +32,16 @@
 
     }
 
+    .exist-page{
+        visibility: visible;
+        width: 100%;
+        text-align: right;
+        margin-right: 1rem;
+        // display: none;
+    }
+
     .footer-container{
-        display: none;
+        display: none !important;
     }
 
 
@@ -107,6 +126,10 @@
 
 // tablet
 @media (min-width: 640px) {
+
+    .exist-page{
+        visibility: hidden;
+    }
 
     .sponsers-container{
 

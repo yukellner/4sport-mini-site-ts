@@ -1,9 +1,13 @@
+import { useEffect } from "react"
 import { HeaderTitle } from "../../components/HeaderTitle"
 import { RaceObjModel } from "../../models/raceObj.model"
 
-export const Maps: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const Maps: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
 
 
+    useEffect(() => {
+        pageHeader("מפות")
+      }, [])
     return (
         <div className="main-contact">
             <HeaderTitle titleText={'מפות'} />

@@ -5,16 +5,17 @@ import { RaceObjModel } from "../../models/raceObj.model";
 import CountdownTimer from "../countdown/CountdownTimer";
 
 
-export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> = ({ eventObj, existPage }) => {
 
     const [timerIsShown, setTimerIsShownd] = useState(true)
+    const [pageHederShown, setPageHederShown] = useState(false)
     const [mobileHeader, setMobileHeader] = useState()
     const { codeName } = eventObj
 
-    // var NOW_IN_MS = new Date().getTime();
-    // var date = new Date("11/21/2022 16:00:00"); // some mock date
-    var date = new Date(eventObj.dateTime); // some mock date
-    console.log('date', date)
+    var dateString = eventObj.dateTime
+    dateString = dateString.slice(0,8)
+    dateString = dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
+    var date = new Date(dateString); // some mock date
     var DATE_IN_MS = date.getTime();
 
     useEffect(() => {
@@ -32,7 +33,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
 
         if (scrollValue > 100) {
             setTimerIsShownd(false)
+            setPageHederShown(true)
         } else if (scrollValue <= 100) {
+            setPageHederShown(false)
             setTimerIsShownd(true)
         }
     }
@@ -75,6 +78,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
                         </NavLink>
                     </li>
                 </div>
+               {pageHederShown && <div className="exist-page">
+                    {existPage}
+                </div>}
                 <div className="navbar" id="navbar">
                     <ul>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>

@@ -1,11 +1,10 @@
 .footer-container{
     height: 2rem;
-    position: absolute;
     background-color: var(--BackgroundColor);
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 0;
+    margin-top: auto;
     div{
         a{
             cursor: pointer;
