@@ -11,10 +11,10 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) =>
     const [mobileHeader, setMobileHeader] = useState()
     const { codeName } = eventObj
 
-    // var NOW_IN_MS = new Date().getTime();
-    // var date = new Date("11/21/2022 16:00:00"); // some mock date
-    var date = new Date(eventObj.dateTime); // some mock date
-    console.log('date', date)
+    var dateString = eventObj.dateTime
+    dateString = dateString.slice(0,8)
+    dateString = dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
+    var date = new Date(dateString); // some mock date
     var DATE_IN_MS = date.getTime();
 
     useEffect(() => {
