@@ -4,7 +4,7 @@ import { RaceObjModel } from "../../../../models/raceObj.model"
 
 
 
-export const Results: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const Terms: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const StyledButton = styled(Button)`
     background-color: white;
@@ -24,10 +24,11 @@ export const Results: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
     return (
         <div className="resaluts-container">
             <div>
-                <h1>תוצאות</h1>
-                <StyledButton className="sign-btn" href={eventObj.resultsUrl} 
+                <h1>תקנון</h1>
+                <h3>{eventObj.comments}</h3>
+                {/* <StyledButton className="sign-btn" href={eventObj.resultsUrl} 
                 sx={{  }}
-                variant="contained">לחץ לתוצאות</StyledButton>
+                variant="contained">לחץ לתוצאות</StyledButton> */}
             </div>
 
 

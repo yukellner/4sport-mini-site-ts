@@ -78,7 +78,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
                         </NavLink>
                     </li>
                 </div>
-               {pageHederShown && <div className="exist-page">
+               {<div className="exist-page">
                     {existPage}
                 </div>}
                 <div className="navbar" id="navbar">

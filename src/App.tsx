@@ -9,7 +9,7 @@ import { AppFooter } from './components/footer/AppFooter';
 import { Details } from './pages/details/Details';
 import { Contact } from './pages/contact/Contact';
 import { Maps } from './pages/maps/Maps';
-import { Enrollment } from './pages/home/enrollment/Enrollment';
+import { Enrollment } from './pages/enrollment/Enrollment';
 import ScrollToTop from "./components/ScrollToTop";
 import { Gallery } from "./pages/gallery/Gallery";
 import { Info } from "./pages/info/Info";

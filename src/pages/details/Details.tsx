@@ -22,6 +22,11 @@ export const Details:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = (
                 <DetailsContent eventObj={eventObj} />
                 <DetailsMainHeader eventObj={eventObj} />
             </div>
+            <h1>הערות לרצים</h1>
+            <h3>
+
+                {eventObj.comments}
+            </h3>
 
 
         </div >

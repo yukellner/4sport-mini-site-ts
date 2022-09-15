@@ -17,11 +17,18 @@
     }
 
     .enrollment-table{
+        padding: 1rem !important;
         p{
             padding: 1rem !important;
         }
 
     } 
+
+    .titleText{
+        visibility: hidden;
+        text-align: right !important;
+        padding-right: 2rem;
+    }
 
     .map-container {
         padding: 3rem 2%;

@@ -18,12 +18,14 @@
         margin: 0 auto;
         border-collapse: collapse;
         td,tr,th{
+            padding: 0.4rem;
             border: 1px solid lightgray;
-
         }
         th{
             background-color: lightgrey;
         }
+        
+       
     }
 
     p {

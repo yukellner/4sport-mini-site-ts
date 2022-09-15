@@ -1,10 +1,24 @@
 import {Button} from "@mui/material"
-import { RaceObjModel } from "../../../../models/raceObj.model"
+import { RaceObjModel } from "../../../models/raceObj.model"
+import styled from "@emotion/styled"
 
 
 export const EnrollmentTable:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
 
     console.log('heats', eventObj.heats)
+
+    const StyledButton = styled(Button)`
+    background-color: ${eventObj.backgroundColor};
+    color: ${eventObj.foregroundColor};
+    &:hover {
+      background-color: ${eventObj.foregroundColor};
+      color:${eventObj.backgroundColor};
+      outline:1px ${eventObj.backgroundColor} solid;
+    }
+    // &:focus {
+    //   background-color: green;
+    // }
+  `;
 
 
     return (
@@ -81,7 +95,10 @@ export const EnrollmentTable:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) =>
                 </table>
             </div>
             <div>
-                <Button className="sign-btn" href={eventObj.participantsListUrl} variant="contained">לחץ להרשמה</Button>
+            <StyledButton className="sign-btn" href={eventObj.registrationUrl} 
+                sx={{  }}
+                variant="contained">לחץ להרשמה</StyledButton>
+                {/* <Button className="sign-btn" href={eventObj.participantsListUrl} variant="contained">לחץ להרשמה</Button> */}
             </div>
 
             <p>
