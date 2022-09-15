@@ -9,7 +9,7 @@ export const Calendar:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
 
 
     return (
-        <div className="resaluts-container">
+        <div className="calendar-container">
 
 <div className="schedule">
                 <h1>לוז אירוע</h1>
