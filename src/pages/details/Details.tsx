@@ -6,12 +6,12 @@ import { DetailsMainHeader } from "./details-cmp/DetailsMainHeader"
 // import { DetailsMainHeader } from "./details-cmp/DetailsMainHeader"
 
 
-export const Details:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({ eventObj, pageHeader }) => {
+export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
 
 
     useEffect(() => {
         pageHeader("פרטים מלאים")
-        
+
     }, [])
 
 
@@ -22,11 +22,12 @@ export const Details:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = (
                 <DetailsContent eventObj={eventObj} />
                 <DetailsMainHeader eventObj={eventObj} />
             </div>
-            <h1>הערות לרצים</h1>
-            <h3>
-
-                {eventObj.comments}
-            </h3>
+                <div className="custom-notes">
+                    <h1>הערות לרצים</h1>
+                    <h3>
+                        {eventObj.comments}
+                    </h3>
+                </div>
 
 
         </div >

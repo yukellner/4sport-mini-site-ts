@@ -4,8 +4,8 @@
         padding: 2rem 2rem 2rem 1rem;
         height: 20rem;
         margin-bottom: 5rem;
-        
-        
+
+
         img {
             box-shadow: 1rem 1.25rem var(--BackgroundColor);
             height: 20rem;
@@ -26,28 +26,24 @@
     }
 }
 
-
+.custom-notes {
+    padding: 1rem;
+    h3 {
+        text-align: right;
+    }
+}
 
 .content-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.categories{
-    div{
-        h3:first-child{
+.categories {
+    div {
+        h3:first-child {
             text-decoration: underline;
             font-weight: bold;
         }
     }
 }
 
-.meeting-point{
-    text-align: center;
-    a{
-        cursor: pointer;
-    }
-    img{
-        height: 4rem;
-    }
-}

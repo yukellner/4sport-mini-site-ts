@@ -4,7 +4,7 @@ import { Category } from "./sections/Category"
 import { Location } from "./sections/Location"
 import { Prize } from "./sections/Prize"
 import { Results } from "./sections/Results"
-import { Terms } from "./sections/Terms"
+import { Terms } from "./sections/terms/Terms"
 
 
 

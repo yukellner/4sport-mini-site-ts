@@ -46,9 +46,17 @@
 .meeting-point{
     text-align: center !important;
 
+
     a{
-        display: flex;
-        flex-direction: column;
+        a{
+            margin: 1rem auto;
+
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            max-width: 10rem;
+        }
+
     }
 
     svg{
@@ -77,5 +85,8 @@
 .resaluts-container{
     div:first-child{
         text-align: center;
+        div{
+            text-align: center;
+        }
     }
 }

@@ -11,7 +11,7 @@ import { Contact } from './pages/contact/Contact';
 import { Maps } from './pages/maps/Maps';
 import { Enrollment } from './pages/enrollment/Enrollment';
 import ScrollToTop from "./components/ScrollToTop";
-import { Gallery } from "./pages/gallery/Gallery";
+import { GalleryCopy } from "./pages/gallery/Gallery";
 import { Info } from "./pages/info/Info";
 import Favicon from "react-favicon";
 
@@ -111,7 +111,7 @@ function App() {
                     <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj} pageHeader={pageHeader}/>} />
                     <Route path={`${basePath}/details`} element={<Details eventObj={eventObj} pageHeader={pageHeader}/>} />
                     <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj} pageHeader={pageHeader}/>} />
-                    <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/gallery`} element={<GalleryCopy eventObj={eventObj} pageHeader={pageHeader}/>} />
                     <Route path={`${basePath}/info`} element={<Info eventObj={eventObj} pageHeader={pageHeader} />} />
                 </Routes>
                 {eventObj.sponsors && eventObj.sponsors.length !== 0 && <Sponsers eventObj={eventObj} />}

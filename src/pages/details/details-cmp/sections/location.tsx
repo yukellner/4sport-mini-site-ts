@@ -2,13 +2,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { RaceObjModel } from "../../../../models/raceObj.model"
 // import { faWater, brands  } from '@fortawesome/free-solid-svg-icons'
 import { faWaze } from '@fortawesome/free-brands-svg-icons'
+import styled from "@emotion/styled";
+import { Button } from "@mui/material";
 
 
 
 
 export const Location: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
-
+    const StyledButton = styled(Button)`
+    background-color: white;
+    color: ${eventObj.backgroundColor};
+    &:hover {
+      background-color: ${eventObj.foregroundColor};
+      color:${eventObj.backgroundColor};
+      outline:1px ${eventObj.backgroundColor} solid;
+    }
+    // &:focus {
+    //   background-color: green;
+    // }
+  `;
 
 
 
@@ -17,9 +30,12 @@ export const Location: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => 
             <div className="meeting-point">
 
                 <a href={eventObj.wazeDirection}>
-                    <FontAwesomeIcon href={eventObj.wazeDirection} className="icon" icon={faWaze} />
-                    {/* <img src={require('../../../../assets/icons/icon-waze.png')} alt="" /> */}
                     <h3>לחץ לניווט לשטח הכינוס</h3>
+                    <StyledButton className="sign-btn" href={eventObj.resultsUrl}
+                        sx={{}}
+                        variant="outlined">
+                        <FontAwesomeIcon href={eventObj.wazeDirection} className="icon" icon={faWaze} />
+                    </StyledButton>
                 </a>
 
             </div>
