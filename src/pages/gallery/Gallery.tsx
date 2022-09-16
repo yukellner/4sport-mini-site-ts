@@ -36,11 +36,11 @@ export const GalleryCopy: React.FC<{ eventObj: RaceObjModel, pageHeader: Functio
 
     return (
         <div >
-        <Gallery
+        {/* <Gallery
         images={images}
         onClick={handleClick}
         enableImageSelection={false}
-      />
+      /> */}
       {!!currentImage && (
         /* @ts-ignore */
         <Lightbox
