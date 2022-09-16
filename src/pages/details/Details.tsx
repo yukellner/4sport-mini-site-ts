@@ -14,7 +14,7 @@ export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
 
     }, [])
 
-
+    console.log(eventObj.comments)
     return (
         <div className="details-container">
             <HeaderTitle titleText={'פרטים מלאים'} />
@@ -22,12 +22,10 @@ export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
                 <DetailsContent eventObj={eventObj} />
                 <DetailsMainHeader eventObj={eventObj} />
             </div>
-                <div className="custom-notes">
-                    <h1>הערות לרצים</h1>
-                    <h3>
-                        {eventObj.comments}
-                    </h3>
-                </div>
+            {eventObj.comments.length > 0 && <div className="custom-notes">
+                <div className="json-par" dangerouslySetInnerHTML={{ __html: eventObj.comments }} />
+
+            </div>}
 
 
         </div >

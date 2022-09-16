@@ -47,3 +47,21 @@
     }
 }
 
+.json-par{
+    border: 1px var(--BackgroundColor) solid;
+    border-radius: 1rem;
+    padding: 2rem 2rem 2rem 1rem;
+    box-shadow: 1rem 1.25rem var(--BackgroundColor);
+    margin: 0 1rem;
+    a{
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+        z-index: 22222222222;
+    }
+}
+
+.custom-notes{
+    display: flex;
+}
+
