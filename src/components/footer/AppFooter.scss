@@ -4,13 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
+    // margin-top: auto;
     div{
         a{
             cursor: pointer;
         }
 
-        color: var(--fontcolorJson);
+        color: var(--fontColorJson) !important;
     }
     width: 100%;
     text-align: center;

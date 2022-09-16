@@ -3,3 +3,9 @@
     // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     background-color: white;
 }
+
+.sponsers-main-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
