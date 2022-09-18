@@ -35,6 +35,7 @@ export const Calendar:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
                 </table>
                 <h3>טקס סיום וחלוקת פרסים : {eventObj.ceremonyTime}</h3>
             </div>
+            
            
 
 

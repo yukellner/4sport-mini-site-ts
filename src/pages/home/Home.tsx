@@ -9,7 +9,7 @@ export const Home:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({ev
     
 
     useEffect(() => {
-        // console.log('eventobj',eventObj)
+        console.log('eventobj',eventObj)
         pageHeader("בית")
         // printJSON()
       }, [])
