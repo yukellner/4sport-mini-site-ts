@@ -4,7 +4,7 @@ export const AppFooter:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
 
 
     return (
-        <div className="footer-container">
+        <div id="footer-container" className="footer-container margin-top-auto">
             <div className="footer">
                 <a href="http://www.4sport.co.il">
 

@@ -25,7 +25,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-favicon": "^1.0.1",
+    "react-grid-gallery": "^1.0.0",
     "react-helmet": "^6.1.0",
+    "react-image-lightbox": "^5.1.4",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "reify": "^0.20.12",
@@ -43,7 +45,8 @@
     "workbox-range-requests": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
-    "workbox-streams": "^6.5.4"
+    "workbox-streams": "^6.5.4",
+    "yet-another-react-lightbox": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

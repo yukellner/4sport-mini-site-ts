@@ -1,5 +1,11 @@
 .sponsers-container {
     display: grid;
     // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    background-color: white;
+    background-color: var(--white);
+}
+
+.sponsers-main-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
 }

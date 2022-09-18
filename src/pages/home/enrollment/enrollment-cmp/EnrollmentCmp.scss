@@ -23,7 +23,7 @@
     .header-home{
         position: absolute;
         div:first-child{
-            background-color: lightgray;
+            background-color: var(--white);
             border-radius: 1rem;
             box-shadow: 1rem 1.25rem var(--BackgroundColor);
             margin: 0 2rem 1rem 1rem;
@@ -38,7 +38,7 @@
     }
     h1{
         padding: 1rem;
-        color: white;
+        color: var(--white);
     }
 }
 

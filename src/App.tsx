@@ -9,9 +9,9 @@ import { AppFooter } from './components/footer/AppFooter';
 import { Details } from './pages/details/Details';
 import { Contact } from './pages/contact/Contact';
 import { Maps } from './pages/maps/Maps';
-import { Enrollment } from './pages/home/enrollment/Enrollment';
+import { Enrollment } from './pages/enrollment/Enrollment';
 import ScrollToTop from "./components/ScrollToTop";
-import { Gallery } from "./pages/gallery/Gallery";
+import { GalleryCopy } from "./pages/gallery/Gallery";
 import { Info } from "./pages/info/Info";
 import Favicon from "react-favicon";
 
@@ -31,19 +31,21 @@ function App() {
         return urlSegments[siteSegmentIndex + 1]
     }
 
-    const pageHeader = (pageName:string) => {
+    const pageHeader = (pageName: string) => {
         setExistPage(pageName)
-        
-    } 
+
+    }
 
 
-    
+
 
     useEffect(() => {
         const codeName = getCodeName()
         setCodeName(codeName)
         getJsonFromApi(codeName)
     }, [])
+
+
 
     const getJsonFromApi = async (codeName: string) => {
         try {
@@ -65,32 +67,32 @@ function App() {
         "short_name": "React App",
         "name": "Create React App Sample",
         "icons": [
-          {
-            "src": "favicon.ico",
-            "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
-          },
-          {
-            "src": "logo192.png",
-            "type": "image/png",
-            "sizes": "192x192"
-          },
-          {
-            "src": "logo512.png",
-            "type": "image/png",
-            "sizes": "512x512"
-          }
+            {
+                "src": "favicon.ico",
+                "sizes": "64x64 32x32 24x24 16x16",
+                "type": "image/x-icon"
+            },
+            {
+                "src": "logo192.png",
+                "type": "image/png",
+                "sizes": "192x192"
+            },
+            {
+                "src": "logo512.png",
+                "type": "image/png",
+                "sizes": "512x512"
+            }
         ],
         "start_url": `"/site/${codeName}/"`,
         "display": "standalone",
         "theme_color": "#000000",
         "background_color": "#ffffff"
-      }
+    }
 
-      const stringManifest = JSON.stringify(myDynamicManifest);
-      const blob = new Blob([stringManifest], {type: 'application/json'});
-      const manifestURL = URL.createObjectURL(blob);
-      (document.querySelector('#my-manifest-placeholder') as HTMLAnchorElement).setAttribute('href', manifestURL);
+    const stringManifest = JSON.stringify(myDynamicManifest);
+    const blob = new Blob([stringManifest], { type: 'application/json' });
+    const manifestURL = URL.createObjectURL(blob);
+    (document.querySelector('#my-manifest-placeholder') as HTMLAnchorElement).setAttribute('href', manifestURL);
 
     document.title = eventObj.description
 
@@ -104,14 +106,14 @@ function App() {
 
 
             <div className="App">
-                <AppHeader eventObj={eventObj} existPage={existPage}/>
+                <AppHeader eventObj={eventObj} existPage={existPage} />
                 <Routes>
-                    <Route path={`${basePath}/`} element={<Home eventObj={eventObj} pageHeader={pageHeader}/>} />
-                    <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj} pageHeader={pageHeader}/>} />
-                    <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj} pageHeader={pageHeader}/>} />
-                    <Route path={`${basePath}/details`} element={<Details eventObj={eventObj} pageHeader={pageHeader}/>} />
-                    <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj} pageHeader={pageHeader}/>} />
-                    <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj} pageHeader={pageHeader}/>} />
+                    <Route path={`${basePath}/`} element={<Home eventObj={eventObj} pageHeader={pageHeader} />} />
+                    <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj} pageHeader={pageHeader} />} />
+                    <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj} pageHeader={pageHeader} />} />
+                    <Route path={`${basePath}/details`} element={<Details eventObj={eventObj} pageHeader={pageHeader} />} />
+                    <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj} pageHeader={pageHeader} />} />
+                    <Route path={`${basePath}/gallery`} element={<GalleryCopy eventObj={eventObj} pageHeader={pageHeader} />} />
                     <Route path={`${basePath}/info`} element={<Info eventObj={eventObj} pageHeader={pageHeader} />} />
                 </Routes>
                 {eventObj.sponsors && eventObj.sponsors.length !== 0 && <Sponsers eventObj={eventObj} />}

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { HeaderTitle } from "../../../components/HeaderTitle";
-import { RaceObjModel } from "../../../models/raceObj.model";
+import { HeaderTitle } from "../../components/HeaderTitle";
+import { RaceObjModel } from "../../models/raceObj.model";
 import { EnrollmentTable } from "./enrollment-table/EnrollmentTable";
 
 

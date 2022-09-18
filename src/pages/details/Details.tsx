@@ -6,15 +6,15 @@ import { DetailsMainHeader } from "./details-cmp/DetailsMainHeader"
 // import { DetailsMainHeader } from "./details-cmp/DetailsMainHeader"
 
 
-export const Details:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({ eventObj, pageHeader }) => {
+export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
 
 
     useEffect(() => {
         pageHeader("פרטים מלאים")
-        
+
     }, [])
 
-
+    console.log(eventObj.comments)
     return (
         <div className="details-container">
             <HeaderTitle titleText={'פרטים מלאים'} />
@@ -22,6 +22,10 @@ export const Details:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = (
                 <DetailsContent eventObj={eventObj} />
                 <DetailsMainHeader eventObj={eventObj} />
             </div>
+            {eventObj.comments.length > 0 && <div className="custom-notes">
+                <div className="json-par" dangerouslySetInnerHTML={{ __html: eventObj.comments }} />
+
+            </div>}
 
 
         </div >

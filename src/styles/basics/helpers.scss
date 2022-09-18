@@ -52,7 +52,7 @@ body {
 }
 
 .sign-btn-oposite {
-    background-color: white !important;
+    background-color: var(--white) !important;
     // color: var(--BackgroundColor) !important;
     color: var(--fontColorDark) !important; 
 
@@ -72,5 +72,15 @@ body {
 
 .add-padding{
     padding: 1rem;
+}
+
+.attached-top-bottom{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.margin-top-auto{
+    margin-top: auto;
 }
 

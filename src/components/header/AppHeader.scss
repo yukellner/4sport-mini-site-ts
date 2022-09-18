@@ -4,7 +4,7 @@
     height: 4rem;
     align-items: center;
     background-color: var(--BackgroundColor);
-    // color: white;
+    // color: var(--white);
     padding-right: 2rem;
     color: var(--fontColorJson);
 
@@ -41,7 +41,7 @@
 
         img {
             height: 7rem;
-            border: 1px solid white;
+            border: 1px solid var(--white);
             border-radius: 1rem;
             margin: 1rem;
             box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
