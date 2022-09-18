@@ -27,7 +27,7 @@ function App() {
     function getCodeName(): string {
         const urlSegments = window.location.href.split('/')
         const siteSegmentIndex = urlSegments.indexOf('site')
-        console.log('path', urlSegments[siteSegmentIndex + 1])
+        // console.log('path', urlSegments[siteSegmentIndex + 1])
         return urlSegments[siteSegmentIndex + 1]
     }
 
@@ -52,7 +52,7 @@ function App() {
             const response = await fetch(`https://www.4sport-live.com/miniSite/eventData/?codeName=${codeName}`);
             const responseJson = await response.json();
             setEventObj(Object(responseJson))
-            console.log(Object(responseJson))
+            // console.log(Object(responseJson))
 
 
             return responseJson;

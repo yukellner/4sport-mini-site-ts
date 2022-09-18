@@ -25,14 +25,14 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
         var totalprizes:number = 0
         eventObj.heats.map(heat => heat.prizes.map(prize => totalprizes = totalprizes +prize.nis ))
         setTotalprizes(totalprizes)
-        console.log('totalprizes',totalprizes)
+        // console.log('totalprizes',totalprizes)
     }
 
     const openModal = (name: string) => {
         const element = document.getElementById("closee");
         const el1: HTMLElement = element!;
         el1.classList.toggle("none-class");
-        console.log(name)
+        // console.log(name)
         setModalText(name)
 
         const element2 = document.getElementById("details-icons");

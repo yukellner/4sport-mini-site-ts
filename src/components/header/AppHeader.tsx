@@ -28,7 +28,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
     }, [])
 
     const scrollEv = () => {
-        console.log('scroll event')
+        // console.log('scroll event')
         const scrollValue = document.documentElement.scrollTop
 
         if (scrollValue > 100) {

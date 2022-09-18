@@ -1,6 +1,11 @@
 /* MOBILE ONLY  */
 
 @media (max-width: 640px) {
+    .countdown-container {
+        width: 1rem !important;
+
+        // display: none !important;
+    }
 
     .sponsers-container{
 
@@ -122,10 +127,7 @@
         height: unset;
     }
 
-    .countdown-container {
-
-        // display: none !important;
-    }
+    
 
 
 

@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 
 export const EnrollmentTable:React.FC<{eventObj:RaceObjModel}> = ({eventObj}) => {
 
-    console.log('heats', eventObj.heats)
+    // console.log('heats', eventObj.heats)
 
     const StyledButton = styled(Button)`
     background-color: ${eventObj.backgroundColor};
