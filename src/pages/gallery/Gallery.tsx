@@ -38,7 +38,7 @@ export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
 
 
 
-      <LightGallery
+      {/* <LightGallery
         onInit={onInit}
         speed={500}
         plugins={[lgThumbnail, lgZoom]}
@@ -50,7 +50,7 @@ export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
           <img alt="img2" src={require('./images/2.jpg')} />
         </a>
         ...
-      </LightGallery>
+      </LightGallery> */}
 
       <div className="header-gallery">
         <div>
