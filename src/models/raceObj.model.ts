@@ -1,5 +1,6 @@
 import { HeatModel } from "./heat.model";
 import { SponserModel } from "./sponser.model";
+import { TermsLinksModel } from "./TermsLinksModel";
 
     export interface RaceObjModel {
         eventId: number;
@@ -18,6 +19,7 @@ import { SponserModel } from "./sponser.model";
         heats: HeatModel[];
         priceDates: string[];
         sponsors: SponserModel[];
+        termLinks: TermsLinksModel[];
         showParticipants: number;
         participationMedal: number;
         eventType: string;

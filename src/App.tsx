@@ -27,7 +27,7 @@ function App() {
     function getCodeName(): string {
         const urlSegments = window.location.href.split('/')
         const siteSegmentIndex = urlSegments.indexOf('site')
-        console.log('path', urlSegments[siteSegmentIndex + 1])
+        // console.log('path', urlSegments[siteSegmentIndex + 1])
         return urlSegments[siteSegmentIndex + 1]
     }
 
