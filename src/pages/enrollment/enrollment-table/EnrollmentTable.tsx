@@ -109,7 +109,7 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                             <tr key={heat.Rolls}>
                                 <td>{heat.minAge}</td>
                                 <td>{heat.startHeat}</td>
-                                <td>{heat.description}</td>
+                                <td>{heat.description}({heat.amami ? `עממי` : `תחרותי`})</td>
                             </tr>)}
                     </tbody>
                 </table>
