@@ -27,7 +27,7 @@
 }
 
 .custom-notes {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0rem;
     h3 {
         text-align: right;
     }
@@ -50,9 +50,10 @@
 .json-par{
     border: 1px var(--BackgroundColor) solid;
     border-radius: 1rem;
-    padding: 2rem 2rem 2rem 1rem;
+    padding: 1rem;
     box-shadow: 1rem 1.25rem var(--BackgroundColor);
     margin: 0 1rem;
+    width: 100%;
     a{
         color: blue;
         text-decoration: underline;
