@@ -28,6 +28,10 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         pageHeader("צור קשר")
         
     }, [])
+    useEffect(() => {
+        console.log(newStay)
+        
+    }, [newStay])
 
     const handleChange = (ev: any) => {
         ev.preventDefault()
@@ -89,7 +93,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
                                 aria-labelledby="demo-radio-buttons-group-label"
                                 defaultValue="female">
                                 {eventObj.heats.map(heat =>
-                                    <FormControlLabel key={heat.description} value={heat.description} control={<Radio />}
+                                    <FormControlLabel onChange={(ev) => handleChange(ev)}  name="roll" key={heat.description} value={heat.description} control={<Radio />}
                                         label={heat.description} />
                                 )}
                             </RadioGroup>

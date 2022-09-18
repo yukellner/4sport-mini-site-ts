@@ -2,7 +2,7 @@ import { RaceObjModel } from "../../../../models/raceObj.model"
 
 
 
-export const Prize:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
+export const Prize: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
 
 
@@ -11,7 +11,7 @@ export const Prize:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
     return (
         <div className="resaluts-container">
 
-<div className="prices">
+            <div className="prices">
                 <h1>פרסים</h1>
                 <table>
                     <thead>
@@ -36,7 +36,7 @@ export const Prize:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
                 </table>
 
             </div>
-           
+
 
 
         </div >

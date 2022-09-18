@@ -14,6 +14,7 @@ import { TermsLinksModel } from "./TermsLinksModel";
         foregroundColor: string;
         comments:string;
         gatheringTime: string;
+        enrollmentInclude:string;
         secondaryColor: string;
         organizerDetails:string;
         heats: HeatModel[];

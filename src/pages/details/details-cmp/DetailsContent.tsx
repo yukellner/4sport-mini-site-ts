@@ -1,6 +1,6 @@
 import { RaceObjModel } from "../../../models/raceObj.model"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDays, faFile, faAward, faVenusMars,faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays,faFileMedical, faFile, faAward, faVenusMars,faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from "react"
 import { detailsText } from "../../../utils/dictionery-details"
 import { DetailsModal } from "./DetailsModal"
@@ -82,6 +82,10 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
                 <div>
                     <FontAwesomeIcon onClick={() => openModal("terms")} className="icon" icon={faFile} />
                     <h3>תקנון</h3>
+                </div>
+                <div>
+                    <FontAwesomeIcon onClick={() => openModal("medical")} className="icon" icon={faFileMedical} />
+                    <h3>הצהרת בריאות</h3>
                 </div>
             </div>
             
