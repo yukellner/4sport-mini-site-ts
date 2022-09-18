@@ -1,3 +1,4 @@
+import styled from "@emotion/styled"
 import {
     Button,
     FormControl,
@@ -12,6 +13,7 @@ import { useEffect, useState } from "react"
 import { HeaderTitle } from "../../components/HeaderTitle"
 import { RaceObjModel } from "../../models/raceObj.model"
 
+
 export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
 
     const [newStay, setNewStay] = useState(
@@ -23,6 +25,22 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
             competition: eventObj.description,
             content: null
         })
+
+        const StyledTextField = styled(TextField)`
+    justify-content: flex-start;
+    background-color: var(--white);
+    color: ${eventObj.backgroundColor};
+    // border: 1px litegreen solid;
+    text-align-right;
+    &:hover {
+      background-color: ${eventObj.foregroundColor};
+      color:${eventObj.backgroundColor};
+      outline:1px ${eventObj.backgroundColor} solid;
+    }
+    // &:focus {
+    //   background-color: green;
+    // }
+  `;
 
     useEffect(() => {
         pageHeader("צור קשר")
