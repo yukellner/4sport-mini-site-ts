@@ -12,7 +12,7 @@ export const HeatBox: React.FC<{ heat: HeatModel, eventObj: RaceObjModel }> = ({
 
     const StyledButton = styled(Button)`
     background-color: --backgroundColor;
-    color: white;
+    color: var(--white);
     &:hover {
       background-color: ${eventObj.foregroundColor};
       color:${eventObj.backgroundColor};

@@ -7,7 +7,7 @@ import { RaceObjModel } from "../../../../models/raceObj.model"
 export const Results: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const StyledButton = styled(Button)`
-    background-color: white;
+    background-color: var(--white);
     color: ${eventObj.backgroundColor};
     &:hover {
       background-color: ${eventObj.foregroundColor};

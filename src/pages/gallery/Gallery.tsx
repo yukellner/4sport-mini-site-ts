@@ -10,33 +10,40 @@ import { images, CustomImage } from "../../utils/images";
 
 
 export const GalleryCopy: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
-    
-    const [index, setIndex] = useState(-1);
 
-    const currentImage = images[index];
-    const nextIndex = (index + 1) % images.length;
-    const nextImage = images[nextIndex] || currentImage;
-    const prevIndex = (index + images.length - 1) % images.length;
-    const prevImage = images[prevIndex] || currentImage;
-  
-    const handleClick = (index: number, item: CustomImage) => setIndex(index);
-    const handleClose = () => setIndex(-1);
-    const handleMovePrev = () => setIndex(prevIndex);
-    const handleMoveNext = () => setIndex(nextIndex);
+  const [index, setIndex] = useState(-1);
 
-   
+  const currentImage = images[index];
+  const nextIndex = (index + 1) % images.length;
+  const nextImage = images[nextIndex] || currentImage;
+  const prevIndex = (index + images.length - 1) % images.length;
+  const prevImage = images[prevIndex] || currentImage;
 
-    useEffect(() => {
-        pageHeader("גלריה")
-    }, [])
+  const handleClick = (index: number, item: CustomImage) => setIndex(index);
+  const handleClose = () => setIndex(-1);
+  const handleMovePrev = () => setIndex(prevIndex);
+  const handleMoveNext = () => setIndex(nextIndex);
 
 
 
+  useEffect(() => {
+    pageHeader("גלריה")
+  }, [])
 
 
-    return (
-        <div >
-        {/* <Gallery
+
+
+
+  return (
+    <div className="main-gallery">
+
+      <div className="header-gallery">
+        <div>
+          <h1 >תמונות יעלו בתום האירוע</h1>
+        </div>
+      </div>
+
+      {/* <Gallery
         images={images}
         onClick={handleClick}
         enableImageSelection={false}
@@ -56,9 +63,9 @@ export const GalleryCopy: React.FC<{ eventObj: RaceObjModel, pageHeader: Functio
           onMoveNextRequest={handleMoveNext}
         />
       )}
-      
-        </div >
-    )
+
+    </div >
+  )
 
 
 

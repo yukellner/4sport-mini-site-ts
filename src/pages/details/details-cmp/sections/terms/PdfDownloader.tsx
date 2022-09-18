@@ -9,7 +9,7 @@ export const PdfDownloader: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }
 
 
     const StyledButton = styled(Button)`
-    background-color: white;
+    background-color: var(--white);
     color: ${eventObj.backgroundColor};
     outline:1px ${eventObj.backgroundColor} solid;
     border:unset;
