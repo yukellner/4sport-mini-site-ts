@@ -39,7 +39,7 @@ export const Medical: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
 
 
-            {eventObj.termLinks && eventObj.termLinks.map(link =>
+            {eventObj.medicalLinks && eventObj.medicalLinks.map(link =>
                
                     <StyledButton key={link.link}  className="sign-btn" href={link.link}
                         sx={{}}

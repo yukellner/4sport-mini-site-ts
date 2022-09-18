@@ -19,6 +19,7 @@ export const Maps: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = 
                     <h2>
                         {heat.description}
                     </h2>
+                    <h3>{heat.routeDescription}</h3>
 
                     {heat.mapUrl && <iframe className="alltrails" src={heat.mapUrl} width="100%" height="400" frameBorder="0"
                         scrolling="no"

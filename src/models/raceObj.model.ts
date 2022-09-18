@@ -18,6 +18,7 @@ import { TermsLinksModel } from "./TermsLinksModel";
         secondaryColor: string;
         organizerDetails:string;
         heats: HeatModel[];
+        medicalLinks: TermsLinksModel[];
         priceDates: string[];
         sponsors: SponserModel[];
         termLinks: TermsLinksModel[];
