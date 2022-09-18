@@ -1,28 +1,27 @@
 import { useEffect } from "react"
 import { RaceObjModel } from "../../models/raceObj.model"
-import { Gallery } from "react-grid-gallery";
-import { useState } from "react";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
-import { images, CustomImage } from "../../utils/images";
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/css/lg-thumbnail.css';
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+
+// import 'lightgallery/scss/lightgallery.scss';
+// import 'lightgallery/scss/lg-zoom.scss';
+
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 
 
 
-export const GalleryCopy: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
 
-  const [index, setIndex] = useState(-1);
+export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
 
-  const currentImage = images[index];
-  const nextIndex = (index + 1) % images.length;
-  const nextImage = images[nextIndex] || currentImage;
-  const prevIndex = (index + images.length - 1) % images.length;
-  const prevImage = images[prevIndex] || currentImage;
 
-  const handleClick = (index: number, item: CustomImage) => setIndex(index);
-  const handleClose = () => setIndex(-1);
-  const handleMovePrev = () => setIndex(prevIndex);
-  const handleMoveNext = () => setIndex(nextIndex);
+  const onInit = () => {
+    console.log('lightGallery has been initialized');
+  };
 
 
 
@@ -37,32 +36,29 @@ export const GalleryCopy: React.FC<{ eventObj: RaceObjModel, pageHeader: Functio
   return (
     <div className="main-gallery">
 
+
+
+      <LightGallery
+        onInit={onInit}
+        speed={500}
+        plugins={[lgThumbnail, lgZoom]}
+      >
+        <a href={require("./images/1.jpg")}>
+          <img alt="img1" src={require('./images/1.jpg')} />
+        </a>
+        <a href={require('./images/2.jpg')}>
+          <img alt="img2" src={require('./images/2.jpg')} />
+        </a>
+        ...
+      </LightGallery>
+
       <div className="header-gallery">
         <div>
           <h1 >תמונות יעלו בתום האירוע</h1>
         </div>
       </div>
 
-      {/* <Gallery
-        images={images}
-        onClick={handleClick}
-        enableImageSelection={false}
-      /> */}
-      {!!currentImage && (
-        /* @ts-ignore */
-        <Lightbox
-          mainSrc={currentImage.original}
-          imageTitle={currentImage.caption}
-          mainSrcThumbnail={currentImage.src}
-          nextSrc={nextImage.original}
-          nextSrcThumbnail={nextImage.src}
-          prevSrc={prevImage.original}
-          prevSrcThumbnail={prevImage.src}
-          onCloseRequest={handleClose}
-          onMovePrevRequest={handleMovePrev}
-          onMoveNextRequest={handleMoveNext}
-        />
-      )}
+
 
     </div >
   )

@@ -1,9 +1,7 @@
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material"
-import { RaceObjModel } from "../../../../../models/raceObj.model"
-import { PdfDownloader } from "./PdfDownloader";
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import { RaceObjModel } from "../../../../models/raceObj.model"
 
 
 
@@ -43,7 +41,7 @@ export const Terms: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
             {eventObj.termLinks && eventObj.termLinks.map(link =>
                
-                    <StyledButton className="sign-btn" href={link.link}
+                    <StyledButton key={link.link} className="sign-btn" href={link.link}
                         sx={{}}
                         variant="outlined">
 

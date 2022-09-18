@@ -3,4 +3,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+
+    .route-header{
+        min-width: 50%;
+
+        border-bottom: 1px solid rgb(221, 221, 221);
+    }
+
+    h1{
+        
+    }
+
+    h3{
+
+        margin-top: 1rem;
+        text-align: right;
+        direction: rtl;
+    }
 }

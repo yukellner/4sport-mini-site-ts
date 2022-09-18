@@ -6,23 +6,27 @@ export const Maps: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = 
 
 
     useEffect(() => {
-        pageHeader("מפות")
-      }, [])
+        pageHeader("מפות ומסלולים")
+    }, [])
     return (
         <div className="main-contact">
-            <HeaderTitle titleText={'מפות'} />
+            <HeaderTitle titleText={'מפות ומסלולים'} />
 
             {eventObj.heats.map(heat =>
 
 
                 <div key={heat.description} className="map-container">
+                    <div className="route-header">
+
                     <h2>
                         {heat.description}
                     </h2>
+                    </div>
+                    <h3>{heat.routeDescription}</h3>
 
-                    <iframe className="alltrails" src={heat.mapUrl} width="100%" height="400" frameBorder="0"
+                    {heat.mapUrl && <iframe className="alltrails" src={heat.mapUrl} width="100%" height="400" frameBorder="0"
                         scrolling="no"
-                        title="AllTrails: Trail Guides and Maps for Hiking, Camping, and Running"></iframe>
+                        title="AllTrails: Trail Guides and Maps for Hiking, Camping, and Running"></iframe>}
                 </div>
             )}
 
