@@ -1,7 +1,7 @@
 .loader {
     // width: 8vmax;
     // height: 8vmax;
-    border-right: 6px solid $clrRED;
+    border-right: 6px solid red;
     border-radius: 100%;
     position: fixed;
     top: 50%;
@@ -18,7 +18,7 @@
       position: absolute;
       top: calc(50% - 3vmax);
       left: calc(50% - 3vmax);
-      border-left: 3px solid var(--BackgroundColor);
+      border-left: 3px solid var(--BackgroundColorJson);
       border-radius: 100%;
       animation: spinLeft 800ms linear infinite;
     }
@@ -29,7 +29,7 @@
       top: calc(50% - 2vmax);
       left: calc(50% - 2vmax);
       border: 0;
-      border-right: 2px solid var(--BackgroundColor);
+      border-right: 2px solid var(--BackgroundColorJson);
       animation: none;
     }
   }

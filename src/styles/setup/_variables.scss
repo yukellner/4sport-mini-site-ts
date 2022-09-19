@@ -1,20 +1,11 @@
 :root {
-    --backgroundColor: #fff;
+    --BackgroundColorJson: #fff;
     --fontColorJson: #ECECEC;
     --fontColorDark: black;
-    --BackgroundColor: rgb(134, 131, 131);
     --coverImage: url("../../assets/images/background.jpeg");
     --details-img: url("../../assets/images/background.jpeg");
     --contact-img: url("../../assets/images/background.jpeg");
     --white: #F7F7F7;
 }
 
-$headerbackgroundColor: #fff;
-$lightGreyBackgroundColor: rgb(242, 242, 242);
-$clrRED: #FE385C;
-$clrBLACK: #222222;
-$clrGRAY : #B0B0B0;
-$bgc : var(--white);
-$lite-font-color: #717171;
-$headerFontColor: #B0B0B0;
 

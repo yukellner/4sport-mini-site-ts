@@ -35,7 +35,7 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
         var totalprices: number = 0
         eventObj.heats.map(heat => heat.prices.map(price => totalprices = totalprices + price))
         setTotalPrice(totalprices)
-        console.log('totalprices', totalprices)
+        // console.log('totalprices', totalprices)
     }
 
 

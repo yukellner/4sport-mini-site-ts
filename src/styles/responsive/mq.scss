@@ -85,7 +85,7 @@
             width: 100%;
             gap: 0.5rem;
             top: 64px;
-            background-color: var(--BackgroundColor);
+            background-color: var(--BackgroundColorJson);
             flex-direction: column-reverse;
             justify-content: start;
 
@@ -189,6 +189,10 @@
 
             font-size: 1em !important;
         }
+    }
+
+    .details-icons{
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)) !important;
     }
 
 

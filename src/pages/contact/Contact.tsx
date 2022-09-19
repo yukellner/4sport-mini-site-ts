@@ -46,10 +46,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         pageHeader("צור קשר")
         
     }, [])
-    useEffect(() => {
-        console.log(newStay)
-        
-    }, [newStay])
+    
 
     const handleChange = (ev: any) => {
         ev.preventDefault()
@@ -81,7 +78,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
             <HeaderTitle titleText={'צור קשר'} />
             <div className="contact-content">
                 <div className="contact-img">
-                    <img src={eventObj.coverImages[2]} alt="" />
+                    <img src={eventObj.contactImage} alt="" />
 
                 </div>
                 <div className="contact-form">

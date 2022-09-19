@@ -13,11 +13,14 @@ import { TermsLinksModel } from "./TermsLinksModel";
         backgroundColor: string;
         foregroundColor: string;
         comments:string;
+        coverImage: string;
         gatheringTime: string;
+        detailsImage: string;
         enrollmentInclude:string;
         secondaryColor: string;
         organizerDetails:string;
         heats: HeatModel[];
+        contactImage: string,
         medicalLinks: TermsLinksModel[];
         priceDates: string[];
         sponsors: SponserModel[];

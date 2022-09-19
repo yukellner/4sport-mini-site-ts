@@ -11,7 +11,7 @@ export const DetailsMainHeader: React.FC<{ eventObj: RaceObjModel }> = ({ eventO
 
 
                 <i className="fa-solid fa-calendar-days"></i>
-                <img src={eventObj.coverImages[2]} alt="" />
+                <img src={eventObj.detailsImage} alt="" />
             </div>
             
 

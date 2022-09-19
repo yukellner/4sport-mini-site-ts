@@ -1,6 +1,6 @@
 import { RaceObjModel } from "../../../models/raceObj.model"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDays,faFileMedical, faFile, faAward, faVenusMars,faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays, faFileMedical, faFile, faAward, faVenusMars, faLocationDot, faCommentDots, faStopwatch, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from "react"
 import { detailsText } from "../../../utils/dictionery-details"
 import { DetailsModal } from "./DetailsModal"
@@ -13,17 +13,17 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
 
     useEffect(() => {
         checkPrizes()
-        
-        
+
+
 
         return () => {
-           
+
         };
     }, [])
 
     const checkPrizes = () => {
-        var totalprizes:number = 0
-        eventObj.heats.map(heat => heat.prizes.map(prize => totalprizes = totalprizes +prize.nis ))
+        var totalprizes: number = 0
+        eventObj.heats.map(heat => heat.prizes.map(prize => totalprizes = totalprizes + prize.nis))
         setTotalprizes(totalprizes)
         // console.log('totalprizes',totalprizes)
     }
@@ -38,13 +38,13 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
         const element2 = document.getElementById("details-icons");
         const el2: HTMLElement = element2!;
         el2.classList.toggle("none-class");
-        
+
         const element3 = document.getElementById("details-modal2");
         const el3: HTMLElement = element3!;
         // el3.classList.toggle("details-modal");
         el3.classList.toggle("add-padding");
 
-        
+
     }
 
 
@@ -79,16 +79,16 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
                     <FontAwesomeIcon onClick={() => openModal("location")} className="icon" icon={faLocationDot} />
                     <h3>הגעה</h3>
                 </div>
-                <div>
+                {eventObj.termLinks && <div>
                     <FontAwesomeIcon onClick={() => openModal("terms")} className="icon" icon={faFile} />
                     <h3>תקנון</h3>
-                </div>
-                <div>
+                </div>}
+                {eventObj.medicalLinks && <div>
                     <FontAwesomeIcon onClick={() => openModal("medical")} className="icon" icon={faFileMedical} />
                     <h3>הצהרת בריאות</h3>
-                </div>
+                </div>}
             </div>
-            
+
 
 
 

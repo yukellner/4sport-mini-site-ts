@@ -7,7 +7,7 @@
 
 
         img {
-            box-shadow: 1rem 1.25rem var(--BackgroundColor);
+            box-shadow: 1rem 1.25rem var(--BackgroundColorJson);
             height: 20rem;
             border-radius: 1rem;
             aspect-ratio: 16/9;
@@ -18,7 +18,7 @@
 
     .seconed-img {
         width: 100%;
-        background-color: var(--BackgroundColor);
+        background-color: var(--BackgroundColorJson);
         height: 20rem;
         border-radius: 1rem;
         margin-top: -19rem;
@@ -48,10 +48,10 @@
 }
 
 .json-par{
-    border: 1px var(--BackgroundColor) solid;
+    border: 1px var(--BackgroundColorJson) solid;
     border-radius: 1rem;
     padding: 1rem;
-    box-shadow: 1rem 1.25rem var(--BackgroundColor);
+    box-shadow: 1rem 1.25rem var(--BackgroundColorJson);
     margin: 0 1rem;
     width: 100%;
     margin-bottom: 1rem;
