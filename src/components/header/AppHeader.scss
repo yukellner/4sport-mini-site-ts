@@ -3,7 +3,7 @@
     justify-content: space-between;
     height: 4rem;
     align-items: center;
-    background-color: var(--BackgroundColor);
+    background-color: var(--backgroundColorJson);
     // color: var(--white);
     padding-right: 2rem;
     color: var(--fontColorJson);
@@ -15,7 +15,8 @@
 }
 
 .active-class{
-    text-decoration: underline;
+    font-family: Bold-Font;
+    // text-decoration: underline;
 }
 
 .not-active-class{

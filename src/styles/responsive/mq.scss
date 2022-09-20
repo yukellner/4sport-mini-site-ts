@@ -7,6 +7,18 @@
         // display: none !important;
     }
 
+    .titleText{
+        margin-top: 1rem !important;
+    }
+
+    .main-details-container{
+        display: none;
+    }
+
+    .main-details-container{
+        grid-row: 1;
+    }
+
     .sponsers-container{
 
         
@@ -65,6 +77,15 @@
         z-index: 10;
     }
 
+    .header-home{
+        h1{
+            font-size: 2.5rem !important;
+        }
+        h2{
+            font-size: 1.5rem !important;
+        }
+    }
+
 
 
 
@@ -85,7 +106,7 @@
             width: 100%;
             gap: 0.5rem;
             top: 64px;
-            background-color: var(--BackgroundColor);
+            background-color: var(--backgroundColorJson);
             flex-direction: column-reverse;
             justify-content: start;
 
@@ -189,6 +210,10 @@
 
             font-size: 1em !important;
         }
+    }
+
+    .details-icons{
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)) !important;
     }
 
 

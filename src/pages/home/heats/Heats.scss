@@ -20,7 +20,7 @@
     width: 10rem;
     box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
     border: 1px solid #ddd;
-    background-color: var(--BackgroundColor);
+    background-color: var(--backgroundColorJson);
     color: var(--white);
     font-size: 2rem;
     margin: -19rem auto;
@@ -60,7 +60,7 @@
 
         // font-weight: 900 !important;
         .css-sghohy-MuiButtonBase-root-MuiButton-root {
-            background-color: var(--BackgroundColor) !important;
+            background-color: var(--backgroundColorJson) !important;
         }
     }
 

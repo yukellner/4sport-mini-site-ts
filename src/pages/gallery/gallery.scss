@@ -1,4 +1,9 @@
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-zoom.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-video.css');
+
 .main-gallery {
+    margin-top: 15rem;
 
     min-height: 20rem;
 
@@ -13,9 +18,9 @@
         div:first-child {
             // background-color: lightgray;
             padding: 1rem;
-            border: 1px var(--BackgroundColor) solid;
+            border: 1px var(--backgroundColorJson) solid;
             border-radius: 1rem;
-            box-shadow: 1rem 1.25rem var(--BackgroundColor);
+            box-shadow: 1rem 1.25rem var(--backgroundColorJson);
             margin: 0 2rem 1rem 1rem;
         }
 
@@ -27,4 +32,34 @@
             font-size: 2rem;
         }
     }
+}
+
+// .img-responsive{
+//     margin: 1rem;
+//     cursor: pointer;
+//     // aspect-ratio: 1/1;
+//     // width: 20%;
+//     border-radius: 1rem;
+//     object-fit: cover;
+
+
+
+
+// }
+.lg-next, .lg-prev {
+    width: 4rem;
+    border-radius: 50% !important;
+    padding: 0;
+}
+.gallery-item {
+    margin: 5px;
+
+}
+
+.gallery-item {
+    // width: 20%;
+}
+
+.sub-html {
+    // width: 20%;
 }
