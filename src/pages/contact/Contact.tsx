@@ -61,6 +61,10 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         try {
             const response = await fetch(`https://www.4sport-live.com/miniSite/contact/?eventId=${eventObj.eventId}`, {
                 method: 'POST',
+                credentials: 'omit',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify({
                     name: newStay.fullName,
                     mobile: newStay.phoneNumber,
