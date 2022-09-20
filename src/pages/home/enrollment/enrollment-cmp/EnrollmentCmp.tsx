@@ -35,11 +35,16 @@ export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }
                     <h1 >{eventObj.description}</h1>
                     <h2 className="hero">ההרשמה בעיצומה!</h2>
                 </div>
-                <StyledButton className="sign-btn" href={eventObj.registrationUrl}
+                <div>
+                    <a href={eventObj.registrationUrl}>
+                        <button className="main-btn reverse-color">לחץ להרשמה</button>
+                    </a>
+                </div>
+                {/* <StyledButton className="sign-btn" href={eventObj.registrationUrl}
                     sx={{}}
                     variant="outlined">
                     להרשמה
-                </StyledButton>
+                </StyledButton> */}
             </div>
 
         </div>

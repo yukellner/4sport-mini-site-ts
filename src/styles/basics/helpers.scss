@@ -28,6 +28,7 @@
     position: relative;
     box-sizing: border-box;
     border: 1px solid transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     
 }
 
@@ -40,13 +41,14 @@
 
 }
 
-// .main-btn:active{
-//     background-color: lightgray;
-// }
+.main-btn:active{
+    background-color: lightgray;
+}
 
 .reverse-color{
     color: var(--white);
     background-color: var(--backgroundColorJson);
+    
 }
 
 .reverse-color:active{
@@ -55,9 +57,10 @@
 }
 
 .reverse-color:hover{
+    border: 1px solid transparent;
     // color: #15a4ae;
     background-color: var(--white);
-    outline: 1px var(--backgroundColorJson) solid;
+    // outline: 1px var(--backgroundColorJson) solid;
     color: var(--backgroundColorJson);
 
     opacity: 0.9;
