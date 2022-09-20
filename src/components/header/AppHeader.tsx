@@ -61,10 +61,10 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
 
 
     const updateVaribles = () => {
-        document.documentElement.style.setProperty('--BackgroundColorJson', eventObj.backgroundColor);
+        document.documentElement.style.setProperty('--backgroundColorJson', eventObj.backgroundColor);
         document.documentElement.style.setProperty('--fontColorJson', eventObj.foregroundColor);
         document.documentElement.style.setProperty(`--coverImage`, `url(${eventObj.coverImage})`);
-        document.documentElement.style.setProperty(`--BackgroundColorJson`, eventObj.backgroundColor);
+        document.documentElement.style.setProperty(`--backgroundColorJson`, eventObj.backgroundColor);
     }
 
     const basePath = `/site/${codeName}`

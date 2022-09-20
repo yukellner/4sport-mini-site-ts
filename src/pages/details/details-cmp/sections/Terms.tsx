@@ -30,7 +30,7 @@ export const Terms: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
             <h1>תקנון</h1>
 
-           
+
             <h3>
                 {eventObj.terms}
             </h3>
@@ -40,15 +40,13 @@ export const Terms: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
 
             {eventObj.termLinks && eventObj.termLinks.map(link =>
-               
-                    <StyledButton key={link.link} className="sign-btn" href={link.link}
-                        sx={{}}
-                        variant="outlined">
 
-                        {/* <FontAwesomeIcon href={eventObj.wazeDirection} className="icon" icon={faDownload} /> */}
-                        {link.name}
-                    </StyledButton>
-                
+
+                <a href={link.link} key={link.link} target="_blank">
+                    <button className="main-btn" >{link.name}</button>
+                </a>
+
+
 
             )}
             {/* </div> */}

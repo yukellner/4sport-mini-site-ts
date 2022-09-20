@@ -14,6 +14,58 @@
 
 }
 
+.main-btn {
+    padding: 5px 15px;
+    border: unset;
+    border-radius: 4px;
+    color: var(--backgroundColorJson);
+    background-color: var(--white);
+    font-size: 0.875rem;
+    line-height: 1.75;
+    min-width: 64px;
+    letter-spacing: 0.02857em;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    
+}
+
+.main-btn:hover{
+    box-sizing: border-box;
+    border: 1px solid var(--backgroundColorJson);
+    color: #15a4ae;
+    // outline: 1px #15a4ae solid;
+    background-color: rgb(242, 242, 242);
+
+}
+
+// .main-btn:active{
+//     background-color: lightgray;
+// }
+
+.reverse-color{
+    color: var(--white);
+    background-color: var(--backgroundColorJson);
+}
+
+.reverse-color:active{
+    background-color: lightgray;
+    color: var(--backgroundColorJson);
+}
+
+.reverse-color:hover{
+    // color: #15a4ae;
+    background-color: var(--white);
+    outline: 1px var(--backgroundColorJson) solid;
+    color: var(--backgroundColorJson);
+
+    opacity: 0.9;
+
+}
+
+
+
 .pointer{
     cursor: pointer;
 }
@@ -49,12 +101,12 @@ body {
 
 .sign-btn {
     margin-top: 5rem;
-    background-color: var(--BackgroundColorJson);
+    background-color: var(--backgroundColorJson);
 }
 
 .sign-btn-oposite {
     background-color: var(--white) !important;
-    // color: var(--BackgroundColorJson) !important;
+    // color: var(--backgroundColorJson) !important;
     color: var(--fontColorDark) !important; 
 
 

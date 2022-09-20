@@ -16,7 +16,7 @@
 
 
     .icon {
-        color: var(--BackgroundColorJson);
+        color: var(--backgroundColorJson);
         font-size: 2rem;
         cursor: pointer;
 
@@ -49,7 +49,7 @@
 
         th {
             background-color: lightgrey;
-            color: var(--BackgroundColorJson);
+            color: var(--backgroundColorJson);
         }
     }
 
@@ -94,7 +94,7 @@
 }
 
 .details-modal2 {
-    background-color: var(--BackgroundColorJson);
+    background-color: var(--backgroundColorJson);
     // padding: 1rem;
     color: var(--fontColorJson);
     border-radius: 1rem

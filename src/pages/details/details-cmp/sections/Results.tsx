@@ -25,9 +25,12 @@ export const Results: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
         <div className="resaluts-container">
             <div>
                 <h1>תוצאות</h1>
-                <StyledButton className="sign-btn" href={eventObj.resultsUrl} 
+                <a href={eventObj.resultsUrl}>
+                  <button className="main-btn">לחץ לתוצאות</button>
+                </a>
+                {/* <StyledButton className="sign-btn" href={eventObj.resultsUrl} 
                 sx={{  }}
-                variant="contained">לחץ לתוצאות</StyledButton>
+                variant="contained">לחץ לתוצאות</StyledButton> */}
             </div>
 
 

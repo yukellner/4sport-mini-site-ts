@@ -6,7 +6,7 @@ import { RaceObjModel } from "../../../../models/raceObj.model"
 export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const StyledButton = styled(Button)`
-    background-color: var(--BackgroundColorJson);
+    background-color: var(--backgroundColorJson);
     color: var(--fontColorJson);
     border: unset;
     box-sizing: border-box;

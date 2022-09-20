@@ -115,9 +115,12 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                 </table>
             </div>
             <div>
-                <StyledButton className="sign-btn" href={eventObj.registrationUrl}
+                <a href={eventObj.registrationUrl}>
+                    <button className="main-btn reverse-color">לחץ להרשמה</button>
+                </a>
+                {/* <StyledButton className="sign-btn" href={eventObj.registrationUrl}
                     sx={{}}
-                    variant="contained">לחץ להרשמה</StyledButton>
+                    variant="contained">לחץ להרשמה</StyledButton> */}
                 {/* <Button className="sign-btn" href={eventObj.participantsListUrl} variant="contained">לחץ להרשמה</Button> */}
             </div>
 

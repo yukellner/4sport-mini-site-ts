@@ -59,13 +59,14 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         ev.preventDefault()
 
         try {
-            const response = await fetch('https://www.4sport-live.com/miniSite/contact/?eventId=1', {
+            const response = await fetch(`https://www.4sport-live.com/miniSite/contact/?eventId=${eventObj.eventId}`, {
                 method: 'POST',
                 body: JSON.stringify({
                     name: newStay.fullName,
                     mobile: newStay.phoneNumber,
                     email: newStay.email,
-                    content: newStay.content
+                    content: newStay.content,
+                    roll: newStay.roll
                 })
             })
             return response

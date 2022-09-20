@@ -52,7 +52,7 @@ function App() {
             const response = await fetch(`https://www.4sport-live.com/miniSite/eventData/?codeName=${codeName}`);
             const responseJson = await response.json();
             setEventObj(Object(responseJson))
-            // console.log(Object(responseJson))
+            console.log(Object(responseJson))
 
 
             return responseJson;
