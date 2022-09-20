@@ -7,6 +7,10 @@
         // display: none !important;
     }
 
+    .main-details-container{
+        grid-row: 1;
+    }
+
     .sponsers-container{
 
         
@@ -63,6 +67,15 @@
         right: 0;
         left: 0;
         z-index: 10;
+    }
+
+    .header-home{
+        h1{
+            font-size: 2.5rem !important;
+        }
+        h2{
+            font-size: 1.5rem !important;
+        }
     }
 
 
