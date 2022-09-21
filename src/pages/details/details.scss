@@ -55,6 +55,10 @@
     margin: 0 1rem;
     width: 100%;
     margin-bottom: 1rem;
+    *{
+
+        background-color: var(--white) !important;
+    }
     a{
         color: blue;
         text-decoration: underline;
