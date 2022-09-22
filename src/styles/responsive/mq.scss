@@ -7,41 +7,45 @@
         // display: none !important;
     }
 
-    .titleText{
+    .titleText {
         margin-top: 1rem !important;
     }
 
-    .main-details-container{
+    .main-details-container {
         display: none;
     }
 
-    .main-details-container{
+    .main-details-container {
         grid-row: 1;
     }
 
-    .sponsers-container{
+    .sponsers-container {
 
-        
+
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))
     }
 
-    body{
+    body {
         padding-bottom: 10rem;
     }
 
     .contact-img {
-        display: none;
+        display: none !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .enrollment-table{
+    .enrollment-table {
         padding: 1rem !important;
-        p{
+
+        p {
             padding: 1rem !important;
         }
 
-    } 
+    }
 
-    .titleText{
+    .titleText {
         visibility: hidden;
         text-align: right !important;
         padding-right: 2rem;
@@ -56,7 +60,7 @@
 
     }
 
-    .exist-page{
+    .exist-page {
         visibility: visible;
         width: 100%;
         text-align: right;
@@ -64,7 +68,7 @@
         // display: none;
     }
 
-    .footer-container{
+    .footer-container {
         display: none !important;
     }
 
@@ -77,11 +81,12 @@
         z-index: 10;
     }
 
-    .header-home{
-        h1{
+    .header-home {
+        h1 {
             font-size: 2.5rem !important;
         }
-        h2{
+
+        h2 {
             font-size: 1.5rem !important;
         }
     }
@@ -148,7 +153,7 @@
         height: unset;
     }
 
-    
+
 
 
 
@@ -159,13 +164,13 @@
 // tablet
 @media (min-width: 640px) {
 
-    .exist-page{
+    .exist-page {
         visibility: hidden;
     }
 
-    .sponsers-container{
+    .sponsers-container {
 
-        
+
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
     }
 
@@ -212,7 +217,7 @@
         }
     }
 
-    .details-icons{
+    .details-icons {
         grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)) !important;
     }
 
