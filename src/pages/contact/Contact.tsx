@@ -20,12 +20,12 @@ import rtl from 'jss-rtl';
 import { jssPreset } from '@mui/styles';
 
 export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
-    const [newStay, setNewStay] = useState(
+    const [newForm, setNewForm] = useState(
         {
-            fullName: null,
-            roll: null,
-            phoneNumber: null,
-            email: null,
+            fullName: '',
+            roll: '',
+            phoneNumber: '',
+            email: '',
             competition: eventObj.description,
             content: ''
         })
@@ -59,18 +59,19 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         ev.preventDefault()
         const field = ev.target.name
         const value = ev.target.value
-        setNewStay({ ...newStay, [field]: value })
+        setNewForm({ ...newForm, [field]: value })
+        // console.log('newForm',newForm)
     }
 
     const onSubmit = async (ev: any) => {
         ev.preventDefault()
-        if (newStay.content.length < 10) {
+        if (newForm.content.length < 10) {
             setContentErorr(true)
             return
         }
         setContentErorr(false)
         let form = document.getElementById('contact-form')
-        if(form) (form as HTMLFormElement).reset(); 
+        if (form) (form as HTMLFormElement).reset();
 
         modalView()
 
@@ -82,11 +83,11 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
             const response = await fetch(`https://www.4sport-live.com/miniSite/contact/?eventId=${eventObj.eventId}`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    name: newStay.fullName,
-                    mobile: newStay.phoneNumber,
-                    email: newStay.email,
-                    content: newStay.content,
-                    roll: newStay.roll
+                    name: newForm.fullName,
+                    mobile: newForm.phoneNumber,
+                    email: newForm.email,
+                    content: newForm.content,
+                    roll: newForm.roll
                 })
             })
             return {
@@ -117,7 +118,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
                 <span id="closee" onClick={modalView} className="material-icons pointer">close</span>
                 <h2 >
                     היי
-                    {` ${newStay.fullName}`}
+                    {` ${newForm.fullName}`}
                     <br />
                     פנייתך התקבלה במערכת
                 </h2>
@@ -131,38 +132,53 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
                     <form autoComplete="off" dir="rtl" id="contact-form" onSubmit={onSubmit} method="POST">
                         <div dir="rtl" className="form-group">
                         </div>
-                        <CacheProvider value={cacheRtl}>
-                            <ThemeProvider theme={theme}>
-                                <div dir="rtl" className="contact-container">
+
+                        <ThemeProvider theme={theme}>
+                            <div dir="rtl" className="contact-container">
+                                <CacheProvider value={cacheRtl}>
                                     <TextField size="small" onChange={(ev) => handleChange(ev)} id="outlined-basic"
                                         required
+                                        // InputProps={{ inputProps: { min: 10, max: 20 } }}
+                                        type="phoneNumber"
+
                                         label="שם מלא"
                                         name="fullName"
                                         variant="outlined"
                                         InputLabelProps={{ style: { color: '#222222' } }}
                                     />
+                                </CacheProvider>
+                                <CacheProvider value={cacheRtl}>
                                     <TextField size="small" onChange={(ev) => handleChange(ev)} id="outlined-basic"
                                         required
                                         label="מספר טלפון"
                                         name="phoneNumber"
+                                        InputProps={{ inputProps: { min: 0, max: 10 } }}
                                         variant="outlined"
-                                        type="phone"
+                                        type="tel"
                                         InputLabelProps={{ style: { color: '#222222' } }} />
+                                </CacheProvider>
+                                <CacheProvider value={cacheRtl}>
                                     <TextField size="small" onChange={(ev) => handleChange(ev)} id="outlined-basic"
                                         required
-                                        label="כתובת אימייל" name="email" variant="outlined"
+                                        label="כתובת אימייל" 
+                                        name="email" 
+                                        variant="outlined"
+                                        type="email"
                                         InputLabelProps={{ style: { color: '#222222' } }} />
+                                </CacheProvider>
+                                <CacheProvider value={cacheRtl}>
                                     <TextField size="small" onChange={(ev) => handleChange(ev)} id="outlined-basic" label="  תוכן (לפחות 10 תווים)"
                                         required
                                         multiline rows={4} name="content" variant="outlined"
                                         InputLabelProps={{ style: { color: '#222222' } }}
                                         error={contentErorr}
                                     />
-                                </div>
-                            </ThemeProvider>
-                        </CacheProvider>
+                                </CacheProvider>
+
+                            </div>
+                        </ThemeProvider>
                         <FormControl>
-                            <FormLabel className="add-padding" id="demo-radio-buttons-group-label">מקצה</FormLabel>
+                            <FormLabel className="add-padding" id="demo-radio-buttons-group-label">מקצה *</FormLabel>
                             <RadioGroup onChange={(ev) => handleChange(ev)}
                                 name="roll"
                                 aria-labelledby="demo-radio-buttons-group-label"
