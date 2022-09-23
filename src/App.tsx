@@ -17,6 +17,7 @@ import Favicon from "react-favicon";
 
 
 
+
 function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
     const [codeName, setCodeName] = useState<string | null>(null)
@@ -61,8 +62,8 @@ function App() {
         }
     }
 
-    if (!eventObj) return <div className="loader"></div>
-
+    if (!eventObj) return <div className="lds-ripple"><div></div><div></div></div>
+     
     var myDynamicManifest = {
         "short_name": "React App",
         "name": "Create React App Sample",

@@ -21,6 +21,7 @@
 //basics
 @import 'basics/helpers';
 @import 'basics/loader';
+@import 'loader/loader.scss';
 
 //components
 @import '../components/sponsers/componets/sponser-card/SponserCard';

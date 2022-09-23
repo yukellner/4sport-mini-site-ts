@@ -7,6 +7,9 @@ import { useEffect, useState } from "react"
 export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const [totalPrice, setTotalPrice] = useState<number>(0)
+    const [hasPricesFirst, setHasPricesFirst] = useState<boolean>(false)
+    const [hasPricesSeconed, setHasPricesSeconed] = useState<boolean>(false)
+    const [hasPricesThird, setHasPricesThird] = useState<boolean>(false)
 
     const StyledButton = styled(Button)`
     background-color: ${eventObj.backgroundColor};
@@ -33,10 +36,29 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
 
     const checkPrices = () => {
         var totalprices: number = 0
-        eventObj.heats.map(heat => heat.prices.map(price => totalprices = totalprices + price))
+        eventObj.heats.map(heat => {heat.prices &&  heat.prices.map(price => totalprices = totalprices + price)})
         setTotalPrice(totalprices)
-        // console.log('totalprices', totalprices)
+        
+        totalprices = 0
+        eventObj.heats.map(heat => {heat.prices && (totalprices = totalprices + heat.prices[0])})
+        setHasPricesFirst(totalprices>0)
+        console.log(totalprices)
+        
+        totalprices = 0
+        eventObj.heats.map(heat => {heat.prices &&  (totalprices = totalprices + heat.prices[1])})
+        setHasPricesSeconed(totalprices>0)
+        console.log(totalprices)
+        
+        totalprices = 0
+        eventObj.heats.map(heat => {heat.prices && (totalprices = totalprices + heat.prices[2])})
+        setHasPricesThird(totalprices>0)
+        console.log(totalprices)
+
+        
     }
+    console.log('first', hasPricesFirst)
+    console.log('seconed', hasPricesSeconed)
+    console.log('third', hasPricesThird)
 
 
     return (
@@ -49,23 +71,23 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                 <table className="top-table">
                     <thead>
                         <tr>
-                            <th>
+                           {hasPricesThird && <th>
                                 <div>
                                     הרשמה מאוחרת עד תאריך
                                 </div>
                                 <div>
                                     {eventObj.priceDates[2]}
                                 </div>
-                            </th>
-                            <th>
+                            </th>}
+                           {hasPricesSeconed&& <th>
                                 <div>
                                     הרשמה רגילה עד תאריך
                                 </div>
                                 <div>
                                     {eventObj.priceDates[1]}
                                 </div>
-                            </th>
-                            <th>
+                            </th>}
+                         {hasPricesFirst &&   <th>
                                 <div>
                                     הרשמה מוקדמת עד תאריך
                                 </div>
@@ -73,20 +95,21 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                                     {eventObj.priceDates[0]}
                                 </div>
 
-                            </th>
+                            </th>}
                             <th>מקצה</th>
                         </tr>
 
 
                     </thead>
                     <tbody>
-                        {eventObj.heats.map(heat =>
-                            <tr key={heat.Rolls}>
-                                <td>{heat.prices[2]}₪</td>
-                                <td>{heat.prices[1]}₪</td>
-                                <td>{heat.prices[0]}₪</td>
+                        {eventObj.heats.map(heat => <>
+                            {heat.prices && <tr key={heat.Rolls}>
+                              {hasPricesThird &&  <td>{heat.prices[2]}₪</td>}
+                               {hasPricesSeconed && <td>{heat.prices[1]}₪</td>}
+                                {hasPricesFirst && <td>{heat.prices[0]}₪</td>}
                                 <td>{heat.description}</td>
-                            </tr>
+                            </tr>}
+                            </>
                         )}
                     </tbody>
 
