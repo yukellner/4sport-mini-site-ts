@@ -14,6 +14,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import { Gallery } from "./pages/gallery/Gallery";
 import { Info } from "./pages/info/Info";
 import Favicon from "react-favicon";
+import { Button } from "@mui/material";
+import CountdownTimer from "./components/countdown/CountdownTimer";
+
 
 
 
@@ -22,31 +25,43 @@ function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
     const [codeName, setCodeName] = useState<string | null>(null)
     const [existPage, setExistPage] = useState<string>("Home")
+    const [timerIsShown, setTimerIsShownd] = useState(true)
+    const [pageHederShown, setPageHederShown] = useState(false)
+    const [mobileHeader, setMobileHeader] = useState()
 
 
+
+    const scrollEv = () => {
+        const scrollValue = document.documentElement.scrollTop
+        if (scrollValue > 100) {
+            setTimerIsShownd(false)
+            setPageHederShown(true)
+        } else if (scrollValue <= 100) {
+            setPageHederShown(false)
+            setTimerIsShownd(true)
+        }
+    }
 
     function getCodeName(): string {
         const urlSegments = window.location.href.split('/')
         const siteSegmentIndex = urlSegments.indexOf('site')
-        // console.log('path', urlSegments[siteSegmentIndex + 1])
         return urlSegments[siteSegmentIndex + 1]
     }
 
     const pageHeader = (pageName: string) => {
         setExistPage(pageName)
-
     }
-
-
-
 
     useEffect(() => {
         const codeName = getCodeName()
         setCodeName(codeName)
         getJsonFromApi(codeName)
+        window.addEventListener('scroll', scrollEv, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', scrollEv);
+        };
     }, [])
-
-
 
     const getJsonFromApi = async (codeName: string) => {
         try {
@@ -55,7 +70,6 @@ function App() {
             setEventObj(Object(responseJson))
             console.log(Object(responseJson))
 
-
             return responseJson;
         } catch (error) {
             console.error(error);
@@ -63,7 +77,13 @@ function App() {
     }
 
     if (!eventObj) return <div className="lds-ripple"><div></div><div></div></div>
-     
+
+    var dateString = eventObj.dateTime
+    dateString = dateString.slice(0, 8)
+    dateString = dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
+    var date = new Date(dateString); // some mock date
+    var DATE_IN_MS = date.getTime();
+
     var myDynamicManifest = {
         "short_name": "React App",
         "name": "Create React App Sample",
@@ -102,11 +122,16 @@ function App() {
         <BrowserRouter >
             <ScrollToTop />
             <Favicon url={eventObj.logo}></Favicon>
-
-
-
-
             <div className="App">
+                <div className='countdown-container'>
+                    <div className="log-in-modal slide-in-right">
+                        <h1>{eventObj.date}</h1>
+                        {eventObj.status === "registration" ? <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץ
+                            להרשמה</Button> : <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ
+                                לתוצאות</Button>}
+                        {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
+                    </div>
+                </div>
                 <AppHeader eventObj={eventObj} existPage={existPage} />
                 <Routes>
                     <Route path={`${basePath}/`} element={<Home eventObj={eventObj} pageHeader={pageHeader} />} />
@@ -120,7 +145,6 @@ function App() {
                 {eventObj.sponsors && eventObj.sponsors.length !== 0 && <Sponsers eventObj={eventObj} />}
                 <AppFooter eventObj={eventObj} />
             </div>
-
         </BrowserRouter>
     );
 }

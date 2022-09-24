@@ -95,9 +95,11 @@
 
 
     .navbar {
-        visibility: hidden;
-
+        // visibility: hidden;
+        
         ul {
+            left: 100%;
+            transition: left 0.5s;
             padding: 0;
             padding-top: 5rem;
             padding-left: 1rem;

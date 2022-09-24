@@ -1,11 +1,11 @@
 .countdown-container {
     display: flex;
     flex-direction: column;
-    height: 60vh;
+    height: 100%;
     // bottom: 0;
     position: absolute;
     right: 0rem;
-    top: 4rem;
+    padding-top: 4rem;
     color: var(--fontColorJson);
     width: 14rem;
     
