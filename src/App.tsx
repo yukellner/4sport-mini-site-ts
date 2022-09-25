@@ -25,9 +25,7 @@ function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
     const [codeName, setCodeName] = useState<string | null>(null)
     const [existPage, setExistPage] = useState<string>("Home")
-    const [timerIsShown, setTimerIsShownd] = useState(true)
-    const [pageHederShown, setPageHederShown] = useState(false)
-    const [mobileHeader, setMobileHeader] = useState()
+    const [timerIsShown, setTimerIsShownd] = useState<boolean>(true)
 
 
 
@@ -35,9 +33,7 @@ function App() {
         const scrollValue = document.documentElement.scrollTop
         if (scrollValue > 100) {
             setTimerIsShownd(false)
-            setPageHederShown(true)
         } else if (scrollValue <= 100) {
-            setPageHederShown(false)
             setTimerIsShownd(true)
         }
     }
@@ -129,7 +125,10 @@ function App() {
                         {eventObj.status === "registration" ? <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץ
                             להרשמה</Button> : <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ
                                 לתוצאות</Button>}
-                        {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
+                               {timerIsShown && <div>
+
+                        <CountdownTimer  targetDate={DATE_IN_MS} />
+                                </div>}
                     </div>
                 </div>
                 <AppHeader eventObj={eventObj} existPage={existPage} />
