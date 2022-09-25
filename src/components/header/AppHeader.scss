@@ -1,20 +1,4 @@
-.mobile-menu {
-    display: flex;
-    flex-direction: row;
-    top: 10rem;
-    width: 100%;
-    border-bottom-left-radius: 0.75rem;
-    z-index: 20;
-    justify-content: center;
-    background-color: var(--backgroundColorJson);
-    border-bottom-left-radius: 1rem;
-    position: absolute;
-    transition: top 2s;
-    
 
-
-
-}
 
 .main-header {
     display: flex;
@@ -25,7 +9,7 @@
     // color: var(--white);
     padding-right: 1rem;
     color: var(--fontColorJson);
-    z-index: 10;
+    z-index: 102;
 
     
 
@@ -58,6 +42,7 @@
 }
 
 .logo {
+    z-index: 103;
     li {
         height: 4rem;
 
@@ -74,6 +59,21 @@
 
 .close{
     display: none;
+    // position: absolute;
+    // top: 90%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // font-size: 3rem;
+}
+.close1{
+    display: none;
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    
 }
 
 .navbar {

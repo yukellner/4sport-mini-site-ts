@@ -15,7 +15,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
 
     useEffect(() => {
         updateVaribles()
-        
+
     }, [])
 
     const showModal = () => {
@@ -35,6 +35,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
             const el3: HTMLElement = element3!;
             el3.classList.toggle("block-class");
         }
+        const element4 = document.getElementById("close1");
+        const el4: HTMLElement = element4!;
+        el4.classList.toggle("block-class");
     }
 
     const updateVaribles = () => {
@@ -55,7 +58,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
                         </NavLink>
                     </li>
                 </div>
-               {<div className="exist-page">
+                {<div className="exist-page">
                     {existPage}
                 </div>}
                 <div className="navbar" >
@@ -67,16 +70,19 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>פרטים מלאים</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/enrollment`}>הרשמה</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
+                        <span id="close1"  onClick={showModal} className="material-icons pointer close1">
+                            close
+                        </span>
                     </ul>
                 </div>
 
                 <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">
                     menu
                 </span>
-                <span id="close" onClick={showModal} className="material-icons pointer close">
+                <span id="close" style={{ color: eventObj.backgroundColor }} className="material-icons close">
                     close
                 </span>
-               
+
             </header>
         </>
     )

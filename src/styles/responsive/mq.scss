@@ -88,7 +88,6 @@
         top: 0;
         right: 0;
         left: 0;
-        z-index: 10;
     }
 
     .header-home {
@@ -110,6 +109,7 @@
         // visibility: hidden;
         
         ul {
+            height: calc(100% - 4rem);
             left: 100%;
             transition: left 0.5s;
             padding: 0;
@@ -187,7 +187,7 @@
 @media (min-width: 640px) {
 
     .show-counter{
-        top: 10rem;
+        top: 11rem;
     }
 
     .top-0rem{

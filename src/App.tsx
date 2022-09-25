@@ -87,8 +87,9 @@ function App() {
         }
     }
 
-    if (!eventObj) return <div className="lds-ripple"><div></div><div></div></div>
-
+    if (!eventObj)  return  <div className="lds-ripple"><div></div><div></div></div>
+   
+   
     var dateString = eventObj.dateTime
     dateString = dateString.slice(0, 8)
     dateString = dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
