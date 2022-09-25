@@ -1,6 +1,16 @@
 /* MOBILE ONLY  */
 
 @media (max-width: 640px) {
+
+    .slide-in-right {
+        -webkit-animation: unset !important;
+                animation: unset !important;
+    }
+
+    .top-0rem{
+        bottom: 2rem !important;
+    }
+
     .countdown-container {
         width: 1rem !important;
 
@@ -147,6 +157,14 @@
         // visibility: hidden;
     }
 
+    .show-counter{
+        position: fixed !important;
+        bottom: 7rem;
+        left: 0;
+        border-bottom-left-radius:0 !important;
+        top: unset !important;
+    }
+
 
 
     .main-nav {
@@ -167,6 +185,14 @@
 
 // tablet
 @media (min-width: 640px) {
+
+    .show-counter{
+        top: 10rem;
+    }
+
+    .top-0rem{
+        top: 6rem !important;
+    }
 
     .exist-page {
         display: none;

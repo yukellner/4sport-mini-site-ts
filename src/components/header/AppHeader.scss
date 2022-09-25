@@ -1,3 +1,21 @@
+.mobile-menu {
+    display: flex;
+    flex-direction: row;
+    top: 10rem;
+    width: 100%;
+    border-bottom-left-radius: 0.75rem;
+    z-index: 20;
+    justify-content: center;
+    background-color: var(--backgroundColorJson);
+    border-bottom-left-radius: 1rem;
+    position: absolute;
+    transition: top 2s;
+    
+
+
+
+}
+
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -8,6 +26,8 @@
     padding-right: 1rem;
     color: var(--fontColorJson);
     z-index: 10;
+
+    
 
     a {
         cursor: pointer;

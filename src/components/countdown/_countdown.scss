@@ -46,14 +46,18 @@
 .show-counter {
     display: flex;
     flex-direction: row;
-    // padding: 1rem;
-    top: 0;
+    padding-top: 1rem;
+    margin-top: -1rem;
+    // top: 10rem;
+    width: 100%;
     border-bottom-left-radius: 0.75rem;
     z-index: 20;
     justify-content: center;
     background-color: var(--backgroundColorJson);
     border-bottom-left-radius: 1rem;
-    margin-top: 0rem;
+    position: absolute;
+    transition: all 2s;
+    // transition: bottom 2s;
     
 
 

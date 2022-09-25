@@ -31,9 +31,24 @@ function App() {
 
     const scrollEv = () => {
         const scrollValue = document.documentElement.scrollTop
-        if (scrollValue > 100) {
-            setTimerIsShownd(false)
-        } else if (scrollValue <= 100) {
+        if (scrollValue > 50) {
+            // setTimerIsShownd(false)
+            const element = document.getElementById("show-counter");
+            const el1: HTMLElement = element!;
+            el1.classList.add("top-0rem");
+            
+            const element2 = document.getElementById("log-in-modal");
+            const el2: HTMLElement = element2!;
+            el2.classList.add("border-bottom-left");
+            
+
+            
+
+
+        } else if (scrollValue <= 50) {
+            const element = document.getElementById("show-counter");
+            const el1: HTMLElement = element!;
+            el1.classList.remove("top-0rem");
             setTimerIsShownd(true)
         }
     }
@@ -120,16 +135,16 @@ function App() {
             <Favicon url={eventObj.logo}></Favicon>
             <div className="App">
                 <div className='countdown-container'>
-                    <div className="log-in-modal slide-in-right">
+                    <div id="log-in-modal" className="log-in-modal slide-in-right">
                         <h1>{eventObj.date}</h1>
                         {eventObj.status === "registration" ? <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץ
                             להרשמה</Button> : <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ
                                 לתוצאות</Button>}
-                               {timerIsShown && <div>
-
-                        <CountdownTimer  targetDate={DATE_IN_MS} />
-                                </div>}
                     </div>
+                    {timerIsShown && <div >
+
+                        <CountdownTimer targetDate={DATE_IN_MS} />
+                    </div>}
                 </div>
                 <AppHeader eventObj={eventObj} existPage={existPage} />
                 <Routes>
