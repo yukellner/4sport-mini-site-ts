@@ -61,7 +61,7 @@
     }
 
     .exist-page {
-        visibility: visible;
+        display: block;
         width: 100%;
         text-align: right;
         margin-right: 1rem;
@@ -169,7 +169,7 @@
 @media (min-width: 640px) {
 
     .exist-page {
-        visibility: hidden;
+        display: none;
     }
 
     .sponsers-container {
@@ -186,6 +186,7 @@
 
     .navbar {
         ul {
+            padding: 0;
             li {
                 margin-left: 1rem;
             }

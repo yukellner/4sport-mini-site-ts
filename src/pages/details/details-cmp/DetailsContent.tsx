@@ -59,32 +59,32 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
             </div>
 
             <div id="details-icons" className="details-icons">
-                <div>
-                    <FontAwesomeIcon onClick={() => openModal("calendar")} className="icon" icon={faCalendarDays} />
+                <div onClick={() => openModal("calendar")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faCalendarDays} />
                     <h3>לוז</h3>
                 </div>
-                {totalprizes > 0 && <div>
-                    <FontAwesomeIcon onClick={() => openModal("prize")} className="icon" icon={faAward} />
+                {totalprizes > 0 && <div onClick={() => openModal("prize")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faAward} />
                     <h3>פרסים</h3>
                 </div>}
-                <div>
-                    <FontAwesomeIcon onClick={() => openModal("category")} className="icon" icon={faVenusMars} />
+                <div onClick={() => openModal("category")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faVenusMars} />
                     <h3>קטגוריות</h3>
                 </div>
-                <div>
-                    <FontAwesomeIcon onClick={() => openModal("results")} className="icon" icon={faStopwatch} />
+                <div onClick={() => openModal("results")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faStopwatch} />
                     <h3>תוצאות</h3>
                 </div>
-                <div>
-                    <FontAwesomeIcon onClick={() => openModal("location")} className="icon" icon={faLocationDot} />
+                <div onClick={() => openModal("location")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faLocationDot} />
                     <h3>הגעה</h3>
                 </div>
-                {eventObj.termLinks && <div>
-                    <FontAwesomeIcon onClick={() => openModal("terms")} className="icon" icon={faFile} />
+                {eventObj.termLinks && <div onClick={() => openModal("terms")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faFile} />
                     <h3>תקנון</h3>
                 </div>}
-                {eventObj.medicalLinks && <div>
-                    <FontAwesomeIcon onClick={() => openModal("medical")} className="icon" icon={faFileMedical} />
+                {eventObj.medicalLinks && <div onClick={() => openModal("medical")} className="pointer">
+                    <FontAwesomeIcon  className="icon" icon={faFileMedical} />
                     <h3>הצהרת בריאות</h3>
                 </div>}
             </div>

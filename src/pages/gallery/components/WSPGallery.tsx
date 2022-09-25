@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCircleChevronLeft, 
@@ -11,11 +10,8 @@ import { GalleryModel } from '../../../models/gallery.model'
 
 const WSPGallery: React.FC<{ galleryImages: GalleryModel}> = ({galleryImages}) => {
 
-     
-
   const [slideNumber, setSlideNumber] = useState(0)
   const [openModal, setOpenModal] = useState(false)
-
   const handleOpenModal = (index:number) => {
     setSlideNumber(index)
     setOpenModal(true)
@@ -53,12 +49,6 @@ const WSPGallery: React.FC<{ galleryImages: GalleryModel}> = ({galleryImages}) =
           </div>
         </div>
       }
-
-      {/* <br />
-      Current slide number:  {slideNumber}
-      <br />
-      Total Slides: {galleryImages.length}
-      <br /><br /> */}
 
       <div className='galleryWrap'>
         {
