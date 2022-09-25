@@ -28,9 +28,9 @@ export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
 
   return (
     <div className="main-gallery">
-        <WSPGallery
-          galleryImages={galleryImages}
-        />
+        {galleryImages.gallery.length > 1 ? <WSPGallery galleryImages={galleryImages} /> : <h1>תמונות יעלו בקרוב</h1>}
+          
+        
     </div >
   )
 
