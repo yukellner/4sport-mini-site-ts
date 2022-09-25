@@ -41,7 +41,7 @@ const WSPGallery: React.FC<{ galleryImages: GalleryModel}> = ({galleryImages}) =
 
       {openModal && 
         <div className='sliderWrap'>
-          <FontAwesomeIcon icon={faCircleXmark} className='btnClose' onClick={handleCloseModal}  />
+          <FontAwesomeIcon  icon={faCircleXmark} className='btnClose' onClick={handleCloseModal}  />
           <FontAwesomeIcon icon={faCircleChevronLeft} className='btnPrev' onClick={prevSlide} />
           <FontAwesomeIcon icon={faCircleChevronRight} className='btnNext' onClick={nextSlide} />
           <div className='fullScreenImage'>
