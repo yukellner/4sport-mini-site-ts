@@ -138,13 +138,11 @@ function App() {
                 <div className='countdown-container'>
                     <div id="log-in-modal" className="log-in-modal slide-in-right">
                         <h1>{eventObj.date}</h1>
-                        {eventObj.status === "registration" ? <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץ
-                            להרשמה</Button> : <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ
-                                לתוצאות</Button>}
+                        {eventObj.status === "registration" && <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץלהרשמה</Button> }
                     </div>
                     {timerIsShown && <div >
 
-                        <CountdownTimer targetDate={DATE_IN_MS} />
+                        <CountdownTimer targetDate={DATE_IN_MS} eventObj={eventObj}/>
                     </div>}
                 </div>
                 <AppHeader eventObj={eventObj} existPage={existPage} />

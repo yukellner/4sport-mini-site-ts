@@ -2,14 +2,26 @@
 
 @media (max-width: 640px) {
 
+    .top-0rem{
+        bottom: 2rem !important;
+    }
+    .no-reg-counter{
+        position: fixed !important;
+        bottom: 4rem !important;
+        width: 100%;
+        left: 0;
+        border-bottom-left-radius:0 !important;
+        top: unset !important;
+        z-index: 10;
+    }
+
     .slide-in-right {
         -webkit-animation: unset !important;
                 animation: unset !important;
     }
 
-    .top-0rem{
-        bottom: 2rem !important;
-    }
+    
+    
 
     .countdown-container {
         width: 1rem !important;

@@ -74,3 +74,17 @@
     position: fixed;
     bottom: 0;
 }
+
+.no-reg-counter{
+    background-color: var(--backgroundColorJson);
+    padding: 1rem;
+    padding-top: 2rem;
+    border-bottom-left-radius: 1rem;
+    width: 100%;
+    margin-top: -3rem;
+    transition: all 2s;
+    position: absolute;
+    top: 10rem;
+    // bottom: unset !important
+
+}

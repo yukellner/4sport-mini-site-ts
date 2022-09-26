@@ -1,16 +1,18 @@
+import { Button } from '@mui/material';
 import React from 'react';
 import DateTimeDisplay from './DateTimeDisplay';
 import { UseCountdown } from './UseCountdown';
 
 
-const ExpiredNotice = () => {
+const ExpiredNotice = ({eventObj}) => {
   return (
-    <div className="expired-notice">
-      
-      <p>ההרשמה הסתיימה</p>
+    <div id='show-counter' className="expired-notice  no-reg-counter slide-in-right">
+      <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ לתוצאות</Button>
     </div>
   );
 };
+
+ 
 
 const ShowCounter = ({ days, hours, minutes, seconds }) => {
   return (
@@ -26,11 +28,11 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
   );
 };
 
-const CountdownTimer = ({ targetDate }) => {
+const CountdownTimer = ({ targetDate, eventObj }) => {
   const [days, hours, minutes, seconds] = UseCountdown(targetDate);
 
   if (days + hours + minutes + seconds <= 0) {
-    return <ExpiredNotice />;
+    return <ExpiredNotice eventObj={eventObj}/>;
   } else {
     return (
       <ShowCounter
