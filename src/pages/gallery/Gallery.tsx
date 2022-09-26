@@ -38,7 +38,7 @@ export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
   return (
     <div className="main-gallery min-height">
       <HeaderTitle titleText={'גלריה'} />
-      {galleryImages.gallery.length > 1 ? <WSPGallery galleryImages={galleryImages} /> : <h1>תמונות יעלו בקרוב</h1>}
+      {galleryImages.gallery.length > 1 ? <WSPGallery galleryImages={galleryImages} /> : <h1 style={{ marginTop: '6rem' }}>תמונות יעלו בקרוב</h1>}
     </div >
   )
 
