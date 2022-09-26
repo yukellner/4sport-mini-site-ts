@@ -31,7 +31,7 @@ export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
   if (!galleryImages) return (
     <div className="min-height">
       <HeaderTitle titleText={'גלריה'} />
-      {galleryJsonReceived ? <div style={{ top: '30%' }} className="lds-ripple"><div></div><div></div></div> : <h1>תמונות יעלו בקרוב</h1>}
+      {galleryJsonReceived ? <div style={{ top: '30%' }} className="lds-ripple"><div></div><div></div></div> : <h1 style={{ marginTop: '6rem' }}>תמונות יעלו בקרוב</h1>}
     </div>
   )
 
