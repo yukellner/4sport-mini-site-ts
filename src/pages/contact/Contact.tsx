@@ -112,7 +112,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
 
 
     return (
-        <div className="main-contact">
+        <div className="main-contact min-height">
             <div id="dark-home" onClick={modalView} className="contact-modal dark-home none-class"></div>
             <div id="msg-modal" className="msg-modal none-class">
                 <span id="closee" onClick={modalView} className="material-icons pointer">close</span>

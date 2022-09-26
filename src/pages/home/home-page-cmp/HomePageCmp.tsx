@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material"
-import { RaceObjModel } from "../../../../models/raceObj.model"
+import { RaceObjModel } from "../../../models/raceObj.model"
 
 
-export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const HomePageCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const StyledButton = styled(Button)`
     background-color: var(--backgroundColorJson);
@@ -25,7 +25,7 @@ export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }
 
 
     return (
-        <div className="main-enrollment vh-80">
+        <div className="main-home-page vh-80">
             <div className="background-home"></div>
             <div className="dark-home"></div>
             <div className="header-home">

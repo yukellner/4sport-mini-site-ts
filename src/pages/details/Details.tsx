@@ -16,7 +16,7 @@ export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
 
     // console.log(eventObj.comments)
     return (
-        <div className="details-container">
+        <div className="details-container min-height">
             <HeaderTitle titleText={'פרטים מלאים'} />
             <div className="content-container">
                 <DetailsContent eventObj={eventObj} />

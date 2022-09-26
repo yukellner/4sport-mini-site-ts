@@ -9,7 +9,7 @@
 @import '../pages/home/Home';
 @import '../pages/gallery/gallery.scss';
 @import '../pages/info/info.scss';
-@import '../pages/home/enrollment/enrollment-cmp/EnrollmentCmp.scss';
+@import '../pages/home/home-page-cmp/HomePageCmp.scss';
 @import '../pages/home/heats/Heats';
 @import '../pages/details/details.scss';
 @import '../pages/details/details-cmp//details-content.scss';
@@ -31,6 +31,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 @import '../../node_modules/material-design-icons/iconfont/material-icons.css';
 @import '../pages/gallery/components/WSPGallery.scss';
+@import '../pages/enrollment/enrollment.scss';
 
 //animations
 @import 'animations/animations.scss';

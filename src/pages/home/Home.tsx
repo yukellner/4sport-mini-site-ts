@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { RaceObjModel } from "../../models/raceObj.model";
-import { EnrollmentCmp } from "./enrollment/enrollment-cmp/EnrollmentCmp";
+import { HomePageCmp } from "./home-page-cmp/HomePageCmp";
 import { Heats } from "./heats/Heats";
 
 
@@ -17,8 +17,8 @@ export const Home:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({ev
       if (!eventObj) return ( <div className="loader"></div> )
 
     return (
-        <div >
-            <EnrollmentCmp eventObj={eventObj}/>
+        <div className="min-height">
+            <HomePageCmp eventObj={eventObj}/>
             <Heats eventObj={eventObj}/>
 
         </div >
