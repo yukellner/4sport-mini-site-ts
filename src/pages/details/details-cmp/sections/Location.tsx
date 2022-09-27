@@ -31,7 +31,7 @@ export const Location: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => 
 
                 <a href={eventObj.wazeDirection} target="_blank">
                     <h3>לחץ לניווט לשטח הכינוס</h3>
-                    <StyledButton className="sign-btn" href={eventObj.resultsUrl}
+                    <StyledButton className="sign-btn" href={eventObj.wazeDirection}
                         sx={{}}
                         variant="outlined">
                         <FontAwesomeIcon href={eventObj.wazeDirection} className="icon" icon={faWaze} />
