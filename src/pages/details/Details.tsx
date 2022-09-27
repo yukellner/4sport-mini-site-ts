@@ -6,7 +6,7 @@ import { DetailsMainHeader } from "./details-cmp/DetailsMainHeader"
 // import { DetailsMainHeader } from "./details-cmp/DetailsMainHeader"
 
 
-export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
+export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function, target: number }> = ({ target, eventObj, pageHeader }) => {
 
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export const Details: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         <div className="details-container min-height">
             <HeaderTitle titleText={'פרטים מלאים'} />
             <div className="content-container">
-                <DetailsContent eventObj={eventObj} />
+                <DetailsContent target={target} eventObj={eventObj} />
                 <DetailsMainHeader eventObj={eventObj} />
             </div>
             {eventObj.comments.length > 0 && <div className="custom-notes">

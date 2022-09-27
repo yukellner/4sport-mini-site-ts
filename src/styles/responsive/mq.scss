@@ -175,6 +175,7 @@
         left: 0;
         border-bottom-left-radius:0 !important;
         top: unset !important;
+        padding-top: unset;
     }
 
 
@@ -198,8 +199,13 @@
 // tablet
 @media (min-width: 640px) {
 
+    .close, .close1{
+        display: none !important;
+    }
+
     .show-counter{
         top: 11rem;
+        padding-top: 1rem;
     }
 
     .top-0rem{

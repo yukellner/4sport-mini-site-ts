@@ -6,7 +6,7 @@ import { detailsText } from "../../../utils/dictionery-details"
 import { DetailsModal } from "./DetailsModal"
 
 
-export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const DetailsContent: React.FC<{ eventObj: RaceObjModel,target: number }> = ({ eventObj, target }) => {
 
     const [modalText, setModalText] = useState<RaceObjModel | any>(null)
     const [totalprizes, setTotalprizes] = useState<number>(0)
@@ -71,10 +71,10 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj 
                     <FontAwesomeIcon  className="icon" icon={faVenusMars} />
                     <h3>קטגוריות</h3>
                 </div>
-                <div onClick={() => openModal("results")} className="pointer">
+                { (target < Date.now()) && <div onClick={() => openModal("results")} className="pointer">
                     <FontAwesomeIcon  className="icon" icon={faStopwatch} />
                     <h3>תוצאות</h3>
-                </div>
+                </div>}
                 <div onClick={() => openModal("location")} className="pointer">
                     <FontAwesomeIcon  className="icon" icon={faLocationDot} />
                     <h3>הגעה</h3>

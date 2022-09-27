@@ -35,9 +35,9 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
             const el3: HTMLElement = element3!;
             el3.classList.toggle("block-class");
         }
-        const element4 = document.getElementById("close1");
-        const el4: HTMLElement = element4!;
-        el4.classList.toggle("block-class");
+        // const element4 = document.getElementById("close1");
+        // const el4: HTMLElement = element4!;
+        // el4.classList.toggle("block-class");
     }
 
     const updateVaribles = () => {
