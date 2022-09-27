@@ -15,7 +15,7 @@ export const Gallery: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
       const responseJson = await response.json();
       setGalleryJsonReceived(true)
       setGalleryItems(responseJson)
-      console.log(Object(responseJson))
+      // console.log(Object(responseJson))
       return responseJson;
     } catch (error) {
       setGalleryJsonReceived(false)
