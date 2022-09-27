@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material"
+import { StatusBtn } from "../../../components/StatusBtn";
+import { StatusBtnOposite } from "../../../components/StatusBtnOposite";
 import { RaceObjModel } from "../../../models/raceObj.model"
 
 
@@ -33,12 +35,11 @@ export const HomePageCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) 
                     {/* kenburns-top */}
                     {/* className="scale-up-center" */}
                     <h1>{eventObj.description}</h1>
-                    <h2 className="hero">ההרשמה בעיצומה!</h2>
+                    {(eventObj.status === 'registration') && <h2 className="hero">ההרשמה בעיצומה!</h2>}
                 </div>
                 <div>
-                    <a href={eventObj.registrationUrl}>
-                        <button className="main-btn reverse-color">לחץ להרשמה</button>
-                    </a>
+                    <StatusBtn eventObj={eventObj}/>
+                    
                 </div>
                 {/* <StyledButton className="sign-btn" href={eventObj.registrationUrl}
                     sx={{}}

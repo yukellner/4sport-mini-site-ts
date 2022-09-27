@@ -9,52 +9,30 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
     const [hasPricesSeconed, setHasPricesSeconed] = useState<boolean>(false)
     const [hasPricesThird, setHasPricesThird] = useState<boolean>(false)
 
-
-
     useEffect(() => {
         checkPrices()
-
-
-
-        return () => {
-
-        };
+        
     }, [])
 
     const checkPrices = () => {
         var totalprices: number = 0
         eventObj.heats.map(heat => { heat.prices && heat.prices.map(price => totalprices = totalprices + price) })
         setTotalPrice(totalprices)
-
         totalprices = 0
         eventObj.heats.map(heat => { heat.prices && (totalprices = totalprices + heat.prices[0]) })
         setHasPricesFirst(totalprices > 0)
-        console.log(totalprices)
-
         totalprices = 0
         eventObj.heats.map(heat => { heat.prices && (totalprices = totalprices + heat.prices[1]) })
         setHasPricesSeconed(totalprices > 0)
-        console.log(totalprices)
-
         totalprices = 0
         eventObj.heats.map(heat => { heat.prices && (totalprices = totalprices + heat.prices[2]) })
         setHasPricesThird(totalprices > 0)
-        console.log(totalprices)
-
-
     }
-    console.log('first', hasPricesFirst)
-    console.log('seconed', hasPricesSeconed)
-    console.log('third', hasPricesThird)
-
 
     return (
         <div className="enrollment-table">
             {totalPrice != 0 && <div className="container">
-
                 <h1>טבלת מחירים</h1>
-
-
                 <table className="top-table">
                     <thead>
                         <tr>
@@ -85,8 +63,6 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                             </th>}
                             <th>מקצה</th>
                         </tr>
-
-
                     </thead>
                     <tbody>
                         {eventObj.heats.map(heat => <>
@@ -133,9 +109,12 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                 </div>}
                 <br />
                 <div>
-                    <a href={eventObj.registrationUrl}>
-                        <button className="main-btn reverse-color">לחץ להרשמה</button>
-                    </a>
+                    {(eventObj.status === 'registration') ?
+                        <a href={eventObj.registrationUrl}>
+                            <button className="main-btn reverse-color">לחץ להרשמה</button>
+                        </a>
+                        :
+                        <h2>ההרשמה הסתיימה</h2>}
                 </div>
             </div>
 
@@ -152,8 +131,6 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
             <div className="enrollmentInclude">
                 {eventObj.enrollmentInclude}
             </div>
-
-
         </div>
 
 

@@ -16,6 +16,8 @@ import { Info } from "./pages/info/Info";
 import Favicon from "react-favicon";
 import { Button } from "@mui/material";
 import CountdownTimer from "./components/countdown/CountdownTimer";
+import { StatusBtn } from "./components/StatusBtn";
+import { StatusBtnOposite } from "./components/StatusBtnOposite";
 
 
 
@@ -25,31 +27,23 @@ function App() {
     const [eventObj, setEventObj] = useState<RaceObjModel | any>(null)
     const [codeName, setCodeName] = useState<string | null>(null)
     const [existPage, setExistPage] = useState<string>("Home")
-    const [timerIsShown, setTimerIsShownd] = useState<boolean>(true)
-
-
+    
 
     const scrollEv = () => {
         const scrollValue = document.documentElement.scrollTop
         if (scrollValue > 50) {
-            // setTimerIsShownd(false)
             const element = document.getElementById("show-counter");
             const el1: HTMLElement = element!;
             el1.classList.add("top-0rem");
-            
+
             const element2 = document.getElementById("log-in-modal");
             const el2: HTMLElement = element2!;
             el2.classList.add("border-bottom-left");
-            
-
-            
-
 
         } else if (scrollValue <= 50) {
             const element = document.getElementById("show-counter");
             const el1: HTMLElement = element!;
             el1.classList.remove("top-0rem");
-            setTimerIsShownd(true)
         }
     }
 
@@ -87,9 +81,9 @@ function App() {
         }
     }
 
-    if (!eventObj)  return  <div className="lds-ripple"><div></div><div></div></div>
-   
-   
+    if (!eventObj) return <div className="lds-ripple"><div></div><div></div></div>
+
+
     var dateString = eventObj.dateTime
     dateString = dateString.slice(0, 8)
     dateString = dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
@@ -138,12 +132,11 @@ function App() {
                 <div className='countdown-container'>
                     <div id="log-in-modal" className="log-in-modal slide-in-right">
                         <h1>{eventObj.date}</h1>
-                        {eventObj.status === "registration" && <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץלהרשמה</Button> }
+                        <StatusBtnOposite eventObj={eventObj}/>
                     </div>
-                    {timerIsShown && <div >
-
-                        <CountdownTimer targetDate={DATE_IN_MS} eventObj={eventObj}/>
-                    </div>}
+                    <div >
+                        <CountdownTimer targetDate={DATE_IN_MS} eventObj={eventObj} />
+                    </div>
                 </div>
                 <AppHeader eventObj={eventObj} existPage={existPage} />
                 <Routes>
