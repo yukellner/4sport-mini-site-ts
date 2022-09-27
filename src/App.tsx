@@ -143,7 +143,7 @@ function App() {
                     <Route path={`${basePath}/`} element={<Home eventObj={eventObj} pageHeader={pageHeader} />} />
                     <Route path={`${basePath}/contact`} element={<Contact eventObj={eventObj} pageHeader={pageHeader} />} />
                     <Route path={`${basePath}/enrollment`} element={<Enrollment eventObj={eventObj} pageHeader={pageHeader} />} />
-                    <Route path={`${basePath}/details`} element={<Details eventObj={eventObj} pageHeader={pageHeader} />} />
+                    <Route path={`${basePath}/details`} element={<Details target={DATE_IN_MS} eventObj={eventObj} pageHeader={pageHeader} />} />
                     <Route path={`${basePath}/maps`} element={<Maps eventObj={eventObj} pageHeader={pageHeader} />} />
                     <Route path={`${basePath}/gallery`} element={<Gallery eventObj={eventObj} pageHeader={pageHeader} />} />
                     <Route path={`${basePath}/info`} element={<Info eventObj={eventObj} pageHeader={pageHeader} />} />
