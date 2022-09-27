@@ -55,7 +55,7 @@
         margin-bottom: 0.2rem;
     }
 
-    h3:first-child {
+    h3:first-child:not(.btn-status) {
         font-size: 2rem;
 
         // font-weight: 900 !important;

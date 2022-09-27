@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material"
-import { RaceObjModel } from "../../../../models/raceObj.model"
+import { StatusBtn } from "../../../components/StatusBtn";
+import { StatusBtnOposite } from "../../../components/StatusBtnOposite";
+import { RaceObjModel } from "../../../models/raceObj.model"
 
 
-export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const HomePageCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
     const StyledButton = styled(Button)`
     background-color: var(--backgroundColorJson);
@@ -25,20 +27,19 @@ export const EnrollmentCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }
 
 
     return (
-        <div className="main-enrollment vh-80">
+        <div className="main-home-page vh-80">
             <div className="background-home"></div>
             <div className="dark-home"></div>
             <div className="header-home">
                 <div>
                     {/* kenburns-top */}
                     {/* className="scale-up-center" */}
-                    <h1 >{eventObj.description}</h1>
-                    <h2 className="hero">ההרשמה בעיצומה!</h2>
+                    <h1>{eventObj.description}</h1>
+                    {(eventObj.status === 'registration') && <h2 className="hero">ההרשמה בעיצומה!</h2>}
                 </div>
                 <div>
-                    <a href={eventObj.registrationUrl}>
-                        <button className="main-btn reverse-color">לחץ להרשמה</button>
-                    </a>
+                    <StatusBtn eventObj={eventObj}/>
+                    
                 </div>
                 {/* <StyledButton className="sign-btn" href={eventObj.registrationUrl}
                     sx={{}}

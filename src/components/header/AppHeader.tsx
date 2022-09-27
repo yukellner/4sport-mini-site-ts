@@ -12,53 +12,33 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
     const [mobileHeader, setMobileHeader] = useState()
     const { codeName } = eventObj
 
-    var dateString = eventObj.dateTime
-    dateString = dateString.slice(0,8)
-    dateString = dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
-    var date = new Date(dateString); // some mock date
-    var DATE_IN_MS = date.getTime();
 
     useEffect(() => {
         updateVaribles()
-        window.addEventListener('scroll', scrollEv, { passive: true });
 
-        return () => {
-            window.removeEventListener('scroll', scrollEv);
-        };
     }, [])
-
-    const scrollEv = () => {
-        // console.log('scroll event')
-        const scrollValue = document.documentElement.scrollTop
-
-        if (scrollValue > 100) {
-            setTimerIsShownd(false)
-            setPageHederShown(true)
-        } else if (scrollValue <= 100) {
-            setPageHederShown(false)
-            setTimerIsShownd(true)
-        }
-    }
 
     const showModal = () => {
         if (window.innerWidth < 640) {
             // setMobileHeader(page)
             const element = document.getElementById("navbar");
             const el1: HTMLElement = element!;
-            el1.classList.toggle("visible-class");
+            el1.classList.toggle("move-left");
 
 
             const element2 = document.getElementById("hamburger");
             const el2: HTMLElement = element2!;
-            el2.classList.toggle("hide-class");
+            el2.classList.toggle("none-class");
 
 
             const element3 = document.getElementById("close");
             const el3: HTMLElement = element3!;
             el3.classList.toggle("block-class");
         }
+        const element4 = document.getElementById("close1");
+        const el4: HTMLElement = element4!;
+        el4.classList.toggle("block-class");
     }
-
 
     const updateVaribles = () => {
         document.documentElement.style.setProperty('--backgroundColorJson', eventObj.backgroundColor);
@@ -74,15 +54,15 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
                 <div className="logo">
                     <li>
                         <NavLink to={`${basePath}/`}>
-                            <img src={eventObj.logo} alt={'event logo'} />
+                            <img className="slide-in-top" src={eventObj.logo} alt={'event logo'} />
                         </NavLink>
                     </li>
                 </div>
-               {<div className="exist-page">
+                {<div className="exist-page">
                     {existPage}
                 </div>}
-                <div className="navbar" id="navbar">
-                    <ul>
+                <div className="navbar" >
+                    <ul id="navbar">
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/gallery`}>גלריה</NavLink></li>
                         {/* <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/info`}>רז גוטרמן</NavLink></li> */}
@@ -90,24 +70,19 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>פרטים מלאים</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/enrollment`}>הרשמה</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
+                        <span id="close1"  onClick={showModal} className="material-icons pointer close1">
+                            close
+                        </span>
                     </ul>
                 </div>
 
                 <span id="hamburger" onClick={showModal} className="material-icons pointer hamburger">
                     menu
                 </span>
-                <span id="close" onClick={showModal} className="material-icons pointer close">
+                <span id="close" style={{ color: eventObj.backgroundColor }} className="material-icons close">
                     close
                 </span>
-                <div className='countdown-container'>
-                    <div className="log-in-modal">
-                        <h1>{eventObj.date}</h1>
-                        {eventObj.status === "registration" ? <Button className='sign-btn-oposite' href={eventObj.registrationUrl} variant="contained">לחץ
-                            להרשמה</Button> : <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ
-                                לתוצאות</Button>}
-                        {timerIsShown && <CountdownTimer targetDate={DATE_IN_MS} />}
-                    </div>
-                </div>
+
             </header>
         </>
     )

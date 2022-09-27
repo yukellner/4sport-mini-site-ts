@@ -9,7 +9,7 @@ export const Maps: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = 
         pageHeader("מפות ומסלולים")
     }, [])
     return (
-        <div className="main-contact">
+        <div className="main-contact min-height">
             <HeaderTitle titleText={'מפות ומסלולים'} />
 
             {eventObj.heats.map(heat =>

@@ -98,6 +98,17 @@ body {
     display: none;
 }
 
+.min-height{
+    min-height: 60vh;
+}
+
+
+
+.move-left{
+    left: 0% !important;
+
+}
+
 .vh-80 {
     height: 80vh
 }
@@ -127,7 +138,7 @@ body {
 }
 
 .add-padding{
-    padding: 1rem;
+    padding: 1rem !important;
 }
 
 .attached-top-bottom{
@@ -139,4 +150,12 @@ body {
 .margin-top-auto{
     margin-top: auto;
 }
+
+.btn-status{
+    h3{
+        padding: 0.5rem;
+    }
+}
+
+
 

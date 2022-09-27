@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { Button } from "@mui/material"
 import { useEffect, useState } from "react"
+import { StatusBtn } from "../../../../components/StatusBtn"
 import { HeatModel } from "../../../../models/heat.model"
 import { RaceObjModel } from "../../../../models/raceObj.model"
 
@@ -42,13 +43,7 @@ export const HeatBox: React.FC<{ heat: HeatModel, eventObj: RaceObjModel }> = ({
 
                         <h3>{heat.description}</h3>
                        {heat.amami ?  <h3>עממי</h3> : <h3>תחרותי</h3>}
-                        {eventObj.status==="registration" ? <StyledButton className='sign-btn'
-                            sx={{ color: eventObj.foregroundColor, backgroundColor: eventObj.backgroundColor }} href={eventObj.registrationUrl} variant="contained">לחץ
-
-                            להרשמה</StyledButton> : <StyledButton className='sign-btn'
-                            sx={{ color: eventObj.foregroundColor, backgroundColor: eventObj.backgroundColor }} href={eventObj.resultsUrl} variant="contained">לחץ
-
-                            לתוצאות</StyledButton>}
+                        <StatusBtn  eventObj={eventObj}  />
                     </div>
 
                 </div>

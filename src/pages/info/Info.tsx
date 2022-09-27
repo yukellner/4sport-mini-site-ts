@@ -12,7 +12,7 @@ export const Info:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({ e
 
 
     return (
-        <div >
+        <div className="min-height">
             info
            
 
