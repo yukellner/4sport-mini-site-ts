@@ -24,19 +24,17 @@ export const Location: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => 
   `;
 
 
+  console.log(eventObj)
 
     return (
         <div className="location-container">
             <div className="meeting-point">
-
-                <a href={eventObj.wazeDirection} target="_blank">
-                    <h3>לחץ לניווט לשטח הכינוס</h3>
-                    <StyledButton className="sign-btn" href={eventObj.wazeDirection}
-                        sx={{}}
-                        variant="outlined">
-                        <FontAwesomeIcon href={eventObj.wazeDirection} className="icon" icon={faWaze} />
-                    </StyledButton>
+                <h3>הגעה לשטח כינוס</h3>
+                <a href={eventObj.wazeDirection}>
+                    <FontAwesomeIcon  className="icon" icon={faWaze} />
                 </a>
+
+
 
 
             </div>

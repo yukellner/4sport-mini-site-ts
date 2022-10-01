@@ -9,6 +9,9 @@
 
 
     .schedule{
+        h1{
+            text-align: center;
+        }
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -66,14 +69,17 @@
 
 
     a{
-        a{
+        
             margin: 1rem auto;
-
             display: flex;
             flex-direction: column;
             cursor: pointer;
             max-width: 10rem;
-        }
+            background: white;
+            color: var(--backgroundColorJson);
+            border-radius: 5px;
+            padding: 0.2rem;
+        
 
     }
 
