@@ -12,8 +12,11 @@ export const Info:React.FC<{eventObj:RaceObjModel, pageHeader: Function}> = ({ e
 
 
     return (
-        <div className="min-height">
-            info
+        <div className="main-info min-height">
+            <div className="img-top"></div>
+            <div className="info-content"></div>
+            <div className="img-bottom"></div>
+            
            
 
         </div >

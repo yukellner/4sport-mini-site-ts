@@ -1,0 +1,16 @@
+.main-info{
+    grid-template-areas:
+    "a c"
+    "b c";
+  
+}
+
+.img-top{
+    grid-area: a
+}
+.info-content{
+    grid-area: c
+}
+.img-bottom{
+    grid-area: b
+}
