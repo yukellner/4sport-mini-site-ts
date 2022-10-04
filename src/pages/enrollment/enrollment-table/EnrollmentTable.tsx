@@ -11,12 +11,12 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
 
     useEffect(() => {
         checkPrices()
-        
+
     }, [])
 
     const checkPrices = () => {
         var totalprices: number = 0
-        eventObj.heats.map(heat => { heat.prices && heat.prices.map(price => totalprices = totalprices + price) })
+        eventObj.heats.map((heat) => { heat.prices && heat.prices.map((price) => totalprices = totalprices + price) })
         setTotalPrice(totalprices)
         totalprices = 0
         eventObj.heats.map(heat => { heat.prices && (totalprices = totalprices + heat.prices[0]) })
@@ -64,17 +64,16 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                             <th>מקצה</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {eventObj.heats.map(heat => <>
-                            {heat.prices && <tr key={heat.Rolls}>
+                    {eventObj.heats.map((heat, index) =>
+                        <tbody key={index}>
+                            {heat.prices && <tr >
                                 {hasPricesThird && <td>{heat.prices[2]}₪</td>}
                                 {hasPricesSeconed && <td>{heat.prices[1]}₪</td>}
                                 {hasPricesFirst && <td>{heat.prices[0]}₪</td>}
                                 <td>{heat.description}</td>
                             </tr>}
-                        </>
-                        )}
-                    </tbody>
+                        </tbody>
+                    )}
 
                 </table>
             </div>}
@@ -93,8 +92,8 @@ export const EnrollmentTable: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj
                     </thead>
                     <tbody>
 
-                        {eventObj.heats.map(heat =>
-                            <tr key={heat.Rolls}>
+                        {eventObj.heats.map((heat, index) =>
+                            <tr key={index}>
                                 <td>{heat.minAge}</td>
                                 <td>{heat.startHeat}</td>
                                 <td>{heat.amami ? `עממי` : `תחרותי`}</td>
