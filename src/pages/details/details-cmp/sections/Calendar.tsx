@@ -2,7 +2,7 @@ import { RaceObjModel } from "../../../../models/raceObj.model"
 
 
 
-export const Calendar:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
+export const Calendar: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
 
 
 
@@ -11,8 +11,8 @@ export const Calendar:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
     return (
         <div className="calendar-container">
 
-<div className="schedule">
-                <h1>לוז אירוע</h1>
+            <div className="schedule">
+                <h1>לו״ז האירוע</h1>
                 <h3>תאריך האירוע: {eventObj.date}</h3>
                 <h3>הגעה והתכנסות {eventObj.gatheringTime}</h3>
                 <h2>לוז זינוקים</h2>
@@ -35,8 +35,8 @@ export const Calendar:React.FC<{eventObj:RaceObjModel}> = ({ eventObj }) => {
                 </table>
                 <h3>טקס סיום וחלוקת פרסים : {eventObj.ceremonyTime}</h3>
             </div>
-            
-           
+
+
 
 
         </div >

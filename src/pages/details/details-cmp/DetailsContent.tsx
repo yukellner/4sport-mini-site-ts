@@ -75,10 +75,10 @@ export const DetailsContent: React.FC<{ eventObj: RaceObjModel,target: number }>
                     <FontAwesomeIcon  className="icon" icon={faStopwatch} />
                     <h3>תוצאות</h3>
                 </div>}
-                <div onClick={() => openModal("location")} className="pointer">
+                {eventObj.wazeDirection && <div onClick={() => openModal("location")} className="pointer">
                     <FontAwesomeIcon  className="icon" icon={faLocationDot} />
                     <h3>הגעה</h3>
-                </div>
+                </div>}
                 {eventObj.termLinks && <div onClick={() => openModal("terms")} className="pointer">
                     <FontAwesomeIcon  className="icon" icon={faFile} />
                     <h3>תקנון</h3>

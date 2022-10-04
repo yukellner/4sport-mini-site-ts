@@ -1,0 +1,32 @@
+.main-info{
+    display: grid;
+    grid-template-areas:
+    "a c"
+    "b c";
+    gap: 1rem;
+
+    img{
+        // max-height: 50rem;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+        // aspect-ratio: 9/16;
+
+    }
+  
+}
+
+.info-container{
+    padding: 1rem;
+}
+
+.img-top{
+    grid-area: a
+}
+.info-content{
+    grid-area: c;
+    text-align: right;
+}
+.img-bottom{
+    grid-area: b
+}

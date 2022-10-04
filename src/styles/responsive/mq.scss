@@ -2,6 +2,12 @@
 
 @media (max-width: 640px) {
 
+    .main-info{
+        display: flex !important;
+        flex-direction: column;
+        
+    }
+
     .top-0rem{
         bottom: 2rem !important;
     }
