@@ -15,6 +15,7 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
 
     useEffect(() => {
         updateVaribles()
+        console.log(eventObj)
 
     }, [])
 
@@ -65,12 +66,12 @@ export const AppHeader: React.FC<{ eventObj: RaceObjModel, existPage: string }> 
                     <ul id="navbar">
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/gallery`}>גלריה</NavLink></li>
-                        {/* <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/info`}>רז גוטרמן</NavLink></li> */}
+                            {eventObj.customPage && <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/${eventObj.customPage.name}`}>{eventObj.customPage.name}</NavLink></li>}
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>פרטים מלאים</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/enrollment`}>הרשמה</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
-                        <span id="close1"  onClick={showModal} className="material-icons pointer close1">
+                        <span id="close1" onClick={showModal} className="material-icons pointer close1">
                             close
                         </span>
                     </ul>

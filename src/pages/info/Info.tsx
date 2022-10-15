@@ -1,20 +1,22 @@
 import { useEffect } from "react"
 import { HeaderTitle } from "../../components/HeaderTitle"
+import { CustomPageModel } from "../../models/custom.page.model"
 import { RaceObjModel } from "../../models/raceObj.model"
 
 
 
-export const Info: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
+export const Info: React.FC<{ eventObj: RaceObjModel,custom: CustomPageModel,  pageHeader: Function }> = ({ eventObj, pageHeader, custom }) => {
 
     useEffect(() => {
         pageHeader("info")
+        console.log(eventObj)
     }, [])
 
 
 
     return (
         <div className="min-height">
-            <HeaderTitle titleText={'פרטים'} />
+            <HeaderTitle titleText={custom.name} />
             <div className="main-info info-container">
 
 

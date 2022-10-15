@@ -1,3 +1,4 @@
+import { CustomPageModel } from "./custom.page.model";
 import { HeatModel } from "./heat.model";
 import { SponserModel } from "./sponser.model";
 import { TermsLinksModel } from "./TermsLinksModel";
@@ -20,6 +21,7 @@ import { TermsLinksModel } from "./TermsLinksModel";
         secondaryColor: string;
         organizerDetails:string;
         heats: HeatModel[];
+        customPage: CustomPageModel,
         contactImage: string,
         medicalLinks: TermsLinksModel[];
         priceDates: string[];
