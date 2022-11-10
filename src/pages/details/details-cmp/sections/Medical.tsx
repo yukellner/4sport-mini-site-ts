@@ -1,43 +1,32 @@
 import styled from "@emotion/styled"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material"
-import { RaceObjModel } from "../../../../models/raceObj.model"
+import { IEvent } from "../../../../models/Event"
+import React from "react";
 
-export const Medical: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
+export const Medical: React.FC<{ event: IEvent }> = ({ event }) => {
+    styled(Button)`
+      justify-content: flex-start;
+      background-color: var(--white);
+      color: ${event.backgroundColor};
+      target: blank;
 
-    const StyledButton = styled(Button)`
-    justify-content: flex-start;
-    background-color: var(--white);
-    color: ${eventObj.backgroundColor};
-    target: blank;
-
-    &:hover {
-      background-color: ${eventObj.foregroundColor};
-      color:${eventObj.backgroundColor};
-      outline:1px ${eventObj.backgroundColor} solid;
-    }
-    // &:focus {
-    //   background-color: green;
-    // }
-  `;
-
+      &:hover {
+        background-color: ${event.foregroundColor};
+        color:${event.backgroundColor};
+        outline:1px ${event.backgroundColor} solid;
+      }
+    `;
     return (
         <div className="terms-container">
             <h1>הצהרת בריאות</h1>
             <h3>
-                {eventObj.terms}
+                {event.terms}
             </h3>
-            {eventObj.medicalLinks && eventObj.medicalLinks.map(link =>
+            {event.medicalLinks && event.medicalLinks.map(link =>
                 <a href={link.link} key={link.link} target="_blank">
                     <button className="main-btn">{link.name}</button>
                 </a>
-
-
             )}
         </div>
-
-
-
-
     )
 }

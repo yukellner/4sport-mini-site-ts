@@ -1,21 +1,17 @@
-import { SponserModel } from "../../../../models/sponser.model"
+import { ISponsor } from "../../../../models/Sponsor"
+import React from "react";
 
-export const SponserCard: React.FC<{ sponser: SponserModel }> = ({ sponser }) => {
-
-
+export const SponsorCard: React.FC<{ sponsor: ISponsor }> = ({ sponsor }) => {
     return (
-        <div className="sponser-card">
+        <div className="sponsor-card">
             <div className="upper">
-
-                <a className="scale-up-center" href={sponser.link}>
-                    <img src={sponser.logoUrl} />
+                <a className="scale-up-center" href={sponsor.link}>
+                    <img src={sponsor.logoUrl} />
                 </a>
             </div>
             <div className="bellow">
-
                 <h3>
-
-                    {sponser.description}
+                    {sponsor.description}
                 </h3>
             </div>
         </div>

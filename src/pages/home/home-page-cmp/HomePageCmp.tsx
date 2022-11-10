@@ -1,30 +1,22 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material"
 import { StatusBtn } from "../../../components/StatusBtn";
-import { StatusBtnOposite } from "../../../components/StatusBtnOposite";
-import { RaceObjModel } from "../../../models/raceObj.model"
+import { IEvent } from "../../../models/Event"
 
-
-export const HomePageCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) => {
-
-    const StyledButton = styled(Button)`
-    background-color: var(--backgroundColorJson);
-    color: var(--fontColorJson);
-    border: unset;
-    box-sizing: border-box;
-    margin-top: 1rem;
-    &:hover {
-            box-sizing: border-box;
+export const HomePageCmp: React.FC<{ event: IEvent }> = ({ event }) => {
+    styled(Button)`
+      background-color: var(--backgroundColorJson);
+      color: var(--fontColorJson);
+      border: unset;
+      box-sizing: border-box;
+      margin-top: 1rem;
+      &:hover {
+        box-sizing: border-box;
         border: unset;
-      background-color: ${eventObj.foregroundColor};
-      color:${eventObj.backgroundColor};
-    //   border:1px ${eventObj.backgroundColor} solid;
-    }
-    // &:focus {
-    //   background-color: green;
-    // }
-  `;
-
+        background-color: ${event.foregroundColor};
+        color:${event.backgroundColor};
+      }
+    `;
 
     return (
         <div className="main-home-page vh-80">
@@ -32,22 +24,13 @@ export const HomePageCmp: React.FC<{ eventObj: RaceObjModel }> = ({ eventObj }) 
             <div className="dark-home"></div>
             <div className="header-home">
                 <div>
-                    {/* kenburns-top */}
-                    {/* className="scale-up-center" */}
-                    <h1>{eventObj.description}</h1>
-                    {(eventObj.status === 'registration') && <h2 className="hero">ההרשמה בעיצומה!</h2>}
+                    <h1>{event.description}</h1>
+                    {(event.status === 'registration') && <h2 className="hero">ההרשמה בעיצומה!</h2>}
                 </div>
                 <div>
-                    <StatusBtn eventObj={eventObj}/>
-                    
+                    <StatusBtn event={event}/>
                 </div>
-                {/* <StyledButton className="sign-btn" href={eventObj.registrationUrl}
-                    sx={{}}
-                    variant="outlined">
-                    להרשמה
-                </StyledButton> */}
             </div>
-
         </div>
     )
 }
