@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { HeaderTitle } from "../../components/HeaderTitle";
-import { RaceObjModel } from "../../models/raceObj.model";
+import { IEvent } from "../../models/Event";
 import { EnrollmentTable } from "./enrollment-table/EnrollmentTable";
 
 
-export const Enrollment: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
+export const Enrollment: React.FC<{ event: IEvent, pageHeader: Function }> = ({ event, pageHeader }) => {
 
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export const Enrollment: React.FC<{ eventObj: RaceObjModel, pageHeader: Function
     return (
         <div className="main-enrollment min-height">
             <HeaderTitle titleText={'הרשמה'} />
-            <EnrollmentTable eventObj={eventObj} />
+            <EnrollmentTable event={event} />
             
         </div>
     )

@@ -1,4 +1,4 @@
-export interface SectionModel {
+export interface ISection {
     section: number;
     heatId: number;
     description: string;

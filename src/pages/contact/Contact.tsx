@@ -10,7 +10,7 @@ import {
 } from "@mui/material"
 import { useEffect, useState } from "react"
 import { HeaderTitle } from "../../components/HeaderTitle"
-import { RaceObjModel } from "../../models/raceObj.model"
+import { IEvent } from "../../models/Event"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import rtlPlugin from 'stylis-plugin-rtl';
 import createCache from '@emotion/cache';
@@ -19,14 +19,14 @@ import { create } from 'jss';
 import rtl from 'jss-rtl';
 import { jssPreset } from '@mui/styles';
 
-export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }> = ({ eventObj, pageHeader }) => {
+export const Contact: React.FC<{ event: IEvent, pageHeader: Function }> = ({ event, pageHeader }) => {
     const [newForm, setNewForm] = useState(
         {
             fullName: '',
             roll: '',
             phoneNumber: '',
             email: '',
-            competition: eventObj.description,
+            competition: event.description,
             content: ''
         })
 
@@ -36,7 +36,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
         direction: 'rtl',
         palette: {
             primary: {
-                main: `${eventObj.backgroundColor}`
+                main: `${event.backgroundColor}`
             }
 
         }
@@ -80,7 +80,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
 
 
         try {
-            const response = await fetch(`https://www.4sport-live.com/miniSite/contact/?eventId=${eventObj.eventId}`, {
+            const response = await fetch(`https://www.4sport-live.com/miniSite/contact/?eventId=${event.eventId}`, {
                 method: 'POST',
                 body: JSON.stringify({
                     name: newForm.fullName,
@@ -126,7 +126,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
             <HeaderTitle titleText={'צור קשר'} />
             <div className="contact-content">
                 <div className="contact-img">
-                    <img src={eventObj.contactImage} alt="" />
+                    <img src={event.contactImage} alt="" />
                 </div>
                 <div className="contact-form">
                     <form autoComplete="off" dir="rtl" id="contact-form" onSubmit={onSubmit} method="POST">
@@ -186,7 +186,7 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
                                 aria-required
                             >
                                 <div dir="rtl" className="contact-container">
-                                    {eventObj.heats.map(heat =>
+                                    {event.heats.map(heat =>
                                         <FormControlLabel onChange={(ev) => handleChange(ev)} name="roll" key={heat.description} value={heat.description} control={<Radio required={true} />}
                                             label={heat.description} />
                                     )}
@@ -198,9 +198,9 @@ export const Contact: React.FC<{ eventObj: RaceObjModel, pageHeader: Function }>
                 </div>
             </div>
             <div className="contact-boxes-container">
-                <div className="contact-phone contact-box">{eventObj.contactPhone}</div>
-                <div className="contact-location contact-box">{eventObj.location}</div>
-                <div className="contact-hours contact-box">{eventObj.organizerDetails}</div>
+                <div className="contact-phone contact-box">{event.contactPhone}</div>
+                <div className="contact-location contact-box">{event.location}</div>
+                <div className="contact-hours contact-box">{event.organizerDetails}</div>
             </div>
         </div>
     )
