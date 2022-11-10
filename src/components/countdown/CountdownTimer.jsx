@@ -7,7 +7,7 @@ import { UseCountdown } from './UseCountdown';
 const ExpiredNotice = ({eventObj}) => {
   return (
     <div id='show-counter' className="expired-notice  no-reg-counter slide-in-right">
-      {/* <Button className='sign-btn-oposite' href={eventObj.resultsUrl} variant="contained">לחץ לתוצאות</Button> */}
+      {/* <Button className='sign-btn-oposite' href={event.resultsUrl} variant="contained">לחץ לתוצאות</Button> */}
     </div>
   );
 };

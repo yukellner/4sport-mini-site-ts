@@ -1,4 +1,4 @@
-export interface PrizeModel {
+export interface IPrize {
     place: number;
     nis: number;
 }
