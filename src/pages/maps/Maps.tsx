@@ -27,7 +27,7 @@ console.log(event,"event")
                             frameBorder="0"
                             scrolling="no"
                             title="AllTrails: Trail Guides and Maps for Hiking, Camping, and Running">
-                        </iframe> :<div><img  width={"100%"}  src={emekHamaynotImage} alt={"not iframe"}/>
+                        </iframe> :<div><img  width={"100%"}  src={heat.mapUrl} alt={"not iframe"}/>
                         </div>}
                 </div>
             )}
