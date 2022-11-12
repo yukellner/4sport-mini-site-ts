@@ -14,6 +14,8 @@ export interface IHeat {
     sections: ISection[];
     amami: number;
     routeDescription: string;
+    showMap:number
+    mapIframe:number
 }
 
 
