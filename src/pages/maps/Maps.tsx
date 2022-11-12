@@ -6,7 +6,6 @@ export const Maps: React.FC<{ event: IEvent, pageHeader: Function }> = ({ event,
     useEffect(() => {
         pageHeader("מפות ומסלולים")
     }, [])
-console.log(event,"event")
     return (
         <div className="main-contact min-height">
             <HeaderTitle titleText={'מפות ומסלולים'} />
