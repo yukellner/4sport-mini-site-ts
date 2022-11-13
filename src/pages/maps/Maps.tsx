@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { HeaderTitle } from "../../components/HeaderTitle"
 import { IEvent } from "../../models/Event"
-import emekHamaynotImage from "../../assets/images/emekhmaynothalfmarthon.jpeg"
 export const Maps: React.FC<{ event: IEvent, pageHeader: Function }> = ({ event, pageHeader }) => {
     useEffect(() => {
         pageHeader("מפות ומסלולים")
