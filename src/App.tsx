@@ -22,8 +22,6 @@ function App() {
     const [existPage, setExistPage] = useState<string>("Home")
     const {codeName} = useParams();
 
-    console.log(codeName)
-
     const scrollEv = () => {
         const scrollValue = document.documentElement.scrollTop
         if (scrollValue > 50) {
@@ -41,6 +39,7 @@ function App() {
             el1.classList.remove("top-0rem");
         }
     }
+
     const pageHeader = (pageName: string) => {
         setExistPage(pageName)
     }
@@ -133,6 +132,9 @@ function App() {
                     <Route path={`/gallery`} element={<Gallery event={event} pageHeader={pageHeader}/>}/>
                     {event.customPage && <Route path={`/${event.customPage.name}`} element={<Info event={event} custom={event.customPage} pageHeader={pageHeader}/>}/>}
                 </Routes>
+                <br/>
+                <br/>
+                <br/>
                 {event.sponsors && event.sponsors.length !== 0 && <Sponsors event={event}/>}
                 <AppFooter event={event}/>
             </div>
