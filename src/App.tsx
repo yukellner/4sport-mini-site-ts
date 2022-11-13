@@ -129,7 +129,7 @@ function App() {
                     <Route path={`/contact`} element={<Contact event={event} pageHeader={pageHeader}/>}/>
                     <Route path={`/enrollment`} element={<Enrollment event={event} pageHeader={pageHeader}/>}/>
                     <Route path={`/details`} element={<Details target={DATE_IN_MS} event={event} pageHeader={pageHeader}/>}/>
-                    <Route path={`/maps`} element={<Maps event={event} pageHeader={pageHeader}/>}/>
+                    {event.showMaps && <Route path={`/maps`} element={<Maps event={event} pageHeader={pageHeader}/>}/>}
                     <Route path={`/gallery`} element={<Gallery event={event} pageHeader={pageHeader}/>}/>
                     {event.customPage && <Route path={`/${event.customPage.name}`} element={<Info event={event} custom={event.customPage} pageHeader={pageHeader}/>}/>}
                 </Routes>

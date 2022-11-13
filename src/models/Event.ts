@@ -42,5 +42,6 @@ export interface IEvent {
     coverImages: string[];
     gallery: string;
     wazeDirection: string;
+    showMaps:number
 }
 
