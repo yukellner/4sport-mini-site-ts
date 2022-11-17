@@ -1,7 +1,6 @@
 import { IEvent } from "../../../models/Event"
 import React, { useEffect, useState } from "react"
 
-
 export const EnrollmentTable: React.FC<{ event: IEvent }> = ({ event }) => {
     const [totalPrice, setTotalPrice] = useState<number>(0)
     const [hasPricesFirst, setHasPricesFirst] = useState<boolean>(false)
@@ -114,14 +113,12 @@ export const EnrollmentTable: React.FC<{ event: IEvent }> = ({ event }) => {
             </div>
 
             <div>
-                {event.isRegistrationInEventDay ?
-                    <h3>קיימת הרשמה במקום ביום האירוע <span>
-                        *
-                    </span></h3>
-                    :
+                {!event.isRegistrationInEventDay &&
                     <h3>לא תתאפשר הרשמה במקום ביום האירוע <span >
                         *
-                    </span></h3>}
+                    </span>
+                    </h3>
+                }
             </div>
             <div className="enrollmentInclude">
                 {event.enrollmentInclude}
