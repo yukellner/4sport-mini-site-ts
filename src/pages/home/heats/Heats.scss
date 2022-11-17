@@ -1,11 +1,11 @@
 .heats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     align-items: center;
     width: 100%;
-    padding: 1rem 20%;
+    padding: 1rem 10%;
     border-bottom: 1px solid rgb(221, 221, 221);
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .header-large {
