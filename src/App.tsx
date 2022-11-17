@@ -77,8 +77,9 @@ function App() {
     const DATE_IN_MS = date.getTime();
 
     const myDynamicManifest = {
-        "short_name": "React App",
-        "name": "Create React App Sample",
+
+        "short_name": `${event.description}`,
+        "name": `${event.description}`,
         "icons": [
             {
                 "src": "favicon.ico",
