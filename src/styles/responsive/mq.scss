@@ -8,6 +8,10 @@
         
     }
 
+    .sponsor-card{
+        max-width: 10rem;
+    }
+
     .top-0rem{
         bottom: 2rem !important;
     }
@@ -50,7 +54,7 @@
     .sponsers-container {
 
 
-        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr))
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
     }
 
     body {
@@ -207,6 +211,10 @@
 
     .close, .close1{
         display: none !important;
+    }
+
+    .sponsor-card{
+        max-width: 11rem;
     }
 
     .show-counter{
