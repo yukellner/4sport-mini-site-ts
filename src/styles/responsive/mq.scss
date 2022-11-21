@@ -9,7 +9,7 @@
     }
 
     .sponsor-card{
-        max-width: 10rem;
+        max-width: 9rem;
     }
 
     .top-0rem{
@@ -209,12 +209,12 @@
 // tablet
 @media (min-width: 640px) {
 
-    .close, .close1{
-        display: none !important;
-    }
-
     .sponsor-card{
         max-width: 11rem;
+    }
+
+    .close, .close1{
+        display: none !important;
     }
 
     .show-counter{
