@@ -21,15 +21,18 @@
         // margin-top: 8rem;
     }
 
+    
+    
     table {
         margin: 0 auto;
         border-collapse: collapse;
         td,tr,th{
             padding: 0.4rem;
-            border: 1px solid lightgray;
+            border: 1px solid var(--backgroundColorJson);
         }
         th{
-            background-color: lightgrey;
+            background-color: var(--backgroundColorJson);
+            color: var(--fontColorJson);
         }
         
        

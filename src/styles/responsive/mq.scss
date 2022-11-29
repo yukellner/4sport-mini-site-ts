@@ -9,7 +9,7 @@
     }
 
     .sponsor-card{
-        max-width: 9rem;
+        // max-width: 9rem;
     }
 
     .top-0rem{
@@ -54,7 +54,7 @@
     .sponsers-container {
 
 
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
+        // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
     }
 
     body {
@@ -91,6 +91,8 @@
         margin-bottom: 4rem;
 
     }
+
+
 
     .exist-page {
         display: block;
@@ -209,8 +211,17 @@
 // tablet
 @media (min-width: 640px) {
 
+    .route-header {
+
+        font-size: 2rem;
+    }
+
+    table{
+        font-size: 1.5rem;
+    }
+
     .sponsor-card{
-        max-width: 11rem;
+        // max-width: 11rem;
     }
 
     .close, .close1{
@@ -233,7 +244,7 @@
     .sponsers-container {
 
 
-        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr))
+        // grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr))
     }
 
     .map-container {

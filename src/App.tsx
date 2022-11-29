@@ -127,6 +127,7 @@ function App() {
                 <AppHeader event={event} existPage={existPage}/>
                 <Routes>
                     <Route path={`/`} element={<Home event={event} pageHeader={pageHeader}/>}/>
+                    <Route path={`/home`} element={<Home event={event} pageHeader={pageHeader}/>}/>
                     <Route path={`/contact`} element={<Contact event={event} pageHeader={pageHeader}/>}/>
                     <Route path={`/enrollment`} element={<Enrollment event={event} pageHeader={pageHeader}/>}/>
                     <Route path={`/details`} element={<Details target={DATE_IN_MS} event={event} pageHeader={pageHeader}/>}/>
