@@ -16,6 +16,7 @@ import { Info } from "./pages/info/Info";
 import Favicon from "react-favicon";
 import CountdownTimer from "./components/countdown/CountdownTimer";
 import { StatusBtnOposite } from "./components/StatusBtnOposite";
+import TagManager from 'react-gtm-module'
 
 function App() {
     const [event, setEvent] = useState<IEvent | any>(null)
@@ -45,6 +46,11 @@ function App() {
     }
 
     useEffect(() => {
+        if(!event?.gtmId) return
+        TagManager.initialize({ gtmId: event.gtmId })
+    }, [event?.gtmId])
+
+    useEffect(() => {
         getJsonFromApi()
         window.addEventListener('scroll', scrollEv, {passive: true});
 
@@ -57,8 +63,7 @@ function App() {
         try {
             const response = await fetch(`https://www.4sport-live.com/miniSite/eventData/?codeName=${codeName}`);
             const responseJson = await response.json();
-            setEvent(Object(responseJson))
-            console.log(Object(responseJson))
+            setEvent(responseJson)
             return responseJson;
         } catch (error) {
             console.error(error);
@@ -144,4 +149,6 @@ function App() {
         </>
     );
 }
+
+// @ts-ignore
 export default App;
