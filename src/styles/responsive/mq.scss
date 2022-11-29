@@ -9,7 +9,7 @@
     }
 
     .sponsor-card{
-        max-width: 9rem;
+        // max-width: 9rem;
     }
 
     .top-0rem{
@@ -54,7 +54,7 @@
     .sponsers-container {
 
 
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
+        // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
     }
 
     body {
@@ -210,7 +210,7 @@
 @media (min-width: 640px) {
 
     .sponsor-card{
-        max-width: 11rem;
+        // max-width: 11rem;
     }
 
     .close, .close1{
@@ -233,7 +233,7 @@
     .sponsers-container {
 
 
-        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr))
+        // grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr))
     }
 
     .map-container {
