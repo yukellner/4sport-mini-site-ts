@@ -51,12 +51,10 @@ export const AppHeader: React.FC<{ event: IEvent, existPage: string }> = ({ even
                 <div className="navbar" >
                     <ul id="navbar">
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/contact`}>צור קשר</NavLink></li>
-                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/gallery`}>גלריה</NavLink></li>
-                        {event.customPage && <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/${event.customPage.name}`}>{event.customPage.name}</NavLink></li>}
-                        {event.showMaps &&<li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>}
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/gallery`}>גלריה</NavLink></li>{event.customPage && <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/${event.customPage.name}`}>{event.customPage.name}</NavLink></li>}{event.showMaps &&<li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/maps`}>מפות ומסלולים</NavLink></li>}
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/details`}>פרטים מלאים</NavLink></li>
                         <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/enrollment`}>הרשמה</NavLink></li>
-                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/`}>בית</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? "active-class" : "not-active-class")} onClick={showModal} to={`${basePath}/home`}>בית</NavLink></li>
                         <span id="close1" onClick={showModal} className="material-icons pointer close1">
                             close
                         </span>

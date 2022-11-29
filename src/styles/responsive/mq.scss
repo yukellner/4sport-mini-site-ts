@@ -92,6 +92,8 @@
 
     }
 
+
+
     .exist-page {
         display: block;
         width: 100%;
@@ -208,6 +210,10 @@
 
 // tablet
 @media (min-width: 640px) {
+
+    table{
+        font-size: 1.5rem;
+    }
 
     .sponsor-card{
         // max-width: 11rem;
