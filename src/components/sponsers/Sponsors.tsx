@@ -15,7 +15,7 @@ export const Sponsors: React.FC<{event: IEvent}> = ({event}) => {
 
     return (
         <div className="sponsers-main-container">
-            <h1 className="header-large">נותני החסות</h1>
+            <h1 className="header-large">נותני חסות ומציגים באקספו</h1>
             <div className="sponsers-container">
                 {event.sponsors.map(sponser =>
                     <SponsorCard key={sponser.description} sponsor={sponser}/>
