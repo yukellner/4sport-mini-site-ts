@@ -1,0 +1,40 @@
+.egud-box {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-top: 1px solid rgb(221, 221, 221);
+
+    .right-side,
+    .left-side {
+        width: 50%;
+        min-width: 300px;
+        padding: 1rem;
+
+        img {
+            width: 100%;
+            max-width: 18rem;
+        }
+
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h2 {
+
+            font-weight: 700;
+            font-family: "Lato", sans-serif;
+            text-align: right;
+            direction: rtl;
+            text-rendering: optimizeSpeed
+        }
+    }
+
+    .left-side {
+        text-align: center;
+    }
+
+
+}

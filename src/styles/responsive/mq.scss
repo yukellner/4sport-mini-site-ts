@@ -2,36 +2,58 @@
 
 @media (max-width: 640px) {
 
-    .main-info{
-        display: flex !important;
-        flex-direction: column;
-        
+    .egud-box {
+
+
+        img {
+            max-width: 200px !important;
+        }
+
+        .left-side,
+        .right-side {
+            min-width: 200px !important;
+            width: 100% !important;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 
-    .sponsor-card{
+    .main-info {
+        display: flex !important;
+        flex-direction: column;
+
+    }
+
+    .sponsor-card {
         // max-width: 9rem;
     }
 
-    .top-0rem{
+    .top-0rem {
         bottom: 2rem !important;
     }
-    .no-reg-counter{
+
+    .no-reg-counter {
         position: fixed !important;
         bottom: 4rem !important;
         width: 100%;
         left: 0;
-        border-bottom-left-radius:0 !important;
+        border-bottom-left-radius: 0 !important;
         top: unset !important;
         z-index: 10;
     }
 
     .slide-in-right {
         -webkit-animation: unset !important;
-                animation: unset !important;
+        animation: unset !important;
     }
 
-    
-    
+
+
 
     .countdown-container {
         width: 1rem !important;
@@ -125,13 +147,13 @@
     }
 
 
-    
-        
-    
+
+
+
 
     .navbar {
         // visibility: hidden;
-        
+
         ul {
             height: calc(100% - 4rem);
             left: 100%;
@@ -181,11 +203,11 @@
         // visibility: hidden;
     }
 
-    .show-counter{
+    .show-counter {
         position: fixed !important;
         bottom: 7rem;
         left: 0;
-        border-bottom-left-radius:0 !important;
+        border-bottom-left-radius: 0 !important;
         top: unset !important;
         padding-top: unset;
     }
@@ -211,29 +233,35 @@
 // tablet
 @media (min-width: 640px) {
 
+    .egud-box {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     .route-header {
 
         font-size: 2rem;
     }
 
-    table{
+    table {
         font-size: 1.5rem;
     }
 
-    .sponsor-card{
+    .sponsor-card {
         // max-width: 11rem;
     }
 
-    .close, .close1{
+    .close,
+    .close1 {
         display: none !important;
     }
 
-    .show-counter{
+    .show-counter {
         top: 11rem;
         padding-top: 1rem;
     }
 
-    .top-0rem{
+    .top-0rem {
         top: 6rem !important;
     }
 
@@ -256,6 +284,7 @@
     .navbar {
         ul {
             padding: 0;
+
             li {
                 margin-left: 1rem;
             }
@@ -283,6 +312,15 @@
 // /* LARGE */
 
 @media (min-width: 920px) {
+
+
+    .egud-box {
+
+
+        margin: 2rem auto;
+        max-width: 70%;
+
+    }
 
     .main-footer {
         * {

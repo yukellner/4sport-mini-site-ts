@@ -43,6 +43,7 @@ export interface IEvent {
     gallery: string;
     wazeDirection: string;
     showMaps:number,
-    gtmId?: string
+    gtmId?: string,
+    tavTeken: number
 }
 
