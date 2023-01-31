@@ -41,6 +41,7 @@ export interface IEvent {
     status: string;
     coverImages: string[];
     gallery: string;
+    generalGallery: string;
     wazeDirection: string;
     showMaps:number,
     gtmId?: string,
