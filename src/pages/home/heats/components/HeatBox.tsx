@@ -22,6 +22,10 @@ export const HeatBox: React.FC<{ heat: IHeat, event: IEvent }> = ({ heat, event 
         setRaceType(event.eventType)
     }, [])
 
+    function goToRegistrationWithRolls() {
+        window.location.href = `${event.registrationUrl}&skipRolls=1&skipWithRolls=${heat.Rolls}`
+    }
+
     return (
         <div className="main-heat-container">
             <div className="heat-des">
@@ -30,7 +34,7 @@ export const HeatBox: React.FC<{ heat: IHeat, event: IEvent }> = ({ heat, event 
 
                         <h3>{heat.description}</h3>
                         {heat.amami ?  <h3>עממי</h3> : <h3>תחרותי</h3>}
-                        <StatusBtn  event={event}  />
+                        <StatusBtn  event={event} goToRegistration={goToRegistrationWithRolls}  />
                     </div>
                 </div>
             </div>

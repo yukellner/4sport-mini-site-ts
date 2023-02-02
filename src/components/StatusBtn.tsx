@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { IEvent } from "../models/Event";
 
 
-export const StatusBtn: React.FC<{ event: IEvent }> = ({ event }) => {
+export const StatusBtn: React.FC<{ event: IEvent, goToRegistration?: () => void }> = ({ event, goToRegistration }) => {
     const [eventStatus, setEventStatus] = useState<string>('registration')
     const [eventTime, setEventTime] = useState<string>()
 
@@ -34,10 +34,18 @@ export const StatusBtn: React.FC<{ event: IEvent }> = ({ event }) => {
       }
     `;
 
+    function registrationBtnClicked() {
+        if(goToRegistration) {
+            goToRegistration()
+            return
+        }
+        window.location.href = event.registrationUrl
+    }
+
     return (
         <>
             <div className="btn-status">
-                {(event.status === "registration") && (eventTime=== 'before-race') && <StyledButton href={event.registrationUrl} variant="contained">לחץ להרשמה</StyledButton>}
+                {(event.status === "registration") && (eventTime=== 'before-race') && <StyledButton onClick={registrationBtnClicked} variant="contained">לחץ להרשמה</StyledButton>}
                 {(event.status === "registration") && (eventTime=== 'expired') && <StyledButton href={event.resultsUrl} variant="contained">לחץ לתוצאות</StyledButton>}
                 {(event.status != "registration") && (eventTime=== 'before-race') && (event.showParticipants ? <StyledButton href={event.participantsListUrl} variant="contained">לחץ לרשימת המשתתפים</StyledButton> : <h3 style={{fontSize: '1.17em'}}>ההרשמה הסתיימה</h3>)}
                 {(event.status != "registration") && (eventTime=== 'expired') && <StyledButton href={event.resultsUrl} variant="contained">לחץ לתוצאות</StyledButton>}
