@@ -31,7 +31,6 @@
 
 
     table {
-        // margin: 0 auto;
         border-collapse: collapse;
         direction: ltr;
 
@@ -40,14 +39,11 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-
-
         td,
         tr,
         th {
             direction: rtl;
             border: 1px solid lightgray;
-
         }
 
         th {

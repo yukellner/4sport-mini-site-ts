@@ -1,0 +1,10 @@
+
+.pricesTable {
+    border-collapse: collapse !important;
+    direction: ltr;
+    border: none !important;
+}
+
+.pricesTd {
+    border: none !important;
+}
