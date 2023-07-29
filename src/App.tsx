@@ -51,7 +51,7 @@ function App() {
     }, [event?.gtmId])
 
     useEffect(() => {
-        getJsonFromApi()
+        getJsonFromApi().then()
         window.addEventListener('scroll', scrollEv, {passive: true});
 
         return () => {

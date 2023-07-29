@@ -3,7 +3,7 @@ import { Calendar } from "./sections/Calendar"
 import { Category } from "./sections/Category"
 import { Location } from "./sections/Location"
 import { Medical } from "./sections/Medical"
-import { Prize } from "./sections/Prize"
+import { Prize } from "./sections/prize/Prize"
 import { Results } from "./sections/Results"
 import { Terms } from "./sections/Terms"
 import React from "react";
