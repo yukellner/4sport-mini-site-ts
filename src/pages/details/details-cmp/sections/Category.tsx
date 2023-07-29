@@ -8,8 +8,8 @@ export const Category: React.FC<{ event: IEvent }> = ({ event }) => {
                 <h1>קטגוריות</h1>
                 {event.heats.map(heat =>
                     <div key={heat.description}>
-                        {!heat.amami && <h3>מקצה {heat.description}</h3>}
-                        {!heat.amami && heat.sections.map(section => <h3
+                        {!heat.amami && <h3 style={{fontSize:24}}>מקצה {heat.description}</h3>}
+                        {!heat.amami && heat.sections.map(section => <h3 style={{fontSize:20}}
                             key={section.description}>{section.description}</h3>)}
                         <br />
                     </div>

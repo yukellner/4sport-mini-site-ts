@@ -1,6 +1,7 @@
 import React from "react";
-import {IEvent} from "../../../../models/Event";
-import {PrizeTable} from "./PrizeTable";
+import {IEvent} from "../../../../../models/Event";
+import {PrizeTable} from "../PrizeTable";
+import {PrizeDetails} from "./components/prizeTable/PrizeDetails";
 
 export const Prize: React.FC<{ event: IEvent }> = ({ event }) => {
     return (
@@ -13,12 +14,7 @@ export const Prize: React.FC<{ event: IEvent }> = ({ event }) => {
                     <div style={{width: '100%'}}>
                         <h1 style={{width: '100%', textAlign: 'center', color: 'white'}}>{heat.description}</h1>
                         <div style={{width: '100%', height: '1px', background: 'white', marginTop: '8px', marginBottom: '8px'}}></div>
-                        <div style={{float: 'right'}}>
-                            <PrizeTable  prizes={event.heats[0].prizes} gender={'M'}/>
-                        </div>
-                        <div style={{float: 'left'}}>
-                            <PrizeTable prizes={event.heats[0].prizes} gender={'F'}/>
-                        </div>
+                        <PrizeDetails prizes={event.heats[0].prizes}/>
                     </div>
                 )}
             </>
