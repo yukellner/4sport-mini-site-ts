@@ -12,7 +12,7 @@ export const Gallery: React.FC<{ event: IEvent, pageHeader: Function }> = ({ eve
 
   const fetchGallery = async () => {
     try {
-      const response = await fetch(`https://www.minisite.4sport-services.com/v1/gallery/${event.eventId}`);
+      const response = await fetch(`https://www.4sport-live.com/miniSite/gallery?eventId=${event.eventId}`);
       const responseJson = await response.json();
       setGalleryJsonReceived(true)
       setGalleryItems(responseJson)
